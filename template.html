@@ -82,10 +82,6 @@ details.rules[open]>summary::after{transform:rotate(180deg)}
 details.rules ul{margin:0;padding:0 18px 14px 18px;list-style:none}
 details.rules li{position:relative;padding:5px 18px 5px 0;font-size:14px;color:#3a3d33}
 details.rules li::before{content:"⛓";position:absolute;right:0;top:5px;font-size:12px;opacity:.6}
-.doc-link{display:inline-flex;align-items:center;gap:7px;margin-top:10px;text-decoration:none;
-  background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);
-  padding:11px 14px;font-weight:700;font-size:14px;color:var(--pine)}
-.doc-link:active{transform:scale(.98)}
 
 /* day */
 .day{display:none;padding:6px 14px 0}
@@ -202,7 +198,7 @@ footer b{color:var(--pine)}
   display:flex;background:rgba(244,239,228,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);
   box-shadow:0 -4px 18px rgba(29,59,47,.10);padding:6px 8px calc(6px + env(safe-area-inset-bottom))}
 .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;border:0;background:none;cursor:pointer;
-  color:var(--muted);font-family:inherit;font-weight:700;font-size:11.5px;padding:6px 4px;border-radius:12px;transition:.15s}
+  color:var(--muted);font-family:inherit;font-weight:700;font-size:11.5px;padding:6px 4px;border-radius:12px;transition:.15s;text-decoration:none}
 .tab .tab-ic{font-size:21px;line-height:1;filter:grayscale(.45);opacity:.7;transition:.15s}
 .tab .tab-ic svg{width:23px;height:23px;display:block}
 .tab.tab-active{color:var(--pine)}
@@ -263,10 +259,6 @@ footer b{color:var(--pine)}
   <section class="view view-active" data-view="itinerary" aria-label="מסלול יומי">
     <nav class="pillbar" id="pills" aria-label="בחירת יום">{{PILLS}}</nav>
 
-    <div class="intro">
-      {{DOC_LINK}}
-    </div>
-
 {{DAYS}}
     <footer>{{FOOTER}}</footer>
   </section>
@@ -287,6 +279,7 @@ footer b{color:var(--pine)}
   <button class="tab tab-active" type="button" data-go="itinerary" aria-current="page"><span class="tab-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3" fill="#fff"/><path d="M3 8.2a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v.3H3Z" fill="#4f7a5e"/><rect x="6.8" y="3" width="2.2" height="4.3" rx="1.1" fill="#2a5343"/><rect x="15" y="3" width="2.2" height="4.3" rx="1.1" fill="#2a5343"/><rect x="3" y="5" width="18" height="16" rx="3" fill="none" stroke="#2a5343" stroke-width="1.4"/><g fill="#4f7a5e"><circle cx="8" cy="13" r="1.25"/><circle cx="12" cy="13" r="1.25"/><circle cx="16" cy="13" r="1.25"/><circle cx="8" cy="17" r="1.25"/><circle cx="12" cy="17" r="1.25"/></g><circle cx="16" cy="17" r="1.25" fill="#c08a2d"/></svg></span><span class="tab-lbl">תוכנית</span></button>
   <button class="tab" type="button" data-go="nav"><span class="tab-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="#7cb342" d="M12 12 L23 17 L12 22 L1 17 Z"/><path d="M5.5 16.3 L12 13.4 L18.5 16.3" fill="none" stroke="#fff" stroke-width="1.1" opacity=".9" stroke-linejoin="round"/><path fill="#ea4335" d="M12 1.5a5.3 5.3 0 0 0-5.3 5.3c0 3.9 5.3 8.5 5.3 8.5s5.3-4.6 5.3-8.5A5.3 5.3 0 0 0 12 1.5z"/><circle cx="12" cy="6.8" r="1.9" fill="#fff"/></svg></span><span class="tab-lbl">ניווט</span></button>
   <button class="tab" type="button" data-go="emergency"><span class="tab-ic" aria-hidden="true">🆘</span><span class="tab-lbl">חירום</span></button>
+  {{DOC_TAB}}
 </nav>
 <script>
 // honor the user's reduced-motion preference for programmatic scrolling
@@ -312,7 +305,7 @@ function toTop(){ window.scrollTo({top:0, behavior: REDUCE ? 'auto' : 'smooth'})
 
 /* bottom tab bar — switch between top-level views (itinerary / nav / emergency) */
 (function(){
-  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  var tabs=[].slice.call(document.querySelectorAll('.tab[data-go]')); // exclude external links (e.g. document)
   var views=[].slice.call(document.querySelectorAll('.view'));
   function go(name){
     views.forEach(function(v){

@@ -219,16 +219,17 @@ function renderFooter() {
 
 const pills = trip.days.map((d) => `<button class="pill" type="button" data-target="${d.n}" aria-label="יום ${d.n}" aria-controls="day${d.n}">${d.n}</button>`).join('');
 const days = trip.days.map(renderDay).join('\n');
-// Optional link to the full plan document (e.g. a Google Doc). Empty/absent = no button.
-const docLink = trip.docUrl
-  ? `<a class="doc-link" href="${attr(trip.docUrl)}" target="_blank" rel="noopener"><span aria-hidden="true">📄</span> התוכנית המלאה</a>`
+// Optional full-plan document — rendered as an extra item in the bottom tab bar.
+// It's an external link (no data-view), so the view-switcher JS ignores it.
+const docTab = trip.docUrl
+  ? `<a class="tab" href="${attr(trip.docUrl)}" target="_blank" rel="noopener"><span class="tab-ic" aria-hidden="true">📄</span><span class="tab-lbl">מסמך</span></a>`
   : '';
 
 const html = template
   .replace('{{TITLE}}', esc(trip.title))
   .replace('{{SUBTITLE}}', esc(trip.subtitle))
   .replace('{{PILLS}}', pills)
-  .replace('{{DOC_LINK}}', docLink)
+  .replace('{{DOC_TAB}}', docTab)
   .replace('{{DAYS}}', days)
   .replace('{{NAV_SUMMARY}}', navSummary())
   .replace('{{EMERGENCY}}', emergencyView())
