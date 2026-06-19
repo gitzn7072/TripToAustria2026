@@ -1,0 +1,5 @@
+# Netlify deploy config. The site is static; build.js regenerates index.html
+# from trip.json + template.html (Node built-ins only, no npm install needed).
+[build]
+  command = "node build.js"
+  publish = "."
