@@ -168,7 +168,16 @@ footer b{color:var(--pine)}
 /* live weather body: how-to-dress explanation + sun times */
 .live-weather{background:linear-gradient(135deg,#e9f0f8,#f4efe4);border:1px solid var(--line);
   border-radius:12px;padding:11px 13px;margin:2px 0 4px}
-.live-weather .lw-head{font-weight:700;color:var(--pine);font-size:14px;margin-bottom:5px}
+.live-weather .lw-main2{display:flex;justify-content:space-between;align-items:baseline;gap:10px;
+  margin-bottom:9px;padding-bottom:8px;border-bottom:1px dashed var(--line)}
+.live-weather .lw-cond{font-weight:700;font-size:15px;color:var(--pine)}
+.live-weather .lw-range{font-weight:700;font-size:16px;color:var(--pine);direction:ltr}
+.live-weather .lw-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-bottom:4px}
+.live-weather .lw-stat{display:flex;justify-content:space-between;align-items:center;gap:8px;
+  background:rgba(255,255,255,.6);border:1px solid var(--line);border-radius:9px;padding:6px 9px}
+.live-weather .lw-k{font-size:12px;color:var(--muted);font-weight:600}
+.live-weather .lw-v{font-size:13px;color:var(--pine);font-weight:700;direction:ltr;unicode-bidi:isolate;text-align:left}
+.live-weather .lw-head{font-weight:700;color:var(--pine);font-size:14px;margin:10px 0 5px}
 .live-weather ul.lw-dress{margin:0;padding:0;list-style:none}
 .live-weather ul.lw-dress li{position:relative;padding:4px 17px 4px 0;font-size:14px;color:#3a3d33}
 .live-weather ul.lw-dress li::before{content:"👕";position:absolute;right:0;top:4px;font-size:11px}
@@ -515,19 +524,35 @@ function toTop(){ window.scrollTo({top:0, behavior: REDUCE ? 'auto' : 'smooth'})
     if(uv!=null&&uv>=6) t.push('קרינת UV גבוהה — קרם הגנה ומשקפי שמש');
     return t;
   }
+  function uvLabel(uv){
+    if(uv==null) return null;
+    var lvl=uv<3?'נמוך':uv<6?'בינוני':uv<8?'גבוה':uv<11?'גבוה מאוד':'קיצוני';
+    return Math.round(uv)+' · '+lvl;
+  }
+  function row(k,v){ return v==null||v===''?'':'<div class="lw-stat"><span class="lw-k">'+k+'</span><span class="lw-v">'+v+'</span></div>'; }
   function apply(section,o){
     var w=WMO[o.code]||['🌡️','—'];
     // 1) summary: swap the icon, add condition + temp range
     var ic=section.querySelector('[data-wx-icon]'); if(ic) ic.textContent=w[0];
     var sum=section.querySelector('[data-wx-sum]');
     if(sum) sum.innerHTML=' · '+w[1]+' · <span class="wx-temp">'+Math.round(o.tmax)+'°/'+Math.round(o.tmin)+'°</span>';
-    // 2) body: dressing explanation + sun times
+    // 2) body: detailed stats grid + sun times + dressing explanation
     var box=section.querySelector('[data-lw]');
     if(box){
+      var stats=
+        row('מרגיש כמו', o.appMax!=null?Math.round(o.appMax)+'° / '+Math.round(o.appMin)+'°':null)+
+        row('סיכוי גשם', o.pop!=null?o.pop+'%':null)+
+        row('משקעים', o.precip!=null?(Math.round(o.precip*10)/10)+' מ״מ':null)+
+        row('רוח', o.wind!=null?Math.round(o.wind)+' קמ״ש':null)+
+        row('משב מרבי', o.gust!=null?Math.round(o.gust)+' קמ״ש':null)+
+        row('מדד UV', uvLabel(o.uv));
       var lis=dress(o).map(function(x){return '<li>'+x+'</li>';}).join('');
       box.innerHTML=
-        '<div class="lw-head">👕 איך להתלבש לפי התחזית</div><ul class="lw-dress">'+lis+'</ul>'+
+        '<div class="lw-main2"><span class="lw-cond">'+w[0]+' '+w[1]+'</span>'+
+          '<span class="lw-range">'+Math.round(o.tmax)+'° / '+Math.round(o.tmin)+'°</span></div>'+
+        '<div class="lw-stats">'+stats+'</div>'+
         '<div class="lw-sun"><span>🌅 זריחה '+hm(o.sr)+'</span><span>🌇 שקיעה '+hm(o.ss)+'</span></div>'+
+        '<div class="lw-head">👕 איך להתלבש לפי התחזית</div><ul class="lw-dress">'+lis+'</ul>'+
         '<div class="lw-tag">תחזית חיה · Open-Meteo</div>';
       box.hidden=false;
     }
@@ -538,7 +563,8 @@ function toTop(){ window.scrollTo({top:0, behavior: REDUCE ? 'auto' : 'smooth'})
     var lat=section.getAttribute('data-lat'), lon=section.getAttribute('data-lon'), date=section.getAttribute('data-date');
     if(!lat||!lon||!date) return;
     var url='https://api.open-meteo.com/v1/forecast?latitude='+lat+'&longitude='+lon+
-      '&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_probability_max,windspeed_10m_max,uv_index_max,sunrise,sunset'+
+      '&daily=weathercode,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,'+
+      'precipitation_probability_max,precipitation_sum,windspeed_10m_max,windgusts_10m_max,uv_index_max,sunrise,sunset'+
       '&timezone=Europe%2FVienna&start_date='+date+'&end_date='+date;
     var ctrl=new AbortController(), to=setTimeout(function(){ctrl.abort();},7000);
     fetch(url,{signal:ctrl.signal}).then(function(r){return r.json();}).then(function(j){
@@ -546,7 +572,9 @@ function toTop(){ window.scrollTo({top:0, behavior: REDUCE ? 'auto' : 'smooth'})
       var d=j&&j.daily;
       if(!d||!d.time||!d.time.length) return; // out of forecast range -> keep static
       apply(section,{code:d.weathercode[0],tmax:d.temperature_2m_max[0],tmin:d.temperature_2m_min[0],
-        pop:d.precipitation_probability_max[0],wind:d.windspeed_10m_max[0],uv:d.uv_index_max[0],
+        appMax:d.apparent_temperature_max[0],appMin:d.apparent_temperature_min[0],
+        pop:d.precipitation_probability_max[0],precip:d.precipitation_sum[0],
+        wind:d.windspeed_10m_max[0],gust:d.windgusts_10m_max[0],uv:d.uv_index_max[0],
         sr:d.sunrise[0],ss:d.sunset[0]});
     }).catch(function(){ clearTimeout(to); /* offline/error -> keep static */ });
   }
