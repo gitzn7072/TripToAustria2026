@@ -14,7 +14,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%8D%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --pine:#1d3b2f; --pine2:#2a5343; --moss:#4f7a5e; --sky:#3a6ea5;
@@ -51,7 +51,7 @@ body{
    radial-gradient(28px 32px at 88% 100%, var(--paper) 50%, transparent 51%);}
 .hero .peaks{position:absolute;inset:auto 0 0 0;height:90px;opacity:.22}
 .hero-kick{font-weight:600;letter-spacing:.12em;font-size:12px;opacity:.85;text-transform:uppercase}
-.hero h1{font-family:'Frank Ruhl Libre',serif;font-weight:900;font-size:34px;
+.hero h1{font-family:'Assistant',system-ui,sans-serif;font-weight:800;font-size:34px;
   margin:6px 0 8px;line-height:1.1;letter-spacing:-.01em}
 .hero .dates{font-size:14px;opacity:.92;font-weight:500;direction:ltr;text-align:right}
 /* circular country-flag badges (countries on the route: AT / DE / IT) */
@@ -67,7 +67,7 @@ body{
   padding:9px 12px;display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;}
 .pillbar::-webkit-scrollbar{display:none}
 .pill{flex:0 0 auto;width:38px;height:38px;border-radius:12px;border:1.5px solid var(--line);
-  background:#fff;color:var(--pine);font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:17px;
+  background:#fff;color:var(--pine);font-family:'Assistant',system-ui,sans-serif;font-weight:700;font-size:17px;
   cursor:pointer;transition:.18s;font-feature-settings:"tnum"}
 .pill:hover{border-color:var(--moss)}
 .pill.active{background:var(--pine);color:#fff;border-color:var(--pine);transform:translateY(-1px);box-shadow:var(--shadow)}
@@ -93,7 +93,7 @@ details.rules li::before{content:"⛓";position:absolute;right:0;top:5px;font-si
 @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .day-head{padding:16px 2px 4px}
 .day-kicker{margin:0;font-weight:700;font-size:12.5px;letter-spacing:.06em;color:var(--moss);text-transform:uppercase}
-.day-title{font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:22px;line-height:1.28;margin:6px 0 14px;color:var(--pine)}
+.day-title{font-family:'Assistant',system-ui,sans-serif;font-weight:700;font-size:22px;line-height:1.28;margin:6px 0 14px;color:var(--pine)}
 .route-cta{display:flex;align-items:center;gap:11px;text-decoration:none;
   background:linear-gradient(135deg,var(--pine2),var(--moss));color:#fff;border-radius:15px;
   padding:13px 15px;font-weight:700;font-size:14.5px;box-shadow:0 6px 18px rgba(42,83,67,.30);}
@@ -124,7 +124,7 @@ ul.timeline li::before{content:"";position:absolute;right:-6px;top:13px;width:9p
 /* routes */
 .route{border:1px solid var(--line);border-radius:13px;padding:12px 13px;margin-top:11px;background:var(--paper)}
 .route:first-child{margin-top:6px}
-.route-name{font-family:'Frank Ruhl Libre',serif;font-size:16.5px;font-weight:700;margin:0 0 9px;color:var(--pine2)}
+.route-name{font-family:'Assistant',system-ui,sans-serif;font-size:16.5px;font-weight:700;margin:0 0 9px;color:var(--pine2)}
 .meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:9px}
 .chip{background:#fff;border:1px solid var(--line);border-radius:9px;padding:3px 9px;font-size:12px;color:var(--muted);font-weight:500}
 ol.steps{margin:4px 0 8px;padding-inline-start:20px}
@@ -195,7 +195,7 @@ footer b{color:var(--pine)}
 .view[hidden]{display:none}
 .view.view-active{animation:fade .3s ease}
 .view-head{padding:16px 16px 2px}
-.view-head h2{font-family:'Frank Ruhl Libre',serif;color:var(--pine);font-size:21px;margin:8px 0 4px}
+.view-head h2{font-family:'Assistant',system-ui,sans-serif;color:var(--pine);font-size:21px;margin:8px 0 4px}
 .view-head p{margin:0 0 6px;font-size:13.5px;color:var(--muted)}
 
 .tabbar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:500px;z-index:40;
@@ -212,7 +212,7 @@ footer b{color:var(--pine)}
 .navday{background:#fff;border:1px solid var(--line);border-radius:15px;box-shadow:var(--shadow);margin:11px 14px;padding:12px 13px}
 .navday-head{display:flex;align-items:center;gap:9px;margin-bottom:9px}
 .navday-n{flex:0 0 auto;width:27px;height:27px;border-radius:9px;background:var(--pine);color:#fff;
-  display:flex;align-items:center;justify-content:center;font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:15px}
+  display:flex;align-items:center;justify-content:center;font-family:'Assistant',system-ui,sans-serif;font-weight:700;font-size:15px}
 .navday-title{margin:0;font-size:13px;font-weight:700;color:var(--pine2)}
 .navday .route-cta{margin-bottom:4px}
 
