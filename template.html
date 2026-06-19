@@ -151,8 +151,9 @@ ol.steps li{font-size:13.5px;color:#3a3d33;margin:4px 0}
 .btn{display:inline-flex;align-items:center;gap:4px;text-decoration:none;border-radius:10px;
   padding:8px 11px;font-size:12.5px;font-weight:700;white-space:nowrap;transition:.15s;border:1.5px solid transparent}
 .btn:active{transform:scale(.96)}
-.b-waze{background:var(--waze);color:#06384d}
-.b-gmap{background:var(--gmap);color:#fff}
+.b-waze{background:var(--waze);color:#06384d;border-color:#16a6d8}
+.b-gmap{background:#fff;color:#3c4043;border-color:var(--line)}
+.bic{width:15px;height:15px;flex:0 0 auto;display:block}
 .b-walk{display:inline-flex;background:#fff;color:var(--pine);border-color:var(--moss);margin-top:4px}
 .b-link{background:var(--paper2);color:var(--pine2);border-color:var(--line)}
 
@@ -270,7 +271,7 @@ footer b{color:var(--pine)}
   </section>
 
   <section class="view" data-view="nav" aria-label="ניווט — סיכום יומי" hidden>
-    <div class="view-head"><h2>🧭 ניווט — סיכום יומי</h2><p>כל יעדי הניווט של הטיול במקום אחד. הקישו Waze או Google ליעד הרצוי.</p></div>
+    <div class="view-head"><h2>🗺️ ניווט — סיכום יומי</h2><p>כל יעדי הניווט של הטיול במקום אחד. הקישו Waze או Google ליעד הרצוי.</p></div>
     {{NAV_SUMMARY}}
   </section>
 
@@ -283,7 +284,7 @@ footer b{color:var(--pine)}
 
 <nav class="tabbar" id="tabbar" aria-label="ניווט ראשי">
   <button class="tab tab-active" type="button" data-go="itinerary" aria-current="page"><span class="tab-ic" aria-hidden="true">🛣️</span><span class="tab-lbl">מסלול</span></button>
-  <button class="tab" type="button" data-go="nav"><span class="tab-ic" aria-hidden="true">🧭</span><span class="tab-lbl">ניווט</span></button>
+  <button class="tab" type="button" data-go="nav"><span class="tab-ic" aria-hidden="true">🗺️</span><span class="tab-lbl">ניווט</span></button>
   <button class="tab" type="button" data-go="emergency"><span class="tab-ic" aria-hidden="true">🆘</span><span class="tab-lbl">חירום</span></button>
 </nav>
 <script>

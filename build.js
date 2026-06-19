@@ -93,12 +93,19 @@ function hoursBlock(rows) {
   }).join('');
 }
 
+// Brand icons as inline SVG (self-contained, no external requests).
+// Waze: white speech-bubble face on the cyan button (cyan features read as cut-outs).
+const WAZE_ICON = '<svg class="bic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M21 10.4C21 6.3 16.9 3 12 3S3 6.3 3 10.4c0 2 .9 3.7 2.5 5.1-.2 1-.8 2.1-1.6 2.8 1.5.1 3-.4 4.2-1.3 1.2.4 2.5.6 3.9.6 4.9 0 9-3.3 9-7.2z"/><circle cx="9.2" cy="10.2" r="1.2" fill="#33ccff"/><circle cx="14.8" cy="10.2" r="1.2" fill="#33ccff"/><path d="M8.8 13c.9.9 2 1.3 3.2 1.3s2.3-.4 3.2-1.3" fill="none" stroke="#33ccff" stroke-width="1.3" stroke-linecap="round"/></svg>';
+// Google Maps: the red location pin with white center, on a white button.
+const GMAP_ICON = '<svg class="bic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#EA4335" d="M12 2C8.1 2 5 5.1 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.9-3.1-7-7-7z"/><circle cx="12" cy="9" r="2.6" fill="#fff"/></svg>';
+const wazeBtn = (addr, label) => `<a class="btn b-waze" href="${attr(wazeUrl(addr))}" target="_blank" rel="noopener">${WAZE_ICON} ${label}</a>`;
+const gmapBtn = (addr, label) => `<a class="btn b-gmap" href="${attr(gmapSearchUrl(addr))}" target="_blank" rel="noopener">${GMAP_ICON} ${label}</a>`;
+
 // Standard nav rows: destination name + address on its own line.
 function navRows(rows) {
   return rows.map((n) => (
     `<div class="navrow"><div class="nav-info"><div class="nav-dest">${esc(n.dest)}</div><div class="nav-addr">${esc(n.addr)}</div></div>` +
-    `<div class="nav-btns"><a class="btn b-waze" href="${attr(wazeUrl(n.addr))}" target="_blank" rel="noopener">🚗 Waze</a>` +
-    `<a class="btn b-gmap" href="${attr(gmapSearchUrl(n.addr))}" target="_blank" rel="noopener">🗺️ Google</a></div></div>`
+    `<div class="nav-btns">${wazeBtn(n.addr, 'Waze')}${gmapBtn(n.addr, 'Google')}</div></div>`
   )).join('');
 }
 
@@ -106,8 +113,7 @@ function navRows(rows) {
 function shoppingNavRows(rows) {
   return rows.map((n) => (
     `<div class="navrow"><div class="nav-dest">${esc(n.dest)}</div>` +
-    `<div class="nav-btns"><a class="btn b-gmap" href="${attr(gmapSearchUrl(n.addr))}" target="_blank" rel="noopener">🗺️ מפה</a>` +
-    `<a class="btn b-waze" href="${attr(wazeUrl(n.addr))}" target="_blank" rel="noopener">🚗 Waze</a></div></div>`
+    `<div class="nav-btns">${gmapBtn(n.addr, 'מפה')}${wazeBtn(n.addr, 'Waze')}</div></div>`
   )).join('');
 }
 
