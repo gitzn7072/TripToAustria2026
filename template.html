@@ -4,6 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>🌍 טיול לאוסטריה 2026</title>
+<meta name="description" content="תוכנית טיול משפחתית לאוסטריה 2026 — Salzburg & Tyrol, 28.06–08.07. מסלול יומי, ניווט, תחזית חיה ומידע חירום.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#1d3b2f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="אוסטריה 2026">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%8D%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -80,7 +88,7 @@ details.rules li::before{content:"⛓";position:absolute;right:0;top:5px;font-si
 .day.active{display:block;animation:fade .35s ease}
 @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .day-head{padding:16px 2px 4px}
-.day-kicker{font-weight:700;font-size:12.5px;letter-spacing:.06em;color:var(--moss);text-transform:uppercase}
+.day-kicker{margin:0;font-weight:700;font-size:12.5px;letter-spacing:.06em;color:var(--moss);text-transform:uppercase}
 .day-title{font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:22px;line-height:1.28;margin:6px 0 14px;color:var(--pine)}
 .route-cta{display:flex;align-items:center;gap:11px;text-decoration:none;
   background:linear-gradient(135deg,var(--pine2),var(--moss));color:#fff;border-radius:15px;
@@ -170,8 +178,8 @@ footer b{color:var(--pine)}
 
 /* ---- top-level views + bottom tab bar (app shell) ---- */
 .wrap{padding-bottom:86px} /* clear the fixed tab bar */
-.view{display:none}
-.view.view-active{display:block;animation:fade .3s ease}
+.view[hidden]{display:none}
+.view.view-active{animation:fade .3s ease}
 .view-head{padding:16px 16px 2px}
 .view-head h2{font-family:'Frank Ruhl Libre',serif;color:var(--pine);font-size:21px;margin:8px 0 4px}
 .view-head p{margin:0 0 6px;font-size:13.5px;color:var(--muted)}
@@ -190,7 +198,7 @@ footer b{color:var(--pine)}
 .navday-head{display:flex;align-items:center;gap:9px;margin-bottom:9px}
 .navday-n{flex:0 0 auto;width:27px;height:27px;border-radius:9px;background:var(--pine);color:#fff;
   display:flex;align-items:center;justify-content:center;font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:15px}
-.navday-title{font-size:13px;font-weight:700;color:var(--pine2)}
+.navday-title{margin:0;font-size:13px;font-weight:700;color:var(--pine2)}
 .navday .route-cta{margin-bottom:4px}
 
 /* emergency view */
@@ -210,12 +218,23 @@ footer b{color:var(--pine)}
 .ec-wa{background:#25d366;color:#fff;border-color:#1da851}
 .ec-card.ec-ph{opacity:.75;border-style:dashed}
 .ec-fill{font-size:11px;font-weight:700;color:var(--gold);border:1px dashed var(--gold);border-radius:8px;padding:5px 9px;white-space:nowrap}
+
+/* ---- accessibility ---- */
+.skip-link{position:absolute;right:8px;top:-48px;z-index:60;background:var(--pine);color:#fff;
+  padding:9px 14px;border-radius:10px;font-weight:700;text-decoration:none;transition:top .15s}
+.skip-link:focus{top:8px}
+:focus-visible{outline:3px solid var(--sky);outline-offset:2px;border-radius:6px}
+.route-cta:focus-visible{outline-color:#fff}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">דלג לתוכן</a>
 <div class="wrap">
-  <div class="hero">
-    <svg class="peaks" viewBox="0 0 500 90" preserveAspectRatio="none"><path d="M0 90 L70 30 L120 60 L190 12 L260 58 L330 22 L400 62 L460 34 L500 70 L500 90 Z" fill="#ffffff"/></svg>
+  <header class="hero">
+    <svg class="peaks" viewBox="0 0 500 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 90 L70 30 L120 60 L190 12 L260 58 L330 22 L400 62 L460 34 L500 70 L500 90 Z" fill="#ffffff"/></svg>
     <div class="hero-kick">תוכנית טיול משפחתית</div>
     <h1>{{TITLE}}</h1>
     <div class="dates">{{SUBTITLE}}</div>
@@ -223,14 +242,15 @@ footer b{color:var(--pine)}
       <span class="flag flag-de" title="גרמניה"></span>
       <span class="flag flag-at" title="אוסטריה"></span>
     </div>
-  </div>
+  </header>
 
-  <section class="view view-active" data-view="itinerary">
-    <nav class="pillbar" id="pills">{{PILLS}}</nav>
+  <main id="main-content">
+  <section class="view view-active" data-view="itinerary" aria-label="מסלול יומי">
+    <nav class="pillbar" id="pills" aria-label="בחירת יום">{{PILLS}}</nav>
 
     <div class="intro">
       <details class="rules">
-        <summary><span class="sx">⛓️</span>כללי ברזל לוואן ולניווט</summary>
+        <summary><span class="sx" aria-hidden="true">⛓️</span>כללי ברזל לוואן ולניווט</summary>
         <ul>{{RULES}}</ul>
       </details>
     </div>
@@ -239,30 +259,40 @@ footer b{color:var(--pine)}
     <footer>{{FOOTER}}</footer>
   </section>
 
-  <section class="view" data-view="nav">
+  <section class="view" data-view="nav" aria-label="ניווט — סיכום יומי" hidden>
     <div class="view-head"><h2>🧭 ניווט — סיכום יומי</h2><p>כל יעדי הניווט של הטיול במקום אחד. הקישו Waze או Google ליעד הרצוי.</p></div>
     {{NAV_SUMMARY}}
   </section>
 
-  <section class="view" data-view="emergency">
+  <section class="view" data-view="emergency" aria-label="חירום ופרטים חשובים" hidden>
     <div class="view-head"><h2>🆘 חירום ופרטים חשובים</h2><p>מספרים לחיוג מהיר וקישורי WhatsApp. שמרו את הדף במסך הבית.</p></div>
     {{EMERGENCY}}
   </section>
+  </main>
 </div>
 
-<nav class="tabbar" id="tabbar">
-  <button class="tab tab-active" data-go="itinerary"><span class="tab-ic">🛣️</span><span class="tab-lbl">מסלול</span></button>
-  <button class="tab" data-go="nav"><span class="tab-ic">🧭</span><span class="tab-lbl">ניווט</span></button>
-  <button class="tab" data-go="emergency"><span class="tab-ic">🆘</span><span class="tab-lbl">חירום</span></button>
+<nav class="tabbar" id="tabbar" aria-label="ניווט ראשי">
+  <button class="tab tab-active" type="button" data-go="itinerary" aria-current="page"><span class="tab-ic" aria-hidden="true">🛣️</span><span class="tab-lbl">מסלול</span></button>
+  <button class="tab" type="button" data-go="nav"><span class="tab-ic" aria-hidden="true">🧭</span><span class="tab-lbl">ניווט</span></button>
+  <button class="tab" type="button" data-go="emergency"><span class="tab-ic" aria-hidden="true">🆘</span><span class="tab-lbl">חירום</span></button>
 </nav>
 <script>
+// honor the user's reduced-motion preference for programmatic scrolling
+var REDUCE = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function toTop(){ window.scrollTo({top:0, behavior: REDUCE ? 'auto' : 'smooth'}); }
+
+/* day switcher (within the itinerary view) */
 (function(){
   var pills=[].slice.call(document.querySelectorAll('.pill'));
   var days=[].slice.call(document.querySelectorAll('.day'));
   function show(n){
     days.forEach(function(d){d.classList.toggle('active', d.dataset.day===String(n));});
-    pills.forEach(function(p){p.classList.toggle('active', p.dataset.target===String(n));});
-    window.scrollTo({top:0,behavior:'smooth'});
+    pills.forEach(function(p){
+      var on=p.dataset.target===String(n);
+      p.classList.toggle('active', on);
+      if(on){ p.setAttribute('aria-current','true'); } else { p.removeAttribute('aria-current'); }
+    });
+    toTop();
   }
   pills.forEach(function(p){p.addEventListener('click',function(){show(p.dataset.target);});});
   show(1);
@@ -273,9 +303,17 @@ footer b{color:var(--pine)}
   var tabs=[].slice.call(document.querySelectorAll('.tab'));
   var views=[].slice.call(document.querySelectorAll('.view'));
   function go(name){
-    views.forEach(function(v){v.classList.toggle('view-active', v.dataset.view===name);});
-    tabs.forEach(function(t){t.classList.toggle('tab-active', t.dataset.go===name);});
-    window.scrollTo({top:0,behavior:'smooth'});
+    views.forEach(function(v){
+      var on=v.dataset.view===name;
+      v.hidden=!on;                       // hidden attribute = real visibility state
+      v.classList.toggle('view-active', on);
+    });
+    tabs.forEach(function(t){
+      var on=t.dataset.go===name;
+      t.classList.toggle('tab-active', on);
+      if(on){ t.setAttribute('aria-current','page'); } else { t.removeAttribute('aria-current'); }
+    });
+    toTop();
   }
   tabs.forEach(function(t){t.addEventListener('click',function(){go(t.dataset.go);});});
 })();

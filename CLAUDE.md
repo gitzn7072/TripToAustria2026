@@ -57,7 +57,17 @@ The page is a single-file app with a fixed bottom tab bar (`.tabbar`) switching 
 - **nav** — `navSummary()` in `build.js`: one block per day with the full-day route CTA + that day's nav rows, so every destination is reachable in one scroll.
 - **emergency** — `emergencyView()` in `build.js` from `trip.emergency`.
 
-The hero stays above all views as the persistent app header. Adding a view = new `<section class="view" data-view="…">` + a `.tab` button with matching `data-go` + a generator + placeholder in `build.js`.
+The hero stays above all views as the persistent app header. Adding a view = new `<section class="view" data-view="…">` + a `.tab` button with matching `data-go` + a generator + placeholder in `build.js`. View visibility is driven by the `hidden` attribute (toggled in JS = real a11y state); `.view-active` only triggers the fade animation.
+
+## Best-practice / accessibility conventions
+
+Keep these when editing markup so the generated HTML stays standards-compliant:
+- **Landmarks**: `<header class="hero">`, `<main id="main-content">` wrapping the views, each day is an `<article aria-labelledby="dayN-title">`, nav/emergency blocks are `<section aria-labelledby>`. There's a skip-link to `#main-content`.
+- **Switchers**: pill and tab `<button type="button">`s carry `aria-label`; the active one gets `aria-current` set in JS (not hardcoded). The two `<nav>`s have `aria-label`s.
+- **Decorative emoji** (section icons, route 🚐/›, drive dot, flags, weather glyph, emergency icons) are `aria-hidden="true"` — the adjacent text carries the meaning.
+- **Motion/focus**: `:focus-visible` rings are defined; `prefers-reduced-motion` disables animations and the JS smooth-scroll falls back to `auto`.
+- **Head**: `<meta description/theme-color>`, Apple/mobile web-app tags (home-screen), and an inline emoji SVG favicon.
+- Emoji used as element text content must be HTML-safe; `esc()` handles user data, but literal emoji in templates are fine.
 
 ## Live features (runtime, in template.html)
 

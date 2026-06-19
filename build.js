@@ -63,7 +63,15 @@ function sec({ icon, title, count, body, open, navClass }) {
   const cls = `sec${navClass ? ' sec-nav' : ''}`;
   const cnt = count != null ? ` <span class="cnt">${count}</span>` : '';
   const o = open ? ' open' : '';
-  return `<details class="${cls}"${o}><summary><span class="sx">${icon}</span>${esc(title)}${cnt}</summary><div class="sec-body">${body}</div></details>`;
+  return `<details class="${cls}"${o}><summary><span class="sx" aria-hidden="true">${icon}</span>${esc(title)}${cnt}</summary><div class="sec-body">${body}</div></details>`;
+}
+
+// Shared daily route CTA (used by the itinerary day cards and the nav-summary view).
+function routeCta(d) {
+  return `<a class="route-cta" href="${attr(directionsUrl(d.drive))}" target="_blank" rel="noopener">` +
+    `<span class="route-cta-ic" aria-hidden="true">🚐</span>` +
+    `<span class="rc-main"><span class="rc-title">מסלול הנסיעה המלא של היום</span>${driveSub(d.driveMin)}</span>` +
+    `<span class="route-cta-arr" aria-hidden="true">›</span></a>`;
 }
 
 function routeBlock(r) {
@@ -111,7 +119,7 @@ function driveSub(min) {
   const t = min < 60
     ? `${min} דק׳`
     : `${Math.floor(min / 60)}:${String(min % 60).padStart(2, '0')} שע׳`;
-  return `<span class="rc-sub"><span class="dt-dot">${dot}</span>סה״כ נסיעה משוערת: ${t}</span>`;
+  return `<span class="rc-sub"><span class="dt-dot" aria-hidden="true">${dot}</span>סה״כ נסיעה משוערת: ${t}</span>`;
 }
 
 /* ---------- day renderer ---------- */
@@ -121,17 +129,12 @@ function renderDay(d) {
   // data-lat/lon/date drive the live weather lookup (see template.html script).
   const geo = d.coords ? ` data-lat="${d.coords.lat}" data-lon="${d.coords.lon}"` : '';
   const date = d.date ? ` data-date="${d.date}"` : '';
-  parts.push(`<section class="day" id="day${d.n}" data-day="${d.n}"${geo}${date}>`);
+  parts.push(`<article class="day" id="day${d.n}" data-day="${d.n}"${geo}${date} aria-labelledby="day${d.n}-title">`);
   parts.push('<header class="day-head">');
-  parts.push(`<div class="day-kicker">${esc(d.kicker)}</div>`);
-  parts.push(`<h2 class="day-title">${esc(d.title)}</h2>`);
+  parts.push(`<p class="day-kicker">${esc(d.kicker)}</p>`);
+  parts.push(`<h2 class="day-title" id="day${d.n}-title">${esc(d.title)}</h2>`);
   // Drive time is merged INTO the route button (a two-line CTA), not a separate badge.
-  parts.push(
-    `<a class="route-cta" href="${attr(directionsUrl(d.drive))}" target="_blank" rel="noopener">` +
-    `<span class="route-cta-ic">🚐</span>` +
-    `<span class="rc-main"><span class="rc-title">מסלול הנסיעה המלא של היום</span>${driveSub(d.driveMin)}</span>` +
-    `<span class="route-cta-arr">›</span></a>`
-  );
+  parts.push(routeCta(d));
   parts.push('</header>');
 
   parts.push(sec({ icon: '🧭', title: 'תקציר היום', open: true, body: `<p class="prose">${esc(d.summary)}</p>` }));
@@ -140,7 +143,7 @@ function renderDay(d) {
   // by JS, replacing the static 🌦️). Expanding reveals the live how-to-dress explanation.
   // The static notes (data-wx-static) are the rollback — shown only when no live data loads.
   parts.push(
-    `<details class="sec sec-wx"><summary><span class="sx" data-wx-icon>🌦️</span>מזג אוויר<span class="wx-sum" data-wx-sum></span></summary>` +
+    `<details class="sec sec-wx"><summary><span class="sx" data-wx-icon aria-hidden="true">🌦️</span>מזג אוויר<span class="wx-sum" data-wx-sum></span></summary>` +
     `<div class="sec-body"><div class="live-weather" data-lw hidden></div>` +
     `<div data-wx-static>${li(d.weather, 'dots')}</div></div></details>`
   );
@@ -158,21 +161,18 @@ function renderDay(d) {
   parts.push(sec({ icon: '💡', title: 'טיפים ודגשים', body: li(d.tips, 'tips') }));
   parts.push(sec({ icon: '📍', title: 'ניווט מהיר ליעדי היום', open: true, navClass: true, body: navRows(d.nav) }));
 
-  parts.push('</section>');
+  parts.push('</article>');
   return parts.join('\n');
 }
 
 /* ---------- navigation summary view (one block per day) ---------- */
 function navSummary() {
   return trip.days.map((d) => (
-    `<div class="navday">` +
-    `<div class="navday-head"><span class="navday-n">${d.n}</span><span class="navday-title">${esc(d.kicker)}</span></div>` +
-    `<a class="route-cta" href="${attr(directionsUrl(d.drive))}" target="_blank" rel="noopener">` +
-    `<span class="route-cta-ic">🚐</span>` +
-    `<span class="rc-main"><span class="rc-title">מסלול הנסיעה המלא של היום</span>${driveSub(d.driveMin)}</span>` +
-    `<span class="route-cta-arr">›</span></a>` +
+    `<section class="navday" aria-labelledby="navday${d.n}-title">` +
+    `<div class="navday-head"><span class="navday-n" aria-hidden="true">${d.n}</span><h3 class="navday-title" id="navday${d.n}-title">${esc(d.kicker)}</h3></div>` +
+    routeCta(d) +
     `<div class="navday-rows">${navRows(d.nav)}</div>` +
-    `</div>`
+    `</section>`
   )).join('\n');
 }
 
@@ -183,7 +183,7 @@ const waHref = (s) => 'https://wa.me/' + s.replace(/[^\d]/g, '');
 function emergencyView() {
   const e = trip.emergency;
   const note = e.note ? `<div class="ec-note">⚠️ ${esc(e.note)}</div>` : '';
-  const groups = e.groups.map((g) => {
+  const groups = e.groups.map((g, gi) => {
     const cards = g.contacts.map((c) => {
       const hasTel = c.tel && c.tel.trim();
       const hasWa = c.wa && c.wa.trim();
@@ -194,9 +194,9 @@ function emergencyView() {
       if (hasWa) btns.push(`<a class="btn ec-wa" href="${attr(waHref(c.wa))}" target="_blank" rel="noopener">💬 WhatsApp</a>`);
       if (c.web) btns.push(`<a class="btn b-link" href="${attr(c.web)}" target="_blank" rel="noopener">🔗 אתר</a>`);
       const btnRow = btns.length ? `<div class="ec-btns">${btns.join('')}</div>` : (isPh ? `<div class="ec-btns"><span class="ec-fill">להשלמה</span></div>` : '');
-      return `<div class="ec-card${isPh ? ' ec-ph' : ''}"><div class="ec-ic">${c.icon || '•'}</div><div class="ec-info"><div class="ec-label">${esc(c.label)}</div>${sub}</div>${btnRow}</div>`;
+      return `<div class="ec-card${isPh ? ' ec-ph' : ''}"><div class="ec-ic" aria-hidden="true">${c.icon || '•'}</div><div class="ec-info"><div class="ec-label">${esc(c.label)}</div>${sub}</div>${btnRow}</div>`;
     }).join('');
-    return `<div class="ec-group"><h3 class="ec-gtitle">${esc(g.title)}</h3>${cards}</div>`;
+    return `<section class="ec-group" aria-labelledby="ecg-${gi}"><h3 class="ec-gtitle" id="ecg-${gi}">${esc(g.title)}</h3>${cards}</section>`;
   }).join('\n');
   return note + groups;
 }
@@ -211,7 +211,7 @@ function renderFooter() {
 
 /* ---------- assemble ---------- */
 
-const pills = trip.days.map((d) => `<button class="pill" data-target="${d.n}">${d.n}</button>`).join('');
+const pills = trip.days.map((d) => `<button class="pill" type="button" data-target="${d.n}" aria-label="יום ${d.n}" aria-controls="day${d.n}">${d.n}</button>`).join('');
 const rules = trip.rules.map((r) => `<li>${esc(r)}</li>`).join('');
 const days = trip.days.map(renderDay).join('\n');
 
