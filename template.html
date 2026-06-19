@@ -405,7 +405,11 @@ function toTop(){ window.scrollTo({top:0, behavior: REDUCE ? 'auto' : 'smooth'})
     fetch(url,{signal:ctrl.signal}).then(function(r){return r.json();}).then(function(j){
       clearTimeout(to);
       var d=j&&j.daily;
-      if(!d||!d.time||!d.time.length) return; // out of forecast range -> keep static
+      if(!d||!d.time||!d.time.length){ // beyond the ~16-day forecast window -> explain, keep static
+        var b=section.querySelector('[data-lw]');
+        if(b){ b.innerHTML='<div class="lw-tag">📡 התחזית החיה תופיע אוטומטית כ-16 ימים לפני התאריך</div>'; b.hidden=false; }
+        return;
+      }
       apply(section,{code:d.weathercode[0],tmax:d.temperature_2m_max[0],tmin:d.temperature_2m_min[0],
         appMax:d.apparent_temperature_max[0],appMin:d.apparent_temperature_min[0],
         pop:d.precipitation_probability_max[0],precip:d.precipitation_sum[0],
