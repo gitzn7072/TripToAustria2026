@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>🌍 טיול לאוסטריה 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pine:#1d3b2f; --pine2:#2a5343; --moss:#4f7a5e; --sky:#3a6ea5;
+  --paper:#f4efe4; --paper2:#ece4d2; --ink:#23271f; --muted:#6d6a5c;
+  --gold:#c08a2d; --rust:#b5482e; --line:#d8cfb9;
+  --waze:#33ccff; --waze-d:#0a6e99; --gmap:#2f7d4f;
+  --shadow:0 6px 22px rgba(29,59,47,.13);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:'Assistant',system-ui,sans-serif;color:var(--ink);
+  background:var(--paper);
+  background-image:
+    radial-gradient(circle at 18% 12%, rgba(79,122,94,.10), transparent 42%),
+    radial-gradient(circle at 88% 78%, rgba(58,110,165,.09), transparent 46%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M0 40h80M40 0v80' stroke='%231d3b2f' stroke-opacity='0.025' stroke-width='1'/%3E%3C/svg%3E");
+  -webkit-font-smoothing:antialiased;line-height:1.55;
+}
+.wrap{max-width:500px;margin:0 auto;padding:0 0 60px;min-height:100vh;
+  background:linear-gradient(var(--paper),var(--paper)) padding-box;}
+
+/* hero */
+.hero{position:relative;color:#f6f1e3;padding:30px 20px 26px;overflow:hidden;
+  background:
+    radial-gradient(130px 130px at 84% 22%, rgba(248,222,150,.42), rgba(248,222,150,0) 62%),
+    radial-gradient(90px 90px at 84% 22%, rgba(255,241,205,.55), rgba(255,241,205,0) 60%),
+    linear-gradient(160deg,#27576a 0%,var(--pine2) 48%,var(--pine) 100%);}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:40px;
+  background:
+   radial-gradient(20px 22px at 12% 100%, var(--paper) 50%, transparent 51%),
+   radial-gradient(26px 30px at 38% 100%, var(--paper) 50%, transparent 51%),
+   radial-gradient(22px 24px at 64% 100%, var(--paper) 50%, transparent 51%),
+   radial-gradient(28px 32px at 88% 100%, var(--paper) 50%, transparent 51%);}
+.hero .peaks{position:absolute;inset:auto 0 0 0;height:90px;opacity:.22}
+.hero-kick{font-weight:600;letter-spacing:.12em;font-size:12px;opacity:.85;text-transform:uppercase}
+.hero h1{font-family:'Frank Ruhl Libre',serif;font-weight:900;font-size:34px;
+  margin:6px 0 8px;line-height:1.1;letter-spacing:-.01em}
+.hero .dates{font-size:14px;opacity:.92;font-weight:500;direction:ltr;text-align:right}
+/* circular country-flag badges (countries on the route: AT / DE / IT) */
+.hero .flags{display:flex;gap:9px;margin-top:13px;position:relative;z-index:1}
+.hero .flag{width:30px;height:30px;border-radius:50%;border:2px solid rgba(255,255,255,.88);
+  box-shadow:0 2px 9px rgba(0,0,0,.28);flex:0 0 auto}
+.flag-at{background:linear-gradient(to bottom,#c8102e 0 33.33%,#fff 33.33% 66.66%,#c8102e 66.66%)}
+.flag-de{background:linear-gradient(to bottom,#111 0 33.33%,#dd0000 33.33% 66.66%,#ffce00 66.66%)}
+
+/* sticky day pills */
+.pillbar{position:sticky;top:0;z-index:20;background:rgba(244,239,228,.92);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
+  padding:9px 12px;display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;}
+.pillbar::-webkit-scrollbar{display:none}
+.pill{flex:0 0 auto;width:38px;height:38px;border-radius:12px;border:1.5px solid var(--line);
+  background:#fff;color:var(--pine);font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:17px;
+  cursor:pointer;transition:.18s;font-feature-settings:"tnum"}
+.pill:hover{border-color:var(--moss)}
+.pill.active{background:var(--pine);color:#fff;border-color:var(--pine);transform:translateY(-1px);box-shadow:var(--shadow)}
+
+.intro{margin:14px 14px 4px}
+details.rules{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+details.rules>summary{list-style:none;cursor:pointer;padding:13px 16px;font-weight:700;color:var(--pine);
+  display:flex;align-items:center;gap:9px;font-size:15px}
+details.rules>summary::-webkit-details-marker{display:none}
+details.rules>summary::after{content:"▾";margin-inline-start:auto;color:var(--muted);transition:.2s}
+details.rules[open]>summary::after{transform:rotate(180deg)}
+details.rules ul{margin:0;padding:0 18px 14px 18px;list-style:none}
+details.rules li{position:relative;padding:5px 18px 5px 0;font-size:14px;color:#3a3d33}
+details.rules li::before{content:"⛓";position:absolute;right:0;top:5px;font-size:12px;opacity:.6}
+
+/* day */
+.day{display:none;padding:6px 14px 0}
+.day.active{display:block;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.day-head{padding:16px 2px 4px}
+.day-kicker{font-weight:700;font-size:12.5px;letter-spacing:.06em;color:var(--moss);text-transform:uppercase}
+.day-title{font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:22px;line-height:1.28;margin:6px 0 14px;color:var(--pine)}
+.route-cta{display:flex;align-items:center;gap:11px;text-decoration:none;
+  background:linear-gradient(135deg,var(--pine2),var(--moss));color:#fff;border-radius:15px;
+  padding:13px 15px;font-weight:700;font-size:14.5px;box-shadow:0 6px 18px rgba(42,83,67,.30);}
+.route-cta-ic{font-size:20px}
+.route-cta-arr{margin-inline-start:auto;font-size:22px;opacity:.85}
+
+/* sections */
+.sec{background:#fff;border:1px solid var(--line);border-radius:15px;margin-top:11px;
+  box-shadow:var(--shadow);overflow:hidden}
+.sec>summary{list-style:none;cursor:pointer;padding:13px 15px;font-weight:700;font-size:15.5px;
+  color:var(--pine);display:flex;align-items:center;gap:10px;user-select:none}
+.sec>summary::-webkit-details-marker{display:none}
+.sec>summary::after{content:"▾";margin-inline-start:auto;color:var(--muted);transition:.2s;font-size:13px}
+.sec[open]>summary::after{transform:rotate(180deg)}
+.sx{font-size:18px;line-height:1}
+.cnt{background:var(--paper2);color:var(--muted);border-radius:20px;padding:1px 9px;font-size:12px;font-weight:700}
+.sec-body{padding:2px 15px 15px}
+.sec-nav>summary{background:linear-gradient(90deg,rgba(58,110,165,.10),transparent)}
+.prose{margin:6px 0 0;font-size:14.5px;color:#3a3d33}
+
+ul.dots,ul.tips,ul.timeline{margin:6px 0 0;padding:0;list-style:none}
+ul.dots li,ul.tips li{position:relative;padding:5px 17px 5px 0;font-size:14px;color:#3a3d33}
+ul.dots li::before{content:"";position:absolute;right:2px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--moss)}
+ul.tips li::before{content:"›";position:absolute;right:0;top:3px;color:var(--gold);font-weight:900}
+ul.timeline li{position:relative;padding:7px 20px 7px 0;font-size:14px;color:#3a3d33;border-right:2px solid var(--line);margin-right:5px}
+ul.timeline li::before{content:"";position:absolute;right:-6px;top:13px;width:9px;height:9px;border-radius:50%;background:var(--sky);border:2px solid #fff;box-shadow:0 0 0 1px var(--sky)}
+
+/* routes */
+.route{border:1px solid var(--line);border-radius:13px;padding:12px 13px;margin-top:11px;background:var(--paper)}
+.route:first-child{margin-top:6px}
+.route-name{font-family:'Frank Ruhl Libre',serif;font-size:16.5px;font-weight:700;margin:0 0 9px;color:var(--pine2)}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:9px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:9px;padding:3px 9px;font-size:12px;color:var(--muted);font-weight:500}
+ol.steps{margin:4px 0 8px;padding-inline-start:20px}
+ol.steps li{font-size:13.5px;color:#3a3d33;margin:4px 0}
+.warn{background:#fbf1e8;border-inline-start:3px solid var(--gold);border-radius:8px;
+  padding:7px 10px;font-size:13px;color:#7a5418;margin:6px 0}
+
+/* hours rows */
+.hrow{padding:9px 0;border-bottom:1px dashed var(--line)}
+.hrow:last-child{border-bottom:0}
+.hrow p{margin:0 0 7px;font-size:13.5px;color:#3a3d33}
+.linkrow{display:flex;flex-wrap:wrap;gap:7px}
+
+/* nav rows */
+.navrow{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.navrow:last-child{border-bottom:0}
+.nav-info{flex:1;min-width:0}
+.nav-dest{font-weight:700;font-size:14.5px;color:var(--pine2)}
+.nav-addr{font-size:12px;color:var(--muted);direction:ltr;text-align:right;margin-top:1px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav-btns{display:flex;gap:6px;flex:0 0 auto}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:4px;text-decoration:none;border-radius:10px;
+  padding:8px 11px;font-size:12.5px;font-weight:700;white-space:nowrap;transition:.15s;border:1.5px solid transparent}
+.btn:active{transform:scale(.96)}
+.b-waze{background:var(--waze);color:#06384d}
+.b-gmap{background:var(--gmap);color:#fff}
+.b-walk{display:inline-flex;background:#fff;color:var(--pine);border-color:var(--moss);margin-top:4px}
+.b-link{background:var(--paper2);color:var(--pine2);border-color:var(--line)}
+
+footer{text-align:center;color:var(--muted);font-size:12px;padding:26px 20px 6px}
+footer b{color:var(--pine)}
+
+/* drive time merged into the route CTA (two-line button) */
+.route-cta .rc-main{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1}
+.rc-title{font-weight:700;font-size:14.5px}
+.rc-sub{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;opacity:.96}
+.rc-sub .dt-dot{font-size:11px;line-height:1}
+
+/* live weather: condition + temp in the section summary */
+.wx-sum{margin-inline-start:7px;font-weight:600;font-size:13.5px;color:var(--pine2)}
+.wx-sum .wx-temp{direction:ltr;font-feature-settings:"tnum"}
+
+/* live weather body: how-to-dress explanation + sun times */
+.live-weather{background:linear-gradient(135deg,#e9f0f8,#f4efe4);border:1px solid var(--line);
+  border-radius:12px;padding:11px 13px;margin:2px 0 4px}
+.live-weather .lw-head{font-weight:700;color:var(--pine);font-size:14px;margin-bottom:5px}
+.live-weather ul.lw-dress{margin:0;padding:0;list-style:none}
+.live-weather ul.lw-dress li{position:relative;padding:4px 17px 4px 0;font-size:14px;color:#3a3d33}
+.live-weather ul.lw-dress li::before{content:"👕";position:absolute;right:0;top:4px;font-size:11px}
+.live-weather .lw-sun{display:flex;gap:18px;margin-top:9px;padding-top:8px;border-top:1px dashed var(--line);
+  font-size:13.5px;color:#3a3d33;direction:ltr;justify-content:flex-end}
+.live-weather .lw-tag{margin-top:7px;font-size:11px;color:var(--muted);letter-spacing:.04em}
+
+/* ---- top-level views + bottom tab bar (app shell) ---- */
+.wrap{padding-bottom:86px} /* clear the fixed tab bar */
+.view{display:none}
+.view.view-active{display:block;animation:fade .3s ease}
+.view-head{padding:16px 16px 2px}
+.view-head h2{font-family:'Frank Ruhl Libre',serif;color:var(--pine);font-size:21px;margin:8px 0 4px}
+.view-head p{margin:0 0 6px;font-size:13.5px;color:var(--muted)}
+
+.tabbar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:500px;z-index:40;
+  display:flex;background:rgba(244,239,228,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);
+  box-shadow:0 -4px 18px rgba(29,59,47,.10);padding:6px 8px calc(6px + env(safe-area-inset-bottom))}
+.tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;border:0;background:none;cursor:pointer;
+  color:var(--muted);font-family:inherit;font-weight:700;font-size:11.5px;padding:6px 4px;border-radius:12px;transition:.15s}
+.tab .tab-ic{font-size:21px;line-height:1;filter:grayscale(.45);opacity:.7;transition:.15s}
+.tab.tab-active{color:var(--pine)}
+.tab.tab-active .tab-ic{filter:none;opacity:1;transform:translateY(-1px)}
+
+/* navigation summary view */
+.navday{background:#fff;border:1px solid var(--line);border-radius:15px;box-shadow:var(--shadow);margin:11px 14px;padding:12px 13px}
+.navday-head{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+.navday-n{flex:0 0 auto;width:27px;height:27px;border-radius:9px;background:var(--pine);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:15px}
+.navday-title{font-size:13px;font-weight:700;color:var(--pine2)}
+.navday .route-cta{margin-bottom:4px}
+
+/* emergency view */
+.ec-note{margin:6px 14px 4px;background:#fbf1e8;border-inline-start:3px solid var(--rust);border-radius:10px;
+  padding:10px 12px;font-size:13.5px;font-weight:600;color:#7a3318}
+.ec-group{margin:0 14px}
+.ec-gtitle{font-size:12.5px;font-weight:700;color:var(--moss);text-transform:uppercase;letter-spacing:.05em;margin:15px 2px 6px}
+.ec-card{display:flex;align-items:center;gap:11px;background:#fff;border:1px solid var(--line);border-radius:13px;
+  box-shadow:var(--shadow);padding:11px 13px;margin-top:9px}
+.ec-ic{flex:0 0 auto;font-size:22px;width:30px;text-align:center}
+.ec-info{flex:1;min-width:0}
+.ec-label{font-weight:700;font-size:14.5px;color:var(--pine)}
+.ec-sub{font-size:12px;color:var(--muted);margin-top:1px}
+.ec-btns{flex:0 0 auto;display:flex;flex-direction:column;gap:5px;align-items:stretch}
+.ec-btns .btn{justify-content:center}
+.ec-call{background:var(--pine);color:#fff;border-color:var(--pine);direction:ltr}
+.ec-wa{background:#25d366;color:#fff;border-color:#1da851}
+.ec-card.ec-ph{opacity:.75;border-style:dashed}
+.ec-fill{font-size:11px;font-weight:700;color:var(--gold);border:1px dashed var(--gold);border-radius:8px;padding:5px 9px;white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <svg class="peaks" viewBox="0 0 500 90" preserveAspectRatio="none"><path d="M0 90 L70 30 L120 60 L190 12 L260 58 L330 22 L400 62 L460 34 L500 70 L500 90 Z" fill="#ffffff"/></svg>
+    <div class="hero-kick">תוכנית טיול משפחתית</div>
+    <h1>{{TITLE}}</h1>
+    <div class="dates">{{SUBTITLE}}</div>
+    <div class="flags" role="img" aria-label="מדינות במסלול: גרמניה, אוסטריה">
+      <span class="flag flag-de" title="גרמניה"></span>
+      <span class="flag flag-at" title="אוסטריה"></span>
+    </div>
+  </div>
+
+  <section class="view view-active" data-view="itinerary">
+    <nav class="pillbar" id="pills">{{PILLS}}</nav>
+
+    <div class="intro">
+      <details class="rules">
+        <summary><span class="sx">⛓️</span>כללי ברזל לוואן ולניווט</summary>
+        <ul>{{RULES}}</ul>
+      </details>
+    </div>
+
+{{DAYS}}
+    <footer>{{FOOTER}}</footer>
+  </section>
+
+  <section class="view" data-view="nav">
+    <div class="view-head"><h2>🧭 ניווט — סיכום יומי</h2><p>כל יעדי הניווט של הטיול במקום אחד. הקישו Waze או Google ליעד הרצוי.</p></div>
+    {{NAV_SUMMARY}}
+  </section>
+
+  <section class="view" data-view="emergency">
+    <div class="view-head"><h2>🆘 חירום ופרטים חשובים</h2><p>מספרים לחיוג מהיר וקישורי WhatsApp. שמרו את הדף במסך הבית.</p></div>
+    {{EMERGENCY}}
+  </section>
+</div>
+
+<nav class="tabbar" id="tabbar">
+  <button class="tab tab-active" data-go="itinerary"><span class="tab-ic">🛣️</span><span class="tab-lbl">מסלול</span></button>
+  <button class="tab" data-go="nav"><span class="tab-ic">🧭</span><span class="tab-lbl">ניווט</span></button>
+  <button class="tab" data-go="emergency"><span class="tab-ic">🆘</span><span class="tab-lbl">חירום</span></button>
+</nav>
+<script>
+(function(){
+  var pills=[].slice.call(document.querySelectorAll('.pill'));
+  var days=[].slice.call(document.querySelectorAll('.day'));
+  function show(n){
+    days.forEach(function(d){d.classList.toggle('active', d.dataset.day===String(n));});
+    pills.forEach(function(p){p.classList.toggle('active', p.dataset.target===String(n));});
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  pills.forEach(function(p){p.addEventListener('click',function(){show(p.dataset.target);});});
+  show(1);
+})();
+
+/* bottom tab bar — switch between top-level views (itinerary / nav / emergency) */
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  var views=[].slice.call(document.querySelectorAll('.view'));
+  function go(name){
+    views.forEach(function(v){v.classList.toggle('view-active', v.dataset.view===name);});
+    tabs.forEach(function(t){t.classList.toggle('tab-active', t.dataset.go===name);});
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){go(t.dataset.go);});});
+})();
+
+/* Live weather, sunrise/sunset, and how-to-dress advice via Open-Meteo
+   (free, no key, CORS-enabled). Each .day carries data-lat/lon/date. On success:
+     - the section summary's static 🌦️ icon becomes the live condition icon,
+       followed by the condition (Hebrew) + temperature range;
+     - expanding the section shows dressing advice DERIVED from the forecast
+       (temp, rain probability, wind, UV — no separate clothing API exists);
+     - the static Hebrew notes (data-wx-static) are hidden.
+   On ANY failure (offline, 7s timeout, or a date beyond Open-Meteo's ~16-day
+   window, which returns no `daily`) nothing changes — static notes stay. */
+(function(){
+  var WMO={0:['☀️','בהיר'],1:['🌤️','בהיר בעיקר'],2:['⛅','מעונן חלקית'],3:['☁️','מעונן'],
+    45:['🌫️','ערפל'],48:['🌫️','ערפל'],51:['🌦️','טפטוף'],53:['🌦️','טפטוף'],55:['🌦️','טפטוף'],
+    56:['🌧️','טפטוף קופא'],57:['🌧️','טפטוף קופא'],61:['🌧️','גשם קל'],63:['🌧️','גשם'],65:['🌧️','גשם חזק'],
+    66:['🌧️','גשם קופא'],67:['🌧️','גשם קופא'],71:['❄️','שלג קל'],73:['❄️','שלג'],75:['❄️','שלג כבד'],77:['❄️','גרגרי שלג'],
+    80:['🌦️','ממטרים'],81:['🌦️','ממטרים'],82:['🌦️','ממטרים עזים'],85:['🌨️','ממטרי שלג'],86:['🌨️','ממטרי שלג'],
+    95:['⛈️','סופת רעמים'],96:['⛈️','סופה עם ברד'],99:['⛈️','סופה עם ברד']};
+  function hm(iso){ return iso ? String(iso).slice(11,16) : ''; }
+  // Derive Hebrew dressing advice from the day's forecast metrics.
+  function dress(o){
+    var t=[], tmax=o.tmax, tmin=o.tmin, pop=o.pop, wind=o.wind, uv=o.uv, c=o.code;
+    if(tmax>=28) t.push('חם ביום — בגדים קלים ונושמים, כובע והרבה מים');
+    else if(tmax>=22) t.push('נעים — חולצה קצרה ביום, שכבה קלה לערב');
+    else if(tmax>=15) t.push('מתון — כדאי שכבות וסווטשירט');
+    else if(tmax>=8) t.push('קריר — מעיל קל או פליז');
+    else t.push('קר — מעיל חם וכובע');
+    if(tmin<12) t.push('בוקר/ערב קרירים (כ-'+Math.round(tmin)+'°) — קחו שכבה חמה');
+    var rainy = (pop!=null&&pop>=50) || (c>=51&&c<=67) || (c>=80&&c<=82) || c>=95;
+    if(rainy) t.push('סיכוי לגשם'+(pop!=null?' ('+pop+'%)':'')+' — מעיל גשם/מטרייה ונעליים סגורות');
+    if(wind!=null&&wind>=30) t.push('רוח חזקה (כ-'+Math.round(wind)+' קמ״ש) — כדאי מעיל רוח');
+    if(uv!=null&&uv>=6) t.push('קרינת UV גבוהה — קרם הגנה ומשקפי שמש');
+    return t;
+  }
+  function apply(section,o){
+    var w=WMO[o.code]||['🌡️','—'];
+    // 1) summary: swap the icon, add condition + temp range
+    var ic=section.querySelector('[data-wx-icon]'); if(ic) ic.textContent=w[0];
+    var sum=section.querySelector('[data-wx-sum]');
+    if(sum) sum.innerHTML=' · '+w[1]+' · <span class="wx-temp">'+Math.round(o.tmax)+'°/'+Math.round(o.tmin)+'°</span>';
+    // 2) body: dressing explanation + sun times
+    var box=section.querySelector('[data-lw]');
+    if(box){
+      var lis=dress(o).map(function(x){return '<li>'+x+'</li>';}).join('');
+      box.innerHTML=
+        '<div class="lw-head">👕 איך להתלבש לפי התחזית</div><ul class="lw-dress">'+lis+'</ul>'+
+        '<div class="lw-sun"><span>🌅 זריחה '+hm(o.sr)+'</span><span>🌇 שקיעה '+hm(o.ss)+'</span></div>'+
+        '<div class="lw-tag">תחזית חיה · Open-Meteo</div>';
+      box.hidden=false;
+    }
+    // 3) hide the static fallback notes
+    var stat=section.querySelector('[data-wx-static]'); if(stat) stat.hidden=true;
+  }
+  function load(section){
+    var lat=section.getAttribute('data-lat'), lon=section.getAttribute('data-lon'), date=section.getAttribute('data-date');
+    if(!lat||!lon||!date) return;
+    var url='https://api.open-meteo.com/v1/forecast?latitude='+lat+'&longitude='+lon+
+      '&daily=weathercode,temperature_2m_max,temperature_2m_min,precipitation_probability_max,windspeed_10m_max,uv_index_max,sunrise,sunset'+
+      '&timezone=Europe%2FVienna&start_date='+date+'&end_date='+date;
+    var ctrl=new AbortController(), to=setTimeout(function(){ctrl.abort();},7000);
+    fetch(url,{signal:ctrl.signal}).then(function(r){return r.json();}).then(function(j){
+      clearTimeout(to);
+      var d=j&&j.daily;
+      if(!d||!d.time||!d.time.length) return; // out of forecast range -> keep static
+      apply(section,{code:d.weathercode[0],tmax:d.temperature_2m_max[0],tmin:d.temperature_2m_min[0],
+        pop:d.precipitation_probability_max[0],wind:d.windspeed_10m_max[0],uv:d.uv_index_max[0],
+        sr:d.sunrise[0],ss:d.sunset[0]});
+    }).catch(function(){ clearTimeout(to); /* offline/error -> keep static */ });
+  }
+  if(window.fetch && window.AbortController){
+    [].slice.call(document.querySelectorAll('.day')).forEach(load);
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1449 @@
+{
+  "title": "🌍 טיול לאוסטריה 2026",
+  "subtitle": "Salzburg & Tyrol | 28.06.2026–08.07.2026",
+  "rules": [
+    "גובה הוואן סביב 2.10 מ׳: להעדיף חניונים פתוחים; לא להיכנס לחניון נמוך בלי בדיקה.",
+    "בכל יום מעבר עם מזוודות: ציוד יקר מוסתר, מצלמות ודרכונים לא נשארים גלויים.",
+    "לפני כל יציאה: לפתוח יעד ניווט, לוודא שהוא נכון, ורק אז להתחיל נסיעה.",
+    "קישורי Waze בנויים לפי כתובת פיזית כדי שיעבדו טוב באייפון."
+  ],
+  "footerLines": [
+    "טיול בטוח ומהנה! · Salzburg & Tyrol | 28.06.2026–08.07.2026",
+    "טיפ: הוסיפו את הדף למסך הבית לגישה מהירה בנייד."
+  ],
+  "days": [
+    {
+      "n": 1,
+      "kicker": "יום 1 · ראשון · 28.06.2026",
+      "title": "🛫 מינכן → Bad Reichenhall: נוחתים, מקבלים את הוואן ב-Sixt/P20, עושים קנייה קצרה אם פתוח ונוסעים למלון ללילה ראשון.",
+      "drive": {
+        "origin": "Terminalstraße Mitte, 85356 München-Flughafen, Germany",
+        "destination": "Am Münster 3, 83435 Bad Reichenhall, Germany",
+        "waypoints": []
+      },
+      "summary": "זהו יום פתיחה לוגיסטי, קצר ורגוע, שמטרתו להכניס את המשפחה לטיול בלי עומס מיותר. נוחתים במינכן, מקבלים את הוואן ב-Sixt, מבצעים בדיקת רכב מסודרת וקנייה קצרה אם מתאפשר, ואז נוסעים ישירות ללינה הראשונה בבאד רייכנהאל. אין ביום הזה יעד תיירותי — הדגש הוא נחיתה טובה, התארגנות בטוחה ושינה לקראת תחילת הטיול האמיתי.",
+      "timeline": [
+        "19:50 נחיתה LY0351 במינכן.",
+        "20:45 בערך קבלת רכב Sixt ובדיקת נזקים ב-P20.",
+        "21:10 קניית מים/נשנושים ב-EDEKA בשדה אם פתוח.",
+        "21:45 יציאה לבאד רייכנהאל.",
+        "23:30 בערך צ׳ק-אין מאוחר."
+      ],
+      "weather": [
+        "ערב קיץ בבוואריה/באד רייכנהאל צפוי לרוב להיות נעים-קריר: סביב 15–22°C, עם אפשרות לגשם מקומי גם בקיץ.",
+        "משמעות ליום: להביא שכבה קלה ליציאה מהשדה; אם יש גשם לילי/עייפות — נסיעה ישירה למלון בלי עצירות."
+      ],
+      "routes": [
+        {
+          "name": "התמצאות בשדה מינכן: טרמינל → MAC → Sixt → P20",
+          "meta": [
+            "נקודת מוצא: אולם קבלת מזוודות במינכן",
+            "משך/מרחק: 20–40 דקות, תלוי תור ומזוודות",
+            "רמת קושי: קל, בתוך השדה"
+          ],
+          "steps": [
+            "שלב 1: אחרי המכס ללכת לפי השילוט Zentralbereich / MAC ולא לצאת לחניונים לפני שמגיעים לדלפקי ההשכרה.",
+            "שלב 2: נהג אחד מתרכז במסמכים ובקבלת הרכב; שאר המשפחה שומרת על מזוודות ולא מתפזרת.",
+            "שלב 3: ב-P20 לצלם וידאו רציף סביב הוואן: ארבע פינות, ג׳אנטים, שמשות, דלתות, שריטות ותא מטען.",
+            "שלב 4: לפני יציאה מהחניון להגדיר ניווט למלון ולוודא שהמסלול לא מכניס לחניה תת-קרקעית נמוכה."
+          ],
+          "warns": [],
+          "walk": null
+        }
+      ],
+      "hours": [],
+      "tips": [
+        "גובה הוואן סביב 2.10 מ׳ — לא להיכנס לחניונים נמוכים בלי בדיקה.",
+        "להכין בהישג יד סווטשירט לכל אחד כי היציאה בלילה קרירה."
+      ],
+      "nav": [
+        {
+          "dest": "Sixt / P20 Munich Airport",
+          "addr": "Terminalstraße Mitte, 85356 München-Flughafen, Germany"
+        },
+        {
+          "dest": "Amber Hotel Bavaria",
+          "addr": "Am Münster 3, 83435 Bad Reichenhall, Germany"
+        }
+      ],
+      "date": "2026-06-28",
+      "coords": {
+        "lat": 47.7222676,
+        "lon": 12.8760923
+      },
+      "driveMin": 106
+    },
+    {
+      "n": 2,
+      "kicker": "יום 2 · שני · 29.06.2026",
+      "title": "🥨 Salzburg + St. Gilgen: איסוף תומר, מסלול בעיר העתיקה של זלצבורג, קפה/תצפיות, ואז טיילת אגם וולפגנג בסנט גילגן והגעה לפלאכאו.",
+      "drive": {
+        "origin": "Am Münster 3, 83435 Bad Reichenhall, Germany",
+        "destination": "Bichlweg 21, 5542 Flachau, Austria",
+        "waypoints": [
+          "Innsbrucker Bundesstraße 95, 5020 Salzburg, Austria",
+          "Hildmannplatz 1, 5020 Salzburg, Austria",
+          "Ischlerstraße 12, 5340 Sankt Gilgen, Austria"
+        ]
+      },
+      "summary": "היום מצטרף תומר והמשפחה מתאחדת לקבוצה מלאה, ולכן בנינו יום שמתחיל רגוע וממשיך אל אחת הערים היפות באוסטריה. מטיילים בעיר העתיקה של זלצבורג במסלול נוח דרך הרחובות, הכיכרות, נקודות הצילום והאווירה ההיסטורית, ולאחר מכן ממשיכים לסיום רך מול אגם וולפגנג בסנט גילגן. אם הקבוצה עייפה אחרי זלצבורג, סנט גילגן נשארת עצירה קצרה ולא הופכת למרוץ.",
+      "timeline": [
+        "07:40 נהג יוצא לאיסוף תומר ב-SZG; שאר המשפחה נשארת במלון.",
+        "08:45 ארוחת בוקר משותפת במלון.",
+        "10:45–14:00 מסלול רגלי בעיר העתיקה של זלצבורג.",
+        "15:30–17:30 סנט גילגן וטיילת אגם וולפגנג.",
+        "19:30 הגעה לדירה בפלאכאו."
+      ],
+      "weather": [
+        "זלצבורג וסנט גילגן בסוף יוני: בדרך כלל 18–26°C ביום, אך יתכנו ממטרים קצרים וסופות אחר הצהריים; ליד האגם קריר יותר בערב.",
+        "משמעות ליום: להתחיל בעיר העתיקה כשהשמיים פתוחים; אם מתפתח גשם — לקצר תצפיות פתוחות ולהשאיר את St. Gilgen לחלון יבש."
+      ],
+      "routes": [
+        {
+          "name": "זלצבורג העתיקה — מסלול רגלי מלא ומסודר",
+          "meta": [
+            "נקודת מוצא: Mönchsberggarage / Hildmannplatz 1",
+            "משך/מרחק: כ-3–4 שעות כולל קפה/תצפית; 4–5 ק״מ אם מגיעים גם למיראבל",
+            "רמת קושי: קל-בינוני עירוני"
+          ],
+          "steps": [
+            "שלב 1: מהחניה במונכסברג יוצאים לכיוון Pferdeschwemme / Karajanplatz. זו נקודת פתיחה נוחה לצילום ולכניסה לעיר העתיקה.",
+            "שלב 2: ממשיכים ל-רחוב גטריידגאסה. לעצור ליד בית מוצרט במס׳ 9 ולצלם את שלטי הברזל של החנויות.",
+            "שלב 3: ממשיכים ל-כיכר אלטר מרקט ו-קפה טומזלי. זו נקודת קפה טובה אם יש מקום; לא חובה אם יש עומס.",
+            "שלב 4: יורדים לכיוון כיכר הקתדרלה / קתדרלת זלצבורג. אם נכנסים — לשמור על שקט, ולהגדיר 10–15 דקות בלבד.",
+            "שלב 5: ממשיכים ל-כיכר קפיטלפלאץ ולתחנת רכבל המצודה. אם מחליטים לעלות למצודה — לקנות כרטיס במקום/אונליין לפי התור.",
+            "שלב 6: במצודה: להתחיל בתצפית החיצונית, אחר כך חצר פנימית ומוזיאונים רק אם יש זמן.",
+            "שלב 7: אם נשאר כוח: לרדת ולחצות לכיוון גני מיראבל לצילום משפחתי בגנים, ואז לחזור לחניון."
+          ],
+          "warns": [
+            "⚠️ לא להיכנס עם הוואן לאזור העיר העתיקה. החניה במונכסברג היא עוגן.",
+            "⚠️ הקישור הרגלי נותן שלד ניווט; בתוך העיר העתיקה ללכת לפי השילוט והזרימה, לא להילחם ב-GPS בסמטאות."
+          ],
+          "walk": {
+            "origin": "Mönchsberggarage, Hildmannplatz 1, 5020 Salzburg, Austria",
+            "destination": "Mönchsberggarage, Hildmannplatz 1, 5020 Salzburg, Austria",
+            "waypoints": [
+              "Pferdeschwemme Salzburg, Austria",
+              "רחוב גטריידגאסה 9, 5020 Salzburg, Austria",
+              "קפה טומזלי, כיכר אלטר מרקט 9, 5020 Salzburg, Austria",
+              "Salzburg Cathedral, כיכר הקתדרלה 1a, Salzburg, Austria",
+              "רכבל המצודה Salzburg, Festungsgasse 4, 5020 Salzburg, Austria",
+              "Hohensalzburg Fortress, Mönchsberg 34, 5020 Salzburg, Austria",
+              "Mirabell Palace, Mirabellplatz 4, 5020 Salzburg, Austria"
+            ]
+          }
+        },
+        {
+          "name": "סנט גילגן — הליכה קצרה וממוקדת על האגם",
+          "meta": [
+            "נקודת מוצא: חניון P1 Ischlerstraße",
+            "משך/מרחק: 45–75 דקות; 1.5–2 ק״מ",
+            "רמת קושי: קל"
+          ],
+          "steps": [
+            "שלב 1: מהחניון הולכים עם השילוט Zentrum לכיוון Mozartplatz.",
+            "שלב 2: עוצרים בכיכר העירייה ובאזור בית אמו של מוצרט לצילום קצר.",
+            "שלב 3: יורדים בסמטה לכיוון אגם וולפגנג והטיילת.",
+            "שלב 4: הולכים לאורך המים עד המזח; אם יש זמן — יושבים לקפה/גלידה מול האגם.",
+            "שלב 5: חוזרים באותה דרך או דרך רחוב מקביל לחניון P1."
+          ],
+          "warns": [
+            "⚠️ לא לנסות להתקרב עם הוואן לסמטאות הכפר."
+          ],
+          "walk": {
+            "origin": "Parkplatz P1, Ischlerstraße 12, 5340 Sankt Gilgen, Austria",
+            "destination": "Parkplatz P1, Ischlerstraße 12, 5340 Sankt Gilgen, Austria",
+            "waypoints": [
+              "Mozartplatz, 5340 Sankt Gilgen, Austria",
+              "Mozarthaus St Gilgen, Ischlerstraße 15, 5340 Sankt Gilgen, Austria",
+              "Schiffsanlegestelle St. Gilgen, אגם וולפגנג, Austria"
+            ]
+          }
+        }
+      ],
+      "hours": [
+        {
+          "text": "Hohensalzburg Fortress: פתוח 365 יום בשנה. בחודשים מאי-ספטמבר: אזור המצודה 08:30–20:00; מוזיאונים/חדרי מדינה/תיאטרון קסם 09:00–19:00. כרטיסים לפי בחירה: בסיס/כולל פוניקולר/חדרי מדינה.",
+          "links": [
+            {
+              "label": "🔗 אתר רשמי",
+              "url": "https://www.festung-hohensalzburg.at/en/your-visit/opening-hours"
+            },
+            {
+              "label": "🎟️ כרטיסים",
+              "url": "https://www.festung-hohensalzburg.at/en/your-visit/tickets"
+            }
+          ]
+        },
+        {
+          "text": "גני מיראבל / העיר העתיקה: טיול חופשי ללא כרטיס. אם נכנסים לאתרים פנימיים כמו קתדרלה או מוזיאונים — לבדוק במקום שעות ותשלום.",
+          "links": []
+        }
+      ],
+      "tips": [
+        "בזלצבורג להגדיר את החניון כיעד חזרה בטלפון.",
+        "להשאיר זמן לסנט גילגן רק אם כולם בסדר אחרי ההליכה בעיר."
+      ],
+      "nav": [
+        {
+          "dest": "Salzburg Airport",
+          "addr": "Innsbrucker Bundesstraße 95, 5020 Salzburg, Austria"
+        },
+        {
+          "dest": "Mönchsberggarage",
+          "addr": "Hildmannplatz 1, 5020 Salzburg, Austria"
+        },
+        {
+          "dest": "St. Gilgen P1",
+          "addr": "Ischlerstraße 12, 5340 Sankt Gilgen, Austria"
+        },
+        {
+          "dest": "Appartement Unterbichl",
+          "addr": "Bichlweg 21, 5542 Flachau, Austria"
+        }
+      ],
+      "date": "2026-06-29",
+      "coords": {
+        "lat": 47.7981346,
+        "lon": 13.0464806
+      },
+      "driveMin": 61
+    },
+    {
+      "n": 3,
+      "kicker": "יום 3 · שלישי · 30.06.2026",
+      "title": "🏔️ Kaprun + Zell am See: מאגרי Mooserboden בבוקר, Schmittenhöhe רק אם יש ראות טובה, ערב בטיילת Zell am See; Maizi Flitzer רק אם נשאר זמן.",
+      "drive": {
+        "origin": "Bichlweg 21, 5542 Flachau, Austria",
+        "destination": "Bichlweg 21, 5542 Flachau, Austria",
+        "waypoints": [
+          "Kesselfallstraße 98, 5710 Kaprun, Austria",
+          "Schmittenstraße 119, 5700 Zell am See, Austria",
+          "Saalfeldner Str. 2, 5700 Zell am See, Austria",
+          "Schaufelbergstraße 30, 5710 Kaprun, Austria"
+        ]
+      },
+      "summary": "היום מוקדש לנוף אלפיני גבוה באזור קפרון וזל אם זה, עם שילוב בין טבע דרמטי, תצפיות ואגם עירוני נעים לסיום היום. מתחילים במאגרי Mooserboden כדי ליהנות מהסכרים ומהנוף ההררי בשעות הטובות יותר, ובהמשך בוחרים את Schmittenhöhe רק אם יש ראות טובה באמת. Zell am See משמשת כסיום נעים יותר של היום, ו-Maizi Flitzer נשארת תוספת קצרה בלבד אם היום מתקדם טוב ולא דוחק את הערב.",
+      "timeline": [
+        "09:15 יציאה מפלאכאו.",
+        "10:00–13:30 Mooserboden / Kaprun High Mountain Reservoirs.",
+        "14:30–17:00 Schmittenhöhe / Kräuterweg אם פתוח ויש ראות.",
+        "17:15–20:30 Zell am See: מדרחוב וטיילת.",
+        "אופציה בלבד אם היום מתקצר/הקבוצה רוצה: Maizi Flitzer בקפרון, לפי שעות פעילות ותור.",
+        "20:30 חזרה לפלאכאו."
+      ],
+      "weather": [
+        "אזור Kaprun / Zell am See: בעמק צפוי קיץ נעים סביב 18–26°C; במאגרי Mooserboden וב-Schmittenhöhe קריר ורוחני יותר, לפעמים 8–16°C בלבד.",
+        "משמעות ליום: לקחת שכבה חמה/מעיל גשם דק למאגרים; רכבל Schmittenhöhe משתלם רק אם יש ראות טובה ולא עננות נמוכה."
+      ],
+      "routes": [
+        {
+          "name": "Mooserboden — אחרי ההגעה באוטובוסים/מעלית",
+          "meta": [
+            "נקודת מוצא: Kesselfall / נקודת העלייה למאגרים",
+            "משך/מרחק: 60–90 דקות הליכה קלה סביב הסכר; יותר אם מוסיפים תצפית Höhenburg",
+            "רמת קושי: קל-בינוני בגובה"
+          ],
+          "steps": [
+            "שלב 1: מחנים ב-Kesselfall ומתקדמים לנקודת התשלום/העלייה של המאגרים.",
+            "שלב 2: עולים לפי הסדר התפעולי של האתר: אוטובוס → מעלית משופעת/מעבר → אוטובוס נוסף עד אזור הסכר.",
+            "שלב 3: ביציאה למעלה מתחילים בהליכה על הסכר המרכזי, לא רצים מיד לתצפיות.",
+            "שלב 4: אם מזג האוויר טוב ויש כוח: לעלות לתצפית Höhenburg כ-10–15 דקות לצילום שני המאגרים.",
+            "שלב 5: לחזור לנקודת ההסעה בזמן; לא להשאיר ירידה לשעה האחרונה."
+          ],
+          "warns": [
+            "⚠️ בגובה יכול להיות קר ורוח גם אם בפלאכאו חם."
+          ],
+          "walk": null
+        },
+        {
+          "name": "Schmittenhöhe / Kräuterweg — תצפית רק בתנאי ראות טובים",
+          "meta": [
+            "נקודת מוצא: תחנת Schmittenhöhebahn, Zell am See",
+            "משך/מרחק: 45–90 דקות הליכה קלה-בינונית",
+            "רמת קושי: קל-בינוני"
+          ],
+          "steps": [
+            "שלב 1: לפני קניית כרטיס לבדוק מצלמות/ראות מהפסגה.",
+            "שלב 2: בעלייה ברכבל לצאת מהתחנה העליונה ולהתחיל בתצפית הקרובה — לצילום משפחתי לפני פיזור.",
+            "שלב 3: אם עושים Kräuterweg: ללכת לפי השילוט הצהוב/מסלול העשבים, בקצב רגוע, ולחזור/לרדת לפי זמן הרכבל האחרון.",
+            "שלב 4: אם הראות לא טובה — לוותר ולעבור ישירות ל-Zell am See."
+          ],
+          "warns": [
+            "⚠️ לא להתעקש על רכבל רק כי הוא בתוכנית. זה יעד שתלוי בעננות."
+          ],
+          "walk": null
+        },
+        {
+          "name": "Zell am See בערב — מדרחוב וטיילת",
+          "meta": [
+            "נקודת מוצא: Saalfeldner Str. 2 / חניון מרכז",
+            "משך/מרחק: 60–120 דקות; 2–3 ק״מ",
+            "רמת קושי: קל"
+          ],
+          "steps": [
+            "שלב 1: מהחניון נכנסים למדרחוב/מרכז העיר העתיקה.",
+            "שלב 2: ממשיכים לכיוון Stadtplatz לעצירה קצרה, גלידה או קפה.",
+            "שלב 3: יורדים לכיוון Grand Hotel וה-Esplanade.",
+            "שלב 4: הולכים לאורך הטיילת, מצלמים את האגם וההרים, וחוזרים למרכז/חניון."
+          ],
+          "warns": [
+            "⚠️ בערב ליד האגם יכול להיות קריר — להשאיר שכבה בוואן."
+          ],
+          "walk": {
+            "origin": "Saalfeldner Straße 2, 5700 Zell am See, Austria",
+            "destination": "Saalfeldner Straße 2, 5700 Zell am See, Austria",
+            "waypoints": [
+              "Stadtplatz Zell am See, Austria",
+              "Grand Hotel Zell am See, Esplanade 4-6, 5700 Zell am See, Austria",
+              "Zell am See Esplanade, 5700 Zell am See, Austria"
+            ]
+          }
+        },
+        {
+          "name": "Maizi Flitzer — אופציה קצרה בקפרון אם נשאר זמן",
+          "meta": [
+            "נקודת מוצא: Schaufelbergstraße 30, Kaprun",
+            "משך/מרחק: 45–90 דקות לפי תור ומספר נסיעות",
+            "רמת קושי: קל, אטרקציה בתשלום"
+          ],
+          "steps": [
+            "שלב 1: להגיע רק אם היום לא נמרח במאגרי קפרון/Schmittenhöhe.",
+            "שלב 2: לפני קנייה לבדוק שעות פעילות, תור, מזג אוויר וגיל/גובה רלוונטיים.",
+            "שלב 3: לא לשלב אם זה דוחק את ערב Zell am See או יוצר חזרה מאוחרת מדי לפלאכאו."
+          ],
+          "warns": [],
+          "walk": {
+            "origin": "Maisi Flitzer, Schaufelbergstraße 30, 5710 Kaprun, Austria",
+            "destination": "Maisi Flitzer, Schaufelbergstraße 30, 5710 Kaprun, Austria",
+            "waypoints": [
+              "Maiskogel Familienberg, Kaprun, Austria"
+            ]
+          }
+        }
+      ],
+      "hours": [
+        {
+          "text": "Kaprun High Mountain Reservoirs / Mooserboden: יעד עונתי בגובה; כולל הסעה פנימית/מערך עלייה. יש לבדוק בבוקר שעות פעילות, כרטיסים, מזג אוויר והאם יש עומס בקופות.",
+          "links": [
+            {
+              "label": "🔗 אתר רשמי",
+              "url": "https://www.verbund.com/en-at/about-verbund/visitors-centres/kaprun-high-mountain-reservoirs"
+            }
+          ]
+        },
+        {
+          "text": "Schmittenhöhe: כרטיס רכבל רק אם הראות טובה. לבדוק שעות פעילות/מצלמות אתר לפני יציאה או לפני קנייה.",
+          "links": [
+            {
+              "label": "🔗 אתר רשמי",
+              "url": "https://www.schmitten.at/en/summer"
+            }
+          ]
+        },
+        {
+          "text": "Maizi Flitzer: אופציונלי בלבד. לבדוק שעות, מזג אוויר, תורים וכרטיסים באתר הרשמי של Kaprun/Kitzsteinhorn לפני ההגעה.",
+          "links": [
+            {
+              "label": "🔗 אתר רשמי",
+              "url": "https://www.kitzsteinhorn.at/en"
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "להתחיל בקפרון ולא ב-Zell am See כדי להרוויח את הבוקר.",
+        "אם מתעכבים במאגרים — לקצר/לבטל Schmittenhöhe, ולא להפוך את Maizi Flitzer ליעד חובה."
+      ],
+      "nav": [
+        {
+          "dest": "Mooserboden / Kesselfall",
+          "addr": "Kesselfallstraße 98, 5710 Kaprun, Austria"
+        },
+        {
+          "dest": "Schmittenhöhebahn",
+          "addr": "Schmittenstraße 119, 5700 Zell am See, Austria"
+        },
+        {
+          "dest": "Zell am See Center",
+          "addr": "Saalfeldner Str. 2, 5700 Zell am See, Austria"
+        },
+        {
+          "dest": "Maizi Flitzer",
+          "addr": "Schaufelbergstraße 30, 5710 Kaprun, Austria"
+        }
+      ],
+      "date": "2026-06-30",
+      "coords": {
+        "lat": 47.3239636,
+        "lon": 12.7963165
+      },
+      "driveMin": 48
+    },
+    {
+      "n": 4,
+      "kicker": "יום 4 · רביעי · 01.07.2026",
+      "title": "📸 Hallstatt + Gosausee + Karkogel: האלשטאט מוקדם למסלול גלויה/שייט קצר אם מתאים, גוזאו לארוחה והקפה, וסיום באבטנאו/מגלשות Karkogel; Lucky Flitzer רק אם חוזרים מוקדם.",
+      "drive": {
+        "origin": "Bichlweg 21, 5542 Flachau, Austria",
+        "destination": "Bichlweg 21, 5542 Flachau, Austria",
+        "waypoints": [
+          "Kohlstattweg, 4830 Hallstatt, Austria",
+          "Gosauseestraße 152, 4825 Gosau, Austria",
+          "Au 99, 5441 Abtenau, Austria",
+          "Unterberggasse 172, 5542 Flachau, Austria"
+        ]
+      },
+      "summary": "זהו יום “גלויה אוסטרית” קלאסי, שמשלב עיירת אגם מפורסמת, טבע רגוע ואטרקציית הרים משפחתית בסוף היום. מתחילים מוקדם בהאלשטאט כדי להספיק את הסמטאות, כיכר השוק ונקודת הצילום הקלאסית לפני עומס גדול, ממשיכים לאגם גוזאו לארוחה והליכה רגועה מול ההרים, ומסיימים באבטנאו / Karkogel אם השעה ומזג האוויר מאפשרים.",
+      "timeline": [
+        "08:30 יציאה מדויקת מפלאכאו.",
+        "09:20–12:30 Hallstatt: חניון P2, סמטאות, כיכר השוק, Postcard View ואופציה לסירה חשמלית/שייט קצר.",
+        "13:00–15:30 Gosausee: ארוחת צהריים מול האגם והקפה רגועה של האגם הקדמי.",
+        "16:00–17:30 Abtenau / Karkogel: רכבל ומגלשות הרים לפי שעות פעילות, מזג אוויר ותור.",
+        "18:00 חזרה לדירה בפלאכאו."
+      ],
+      "weather": [
+        "Hallstatt / Gosausee / Abtenau: מזג אוויר קיצי משתנה — 18–25°C בעיירות ובאגמים, קריר יותר ליד המים, וסיכוי לגשם מקומי או עננות בהרים.",
+        "משמעות ליום: האלשטאט וגוזאו יפים גם בעננות קלה; מגלשות Karkogel/Lucky Flitzer מתאימות רק כשהמסלול יבש והפעילות פתוחה."
+      ],
+      "routes": [
+        {
+          "name": "Hallstatt — מסלול “גלויה” בלי להתברבר",
+          "meta": [
+            "נקודת מוצא: Hallstatt Parking P2",
+            "משך/מרחק: 90–150 דקות; 2–3 ק״מ",
+            "רמת קושי: קל עירוני עם קצת עליות"
+          ],
+          "steps": [
+            "שלב 1: מחניון P2 הולכים לכיוון מרכז העיירה והאגם — לא מנסים להתקרב עם הוואן למרכז.",
+            "שלב 2: נכנסים ל-Marktplatz, מצלמים את הכיכר והבתים הצבעוניים.",
+            "שלב 3: ממשיכים צפונה לאורך המים לכיוון נקודת Postcard View הקלאסית.",
+            "שלב 4: אם יש זמן וצפיפות סבירה: שוקלים סירה חשמלית/שייט קצר של 30–60 דקות.",
+            "שלב 5: אם יש כוח: עולים לכיוון הכנסייה/בית העצמות; אם עמוס או חם — מדלגים.",
+            "שלב 6: חוזרים לחניון דרך הטיילת או דרך הסמטאות המקבילות."
+          ],
+          "warns": [
+            "⚠️ הגעה מוקדמת קריטית. אחרי 10:30–11:00 העומס גדל מאוד."
+          ],
+          "walk": {
+            "origin": "Hallstatt Parking P2, Kohlstattweg, 4830 Hallstatt, Austria",
+            "destination": "Hallstatt Parking P2, Kohlstattweg, 4830 Hallstatt, Austria",
+            "waypoints": [
+              "Marktplatz Hallstatt, Austria",
+              "Evangelische Kirche Hallstatt, Austria",
+              "Classic Village Viewpoint / Postcard View, Hallstatt, Austria",
+              "Marktplatz Hallstatt, Austria"
+            ]
+          }
+        },
+        {
+          "name": "Gosausee — ארוחה והקפה רגועה של האגם הקדמי",
+          "meta": [
+            "נקודת מוצא: Gosausee Parkplatz / Gasthof Gosausee",
+            "משך/מרחק: 60–90 דקות; כ-4 ק״מ אם מקיפים את האגם הקדמי",
+            "רמת קושי: קל"
+          ],
+          "steps": [
+            "שלב 1: מחנים ליד Gosausee והולכים קודם לנקודת הצילום מול Dachstein.",
+            "שלב 2: אם מתאים, אוכלים או שותים ב-Gasthof Gosausee לפני/אחרי ההליכה.",
+            "שלב 3: עושים הקפה בכיוון השעון סביב האגם הקדמי, אם הזמן והאנרגיה מאפשרים.",
+            "שלב 4: באמצע הדרך לעצור לשיקופי מים וצילום משפחתי.",
+            "שלב 5: אם מתעייפים — לא חייבים הקפה מלאה; גם 20 דקות הלוך-חזור מהחזית מספיקות."
+          ],
+          "warns": [
+            "⚠️ זה יעד טבע מרכזי ביום — לא לדחוק אותו בגלל תורים בהאלשטאט."
+          ],
+          "walk": {
+            "origin": "Gosausee Parkplatz, Gosauseestraße 152, 4825 Gosau, Austria",
+            "destination": "Gosausee Parkplatz, Gosauseestraße 152, 4825 Gosau, Austria",
+            "waypoints": [
+              "Gasthof Gosausee, 4825 Gosau, Austria",
+              "Vorderer Gosausee Rundweg, Gosau, Austria"
+            ]
+          }
+        },
+        {
+          "name": "Abtenau / Karkogel — רכבל ומגלשות הרים",
+          "meta": [
+            "נקודת מוצא: Karkogelbahn Talstation, Au 99, Abtenau",
+            "משך/מרחק: 60–90 דקות לפי תור ומספר נסיעות",
+            "רמת קושי: קל, אטרקציה בתשלום"
+          ],
+          "steps": [
+            "שלב 1: מגיעים לתחנת העמק של Karkogelbahn ובודקים מיד שעות פעילות, מזג אוויר ותור.",
+            "שלב 2: אם יש תור ארוך או מזג אוויר לא מתאים — לא מתעקשים, וחוזרים לפלאכאו.",
+            "שלב 3: אם נכנסים: קונים כרטיס לפי מספר נסיעות/שילוב רכבל-מגלשה, לפי האפשרויות במקום.",
+            "שלב 4: מגדירים מראש שעת יציאה כדי לא לחזור מאוחר מדי לדירה."
+          ],
+          "warns": [
+            "⚠️ האטרקציה תלויה במזג אוויר. לא להכניס אם השעה כבר גבולית."
+          ],
+          "walk": {
+            "origin": "Karkogelbahn Talstation, Au 99, 5441 Abtenau, Austria",
+            "destination": "Karkogelbahn Talstation, Au 99, 5441 Abtenau, Austria",
+            "waypoints": [
+              "Karkogel Sommerrodelbahn, Abtenau, Austria"
+            ]
+          }
+        }
+      ],
+      "hours": [
+        {
+          "text": "Hallstatt סירה/שייט קצר: רק אם יש זמן, מזג אוויר טוב וצפיפות סבירה. לבדוק במקום זמינות, מחירים ותנאי שייט.",
+          "links": []
+        },
+        {
+          "text": "Karkogel / Abtenau Sommerrodelbahn: אטרקציה בתשלום ושעות פעילות עונתיות. לבדוק שעות, מזג אוויר, תורים וכרטיסים באתר הרשמי/במקום לפני קנייה.",
+          "links": [
+            {
+              "label": "🔗 אתר רשמי",
+              "url": "https://www.abtenau-info.at/"
+            }
+          ]
+        },
+        {
+          "text": "Lucky Flitzer: אופציונלי בלבד אם חוזרים מוקדם. פעילות בתשלום ותלויה בשעות עונתיות/מזג אוויר; לבדוק לפני הגעה.",
+          "links": [
+            {
+              "label": "🔗 אתר רשמי",
+              "url": "https://www.lucky-flitzer.at/"
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "לא להפוך את האלשטאט ליום שלם — היעד הבא הוא גוזאו, ואז אבטנאו.",
+        "אם מאחרים אחרי Gosausee, Karkogel הופך לאופציה שמדלגים עליה.",
+        "Lucky Flitzer נשאר אופציונלי בלבד בסוף היום — רק אם חוזרים מוקדם ויש מספיק זמן לפני סגירה; לא לדחוף בכוח אחרי יום ארוך."
+      ],
+      "nav": [
+        {
+          "dest": "Hallstatt Parking P2",
+          "addr": "Kohlstattweg, 4830 Hallstatt, Austria"
+        },
+        {
+          "dest": "Gosausee",
+          "addr": "Gosauseestraße 152, 4825 Gosau, Austria"
+        },
+        {
+          "dest": "Karkogelbahn Abtenau",
+          "addr": "Au 99, 5441 Abtenau, Austria"
+        },
+        {
+          "dest": "Appartement Unterbichl",
+          "addr": "Bichlweg 21, 5542 Flachau, Austria"
+        },
+        {
+          "dest": "Lucky Flitzer — אופציונלי בלבד",
+          "addr": "Unterberggasse 172, 5542 Flachau, Austria"
+        }
+      ],
+      "date": "2026-07-01",
+      "coords": {
+        "lat": 47.5347939,
+        "lon": 13.5988875
+      },
+      "driveMin": 85
+    },
+    {
+      "n": 5,
+      "kicker": "יום 5 · חמישי · 02.07.2026",
+      "title": "🏔️ Liechtensteinklamm + Geisterberg: נקיק ומפל בבוקר, עלייה לאלפנדורף/Geisterberg לפעילות הר משפחתית, וסיום אופציונלי ב-Lucky Flitzer אם יש זמן לפני סגירה.",
+      "drive": {
+        "origin": "Bichlweg 21, 5542 Flachau, Austria",
+        "destination": "Bichlweg 21, 5542 Flachau, Austria",
+        "waypoints": [
+          "Liechtensteinklammstraße, 5600 St. Johann im Pongau, Austria",
+          "Alpendorf 2, 5600 St. Johann im Pongau, Austria",
+          "Unterberggasse 172, 5542 Flachau, Austria"
+        ]
+      },
+      "summary": "היום נשארים קרוב יחסית לפלאכאו ובונים יום אקטיבי, משפחתי וגמיש בלי נסיעות ארוכות. מתחילים בנקיק Liechtensteinklamm כדי ליהנות מההליכה בין קירות הסלע, המים והמפל לפני עומס גדול, ממשיכים לאזור Alpendorf / Geisterberg לפעילות הר משפחתית בקצב רגוע, ומשאירים את Lucky Flitzer כאופציית סיום בלבד אם נשאר זמן אמיתי לפני הסגירה. Jägersee אינו חלק מהיום הזה.",
+      "timeline": [
+        "08:30 יציאה.",
+        "09:00–10:45 Liechtensteinklamm עם הפתיחה.",
+        "11:15 Alpendorf / Geisterberg.",
+        "12:30–15:00 פעילות בהר וצהריים.",
+        "16:00–18:00 Lucky Flitzer אופציונלי."
+      ],
+      "weather": [
+        "Liechtensteinklamm / Geisterberg: באזור הנקיק לח וקריר יותר גם בקיץ; בהר מעל Alpendorf צפוי מזג נעים אך חשוף יותר לרוח ולגשם מקומי.",
+        "משמעות ליום: נעליים סגורות חובה בנקיק; אם השבילים רטובים או יש רוח בהר — לקצר את Geisterberg ולהשאיר את Lucky Flitzer כאופציה בלבד."
+      ],
+      "routes": [
+        {
+          "name": "Liechtensteinklamm — מסלול עד המפל וחזרה",
+          "meta": [
+            "נקודת מוצא: Parkplatz P4 Liechtensteinklamm",
+            "משך/מרחק: 75–105 דקות; הלוך-חזור על שבילי עץ/מדרגות",
+            "רמת קושי: קל-בינוני; לח בגלל מים ומדרגות"
+          ],
+          "steps": [
+            "שלב 1: מחנים ב-P4 ולא מנסים להתקרב עם הוואן לאזור צפוף יותר.",
+            "שלב 2: מהחניון הולכים לשער הכניסה/קופות לפי השילוט.",
+            "שלב 3: אחרי הכניסה הולכים ברצף פנימה עד המפל — לא להתעכב מדי בתחילת המסלול כדי להקדים קבוצות.",
+            "שלב 4: בדרך חזור עוצרים לצילום מדרגות Helix והמעברים הצרים.",
+            "שלב 5: חוזרים באותה דרך לחניון."
+          ],
+          "warns": [
+            "⚠️ נעליים סגורות חובה. השביל רטוב/לח, לא מתאים לכפכפים."
+          ],
+          "walk": {
+            "origin": "Parkplatz P4 Liechtensteinklamm, St. Johann im Pongau, Austria",
+            "destination": "Parkplatz P4 Liechtensteinklamm, St. Johann im Pongau, Austria",
+            "waypoints": [
+              "Liechtensteinklamm entrance, St. Johann im Pongau, Austria",
+              "Helix staircase Liechtensteinklamm, Austria",
+              "Liechtensteinklamm waterfall, Austria"
+            ]
+          }
+        },
+        {
+          "name": "Geisterberg / Alpendorf — מסלול הר משפחתי",
+          "meta": [
+            "נקודת מוצא: תחנת רכבל Alpendorf",
+            "משך/מרחק: 2–3 שעות כולל רכבל ופעילות; משתנה לפי קצב",
+            "רמת קושי: קל-בינוני"
+          ],
+          "steps": [
+            "שלב 1: מחנים בחניה פתוחה ליד תחנת Alpendorf. לא להיכנס לחניון מקורה אם יש ספק גובה.",
+            "שלב 2: עולים ברכבל לפי שעות הפעילות של Snow Space / Geisterberg.",
+            "שלב 3: בפסגה בוחרים מסלול לפי אנרגיה: מסלול קצר סביב התחנות או הליכה לכיוון Gernkogel אם הקבוצה רוצה.",
+            "שלב 4: מגדירים מראש שעת ירידה אחרונה ולא חורגים ממנה."
+          ],
+          "warns": [
+            "⚠️ הרבה מתקנים לילדים/משפחות — לא חייבים “לכבוש פסגה” כדי ליהנות."
+          ],
+          "walk": null
+        }
+      ],
+      "hours": [
+        {
+          "text": "Liechtensteinklamm: כרטיס כניסה נדרש. האתר עונתי; בחורף סגור. לבדוק שעות וכרטיסים בבוקר היציאה.",
+          "links": [
+            {
+              "label": "🔗 אתר רשמי",
+              "url": "https://www.liechtensteinklamm.at/"
+            }
+          ]
+        },
+        {
+          "text": "Geisterberg / Alpendorf: נדרש כרטיס רכבל/פעילות לפי Snow Space Salzburg. לבדוק שעות רכבל, מזג אוויר וכרטיסים.",
+          "links": [
+            {
+              "label": "🔗 אתר רשמי",
+              "url": "https://www.snow-space.com/en/summer/geisterberg"
+            }
+          ]
+        },
+        {
+          "text": "Lucky Flitzer: אופציונלי, תלוי חזרה מוקדמת ושעות פעילות. לבדוק באתר הרשמי לפני הגעה.",
+          "links": [
+            {
+              "label": "🔗 אתר רשמי",
+              "url": "https://www.lucky-flitzer.at/"
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "הנקיק בבוקר. אם מגיעים מאוחר, העומס מורגש מאוד."
+      ],
+      "nav": [
+        {
+          "dest": "Liechtensteinklamm P4",
+          "addr": "Liechtensteinklammstraße, 5600 St. Johann im Pongau, Austria"
+        },
+        {
+          "dest": "Alpendorf / Geisterberg",
+          "addr": "Alpendorf 2, 5600 St. Johann im Pongau, Austria"
+        },
+        {
+          "dest": "Lucky Flitzer",
+          "addr": "Unterberggasse 172, 5542 Flachau, Austria"
+        }
+      ],
+      "date": "2026-07-02",
+      "coords": {
+        "lat": 47.3475782,
+        "lon": 13.2026049
+      },
+      "driveMin": 25
+    },
+    {
+      "n": 6,
+      "kicker": "יום 6 · שישי · 03.07.2026",
+      "title": "🧗‍♂️ Flachau + Therme Amadé: פעילות בוקר קרובה בדירה/Adventure Flachau, מנוחה וצהריים, ואז Therme Amadé לקראת סוף היום וקניות לשבת.",
+      "drive": {
+        "origin": "Bichlweg 21, 5542 Flachau, Austria",
+        "destination": "Bichlweg 21, 5542 Flachau, Austria",
+        "waypoints": [
+          "Hermann-Maier-Platz 1, 5542 Flachau, Austria",
+          "Thermenplatz 1, 5541 Altenmarkt im Pongau, Austria",
+          "Flachauer Str. 344, 5542 Flachau, Austria"
+        ]
+      },
+      "summary": "זהו יום מאוזן וקל יותר סביב פלאכאו, שנועד לתת למשפחה אוויר אחרי כמה ימי טיול מלאים. הבוקר מוקדש לפעילות קרובה כמו Adventure Flachau בהתאם למזג האוויר ולאנרגיה של כולם, אחר כך משלבים מנוחה וארוחת צהריים, ואת Therme Amadé משאירים בכוונה לחלק המאוחר של היום כדי לסיים בבריכות, מגלשות ורוגע. בסוף היום משלימים קניות לשבת בלי להפוך את היום לעמוס.",
+      "timeline": [
+        "09:30–13:30 Adventure Flachau.",
+        "13:30–14:30 מנוחה/צהריים.",
+        "15:00–19:00 Therme Amadé.",
+        "19:15 MPREIS להשלמת קניות."
+      ],
+      "weather": [
+        "Flachau / Altenmarkt: יום עמק קיצי צפוי להיות נעים וחמים, לרוב 18–27°C; גשם מקומי אפשרי, אך Therme Amadé מתאים גם למזג אוויר פחות טוב.",
+        "משמעות ליום: פעילות חוץ בבוקר רק אם נעים ויבש; אם יש גשם — לקצר Adventure Flachau ולהעביר יותר זמן ל-Therme Amadé."
+      ],
+      "routes": [
+        {
+          "name": "Adventure Flachau — התמצאות קצרה",
+          "meta": [
+            "נקודת מוצא: Hermann-Maier-Platz / מרכז פלאכאו",
+            "משך/מרחק: לפי הפעילות, בדרך כלל 2–4 שעות",
+            "רמת קושי: משתנה לפי מסלול חבלים"
+          ],
+          "steps": [
+            "שלב 1: להגיע עם נעליים סגורות ובגדים נוחים.",
+            "שלב 2: לפני תשלום לשאול אילו מסלולים פתוחים ומה גיל/גובה נדרש לכל מסלול.",
+            "שלב 3: לקבוע נקודת מפגש ברורה למי שלא עושה מסלול גבוה.",
+            "שלב 4: לא להשאיר ציוד יקר גלוי בוואן."
+          ],
+          "warns": [],
+          "walk": null
+        },
+        {
+          "name": "Therme Amadé — כניסה, לוקר, מגלשות ויציאה",
+          "meta": [
+            "נקודת מוצא: Thermenplatz 1",
+            "משך/מרחק: 3–4 שעות",
+            "רמת קושי: קל"
+          ],
+          "steps": [
+            "שלב 1: להכין תיק טרמה נפרד: בגדי ים, מגבות, כפכפים, שקית רטובה, מים.",
+            "שלב 2: בכניסה קונים כרטיס בקופה; לפי האתר אין אפשרות לשריין כרטיסים/מיטות שיזוף מראש ואין כרטיס אונליין לקיצור תור.",
+            "שלב 3: להתחיל בבריכות, אחר כך מגלשות. את Looping Slide לבדוק במקום כי היא פועלת בשעות/זמינות מוגדרות.",
+            "שלב 4: להשאיר 20–30 דקות לפני יציאה להחלפה, ייבוש ותשלום חריגת זמן אם יש."
+          ],
+          "warns": [
+            "⚠️ כרטיסי 2/4 שעות נספרים מהמעבר בכניסה; חריגה מחויבת לפי חצי שעה."
+          ],
+          "walk": null
+        }
+      ],
+      "hours": [
+        {
+          "text": "Therme Amadé: פתוח מדי יום 09:00–22:00; סוף רחצה/סאונה 21:40. כרטיסים בקופה בלבד; אין שריון כרטיסים/מיטות שיזוף ואין כרטיס אונליין שמדלג תור.",
+          "links": [
+            {
+              "label": "🔗 אתר רשמי",
+              "url": "https://www.thermeamade.at/en/opening-times/"
+            },
+            {
+              "label": "🎟️ כרטיסים",
+              "url": "https://www.thermeamade.at/en/prices/"
+            }
+          ]
+        },
+        {
+          "text": "Adventure Flachau: לבדוק בבוקר אילו מתקנים/מסלולים פתוחים, תנאי גיל/גובה ותנאי מזג אוויר.",
+          "links": [
+            {
+              "label": "🔗 אתר רשמי",
+              "url": "https://www.adventure-flachau.com/"
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "להשאיר את הקניות לסוף היום רק אם הטרמה לא מתארכת.",
+        "לא להגיע לטרמה עם כל המזוודות/ציוד יקר גלוי ברכב."
+      ],
+      "nav": [
+        {
+          "dest": "Adventure Flachau",
+          "addr": "Hermann-Maier-Platz 1, 5542 Flachau, Austria"
+        },
+        {
+          "dest": "Therme Amadé",
+          "addr": "Thermenplatz 1, 5541 Altenmarkt im Pongau, Austria"
+        },
+        {
+          "dest": "MPREIS Flachau",
+          "addr": "Flachauer Str. 344, 5542 Flachau, Austria"
+        }
+      ],
+      "date": "2026-07-03",
+      "coords": {
+        "lat": 47.3033637,
+        "lon": 13.3842157
+      },
+      "driveMin": 16
+    },
+    {
+      "n": 7,
+      "kicker": "יום 7 · שבת · 04.07.2026",
+      "title": "🥨 מעבר לטירול: צ׳ק-אאוט מפלאכאו, נסיעה נופית דרך אזור Hochkönig, עצירה ב-Schwarzsee, סיבוב קצר ב-Kitzbühel והגעה ללינה ב-Zell am Ziller.",
+      "drive": {
+        "origin": "Bichlweg 21, 5542 Flachau, Austria",
+        "destination": "6280 Zell am Ziller, Austria",
+        "waypoints": [
+          "Schwarzsee, 6370 Kitzbühel, Austria",
+          "Hahnenkammstraße 1a, 6370 Kitzbühel, Austria"
+        ]
+      },
+      "summary": "היום מחליפים בסיס ועוברים מחבל זלצבורג לעמק הצילרטל שבטירול. בחרנו במסלול אקטיבי, נופי ובטוח לחלוטין, ללא פחד גבהים, העובר דרך אזור ה-Hochkönig המרהיב, עצירה מרגיעה באגם Schwarzsee וביקור בעיירה האייקונית Kitzbühel. זהו יום מעבר, אבל הוא בנוי כך שגם הדרך עצמה תהיה חלק יפה מהטיול ולא רק נסיעה מנהלתית.",
+      "timeline": [
+        "09:00 צ׳ק-אאוט מפלאכאו.",
+        "נסיעה נופית דרך B164 / Hochkönig לפי התוכנית.",
+        "11:00 Schwarzsee.",
+        "13:45 Kitzbühel.",
+        "17:00 Zell am Ziller."
+      ],
+      "weather": [
+        "יום מעבר מפלאכאו לטירול: בעמקים צפוי קיץ נוח סביב 18–26°C, אך במעברי דרך ובאגמים תיתכן ירידת טמפרטורה וגשם מקומי.",
+        "משמעות ליום: אם יבש — Schwarzsee ו-Kitzbühel נעימים לעצירות קצרות; אם גשום — לקצר עצירות ולשמור על מעבר רגוע עם המזוודות."
+      ],
+      "routes": [
+        {
+          "name": "Schwarzsee — עצירה נינוחה באגם",
+          "meta": [
+            "נקודת מוצא: חניה ליד Schwarzsee",
+            "משך/מרחק: 45–75 דקות",
+            "רמת קושי: קל"
+          ],
+          "steps": [
+            "שלב 1: מחנים בחניה מסודרת ליד האגם.",
+            "שלב 2: הולכים חלק מהשביל סביב האגם או עושים הקפה קצרה לפי זמן.",
+            "שלב 3: עוצרים לצילום השתקפויות והרים, פיקניק קל אם מתאים.",
+            "שלב 4: חוזרים לרכב בלי להשאיר ציוד יקר גלוי."
+          ],
+          "warns": [],
+          "walk": null
+        },
+        {
+          "name": "Kitzbühel — סיבוב קצר במרכז",
+          "meta": [
+            "נקודת מוצא: Hahnenkammstraße 1a / P1",
+            "משך/מרחק: 45–90 דקות",
+            "רמת קושי: קל"
+          ],
+          "steps": [
+            "שלב 1: חונים ב-P1 פתוח ליד Hahnenkammbahn.",
+            "שלב 2: הולכים למרכז/מדרחוב הצבעוני, בלי להיכנס לסמטאות עם הוואן.",
+            "שלב 3: עוצרים לקפה/גלידה וצילום בתים צבעוניים.",
+            "שלב 4: חוזרים לרכב לפני עומס אחר הצהריים כדי להגיע לצילרטל בזמן."
+          ],
+          "warns": [],
+          "walk": null
+        }
+      ],
+      "hours": [],
+      "tips": [
+        "מזוודות ברכב: ציוד יקר מוסתר, דרכונים ומצלמות איתכם.",
+        "לתעד כתובת לינה מדויקת בצילרטל לפני היציאה מפלאכאו."
+      ],
+      "nav": [
+        {
+          "dest": "Schwarzsee",
+          "addr": "Schwarzsee, 6370 Kitzbühel, Austria"
+        },
+        {
+          "dest": "Kitzbühel P1",
+          "addr": "Hahnenkammstraße 1a, 6370 Kitzbühel, Austria"
+        },
+        {
+          "dest": "Zell am Ziller",
+          "addr": "6280 Zell am Ziller, Austria"
+        }
+      ],
+      "date": "2026-07-04",
+      "coords": {
+        "lat": 47.4463585,
+        "lon": 12.3911473
+      },
+      "driveMin": 82
+    },
+    {
+      "n": 8,
+      "kicker": "יום 8 · ראשון · 05.07.2026",
+      "title": "🥾 Schlegeis + Olpererhütte: כביש אלפיני למאגר Schlegeis, הליכה/טיפוס לבקתת Olpererhütte והגשר רק אם מזג האוויר יציב; אחרת נשארים סביב הסכר והאגם.",
+      "drive": {
+        "origin": "6280 Zell am Ziller, Austria",
+        "destination": "6280 Zell am Ziller, Austria",
+        "waypoints": [
+          "Schlegeis Stausee Trailhead, 6295 Dornauberg, Austria",
+          "Olpererhütte, 6295 Dornauberg, Austria"
+        ]
+      },
+      "summary": "זהו יום טבע אלפיני משמעותי יותר, עם כביש הררי, מאגר מים טורקיז ואחת מנקודות הצילום המרשימות בטיול. נוסעים אל Schlegeis Alpine Road ומתחילים מהאגם והסכר, ורק אם מזג האוויר יציב והקבוצה מרגישה טוב ממשיכים לטיפוס לכיוון Olpererhütte והגשר המפורסם. אם התנאים לא מתאימים, היום עדיין נשאר יפה ומוצלח סביב הסכר, האגם והנוף — בלי להתעקש על עלייה מיותרת.",
+      "timeline": [
+        "08:00 יציאה מוקדמת.",
+        "09:30 תחילת מסלול באזור Schlegeis Stausee.",
+        "11:30 הגעה משוערת ל-Olpererhütte / גשר.",
+        "13:30 ירידה.",
+        "16:00 חזרה לכיוון הדירה."
+      ],
+      "weather": [
+        "Schlegeis / Olpererhütte הוא יום גובה: באגם ובשביל לבקתה צפוי להיות קריר משמעותית מהעמק, לעיתים 8–16°C, עם רוח ועננות משתנה.",
+        "משמעות ליום: לצאת רק עם שכבות, מעיל גשם דק ונעלי הליכה; אם יש סיכוי לסופת רעמים/ראות גרועה — לא מטפסים ל-Olpererhütte."
+      ],
+      "routes": [
+        {
+          "name": "Schlegeis → Olpererhütte → הגשר התלוי",
+          "meta": [
+            "נקודת מוצא: Schlegeis Stausee Trailhead",
+            "משך/מרחק: עלייה 1.5–2 שעות, ירידה 1–1.5 שעות; יום כולל 4–5 שעות",
+            "רמת קושי: בינוני-גבוה"
+          ],
+          "steps": [
+            "שלב 1: מחנים רק בחניון מסודר בסוף כביש Schlegeis.",
+            "שלב 2: לפני התחלת הטיפוס: שכבות, מים, חטיפים, גשם/רוח, שירותים אם יש.",
+            "שלב 3: עולים בקצב אחיד; לא להתפזר לקבוצות רחוקות.",
+            "שלב 4: בבקתה: מנוחה, אוכל/שתייה לפי עומס וזמן.",
+            "שלב 5: לגשר התלוי ניגשים רק אם הקרקע יבשה, אין ערפל כבד ואין עומס מסוכן.",
+            "שלב 6: יורדים באותו שביל ולא מושכים לשבילים צדדיים."
+          ],
+          "warns": [
+            "⚠️ Google Maps בהרים הוא רק עזר. ללכת לפי סימוני שבילים, מפה אופליין ותחזית."
+          ],
+          "walk": {
+            "origin": "Schlegeis Stausee Trailhead, 6295 Dornauberg, Austria",
+            "destination": "Schlegeis Stausee Trailhead, 6295 Dornauberg, Austria",
+            "waypoints": [
+              "Olpererhütte, 6295 Dornauberg, Austria",
+              "Olpererhütte Suspension Bridge, Austria"
+            ]
+          }
+        }
+      ],
+      "hours": [
+        {
+          "text": "Schlegeis Alpine Road: כביש אגרה/גישה עונתית. לבדוק בבוקר פתיחה, עומס, מזג אוויר ותשלום באתר VERBUND.",
+          "links": [
+            {
+              "label": "🔗 אתר רשמי",
+              "url": "https://www.verbund.com/en-at/about-verbund/visitors-centres/schlegeis-alpine-road"
+            }
+          ]
+        },
+        {
+          "text": "Olpererhütte: אין כרטיס למסלול עצמו, אך הבקתה תלויה במזג אוויר/תפוסה. לבדוק אתר/מזג אוויר לפני הטיפוס.",
+          "links": [
+            {
+              "label": "🔗 אתר רשמי",
+              "url": "https://www.olpererhuette.de/"
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "זה היום הכי רגיש למזג אוויר — לא לצאת אם יש סופות רעמים בצהריים.",
+        "להגדיר נקודת חזרה בזמן: אם ב-11:30 לא קרובים לבקתה, שוקלים חזרה."
+      ],
+      "nav": [
+        {
+          "dest": "Schlegeis Trailhead",
+          "addr": "Schlegeis Stausee Trailhead, 6295 Dornauberg, Austria"
+        },
+        {
+          "dest": "Olpererhütte",
+          "addr": "Olpererhütte, 6295 Dornauberg, Austria"
+        }
+      ],
+      "date": "2026-07-05",
+      "coords": {
+        "lat": 47.1672188,
+        "lon": 11.8638664
+      },
+      "driveMin": 75
+    },
+    {
+      "n": 9,
+      "kicker": "יום 9 · שני · 06.07.2026",
+      "title": "💦 מפלי קרימל: יום טבע עוצמתי סביב המפלים הגבוהים באוסטריה, הליכה מדורגת בשביל המפלים, נקודות תצפית וצילום, וחזרה רגועה לצילרטל.",
+      "drive": {
+        "origin": "6280 Zell am Ziller, Austria",
+        "destination": "6280 Zell am Ziller, Austria",
+        "waypoints": [
+          "Achenseestraße 10, 6212 Maurach, Austria",
+          "6213 Pertisau, Austria"
+        ]
+      },
+      "summary": "היום מחליפים את יום Rofan/AIRROFAN ביום טבע חזק ומרשים יותר במפלי קרימל. בחרנו במסלול שמתאים למשפחה שאוהבת נוף, צילום ומים, בלי פעילות קיצונית ובלי תלות ברכבל או ברוח. יוצאים מצילרטל דרך אזור Gerlos לכיוון Krimml, מטיילים בשביל המפלים לפי הכוח והזמן, ועוצרים בנקודות התצפית הקרובות למים. אין חובה להגיע עד הסוף העליון — גם החלק התחתון והאמצעי מספקים חוויה חזקה מאוד.",
+      "timeline": [
+        "08:30 יציאה מצל-אם-צילר לכיוון Krimml דרך Gerlos.",
+        "09:30–09:45 הגעה לחניון Krimmler Wasserfälle / WasserWelten והתארגנות.",
+        "10:00–12:30 הליכה בשביל המפלים עד המפל התחתון והאמצעי, עם עצירות צילום.",
+        "12:30–13:30 צהריים/קפה באזור Krimml או מנוחה קצרה ליד מתחם הכניסה.",
+        "13:30–15:00 המשך רק אם יש כוח: תצפיות נוספות בשביל המפלים או ביקור קצר ב-WasserWelten.",
+        "15:30–17:00 חזרה רגועה לצילרטל."
+      ],
+      "weather": [
+        "Krimml / Wasserfallweg: באזור המפלים קריר ולח יותר מאשר בעמק, גם ביום קיץ. צפוי רסס מים קבוע ליד נקודות התצפית, והשביל עלול להיות רטוב וחלק.",
+        "משמעות ליום: נעליים סגורות חובה, מומלץ מעיל גשם דק/שכבה קלה וכיסוי לציוד צילום. אם יורד גשם חזק או יש סופות רעמים — מסתפקים במפל התחתון/קירסינגרפלאץ ולא מטפסים גבוה."
+      ],
+      "routes": [
+        {
+          "name": "Krimmler Wasserfallweg — שביל המפלים הרשמי",
+          "meta": [
+            "נקודת מוצא: חניוני Krimmler Wasserfälle / WasserWelten",
+            "משך/מרחק: 10–15 דקות עד המפל התחתון; כ-2–4 שעות אם ממשיכים בשביל המפלים לפי קצב",
+            "רמת קושי: קל עד בינוני-גבוה, בגלל עלייה, מדרגות ושביל רטוב"
+          ],
+          "steps": [
+            "שלב 1: מחנים בחניון מסודר ליד Krimmler Wasserfälle / WasserWelten, לוקחים מים, שכבה קלה וכיסוי לציוד צילום.",
+            "שלב 2: הולכים 10–15 דקות אל המפל התחתון וקירסינגרפלאץ. זו נקודת חובה גם אם לא ממשיכים גבוה יותר.",
+            "שלב 3: ממשיכים בשביל המפלים המסומן בין נקודות התצפית. עוצרים לצילום רק במקומות רחבים ובטוחים, לא באמצע מעבר צר.",
+            "שלב 4: בנקודת ביניים מחליטים אם ממשיכים לכיוון המפל העליון או חוזרים. אין חובה להשלים את כל העלייה כדי שהיום יהיה מוצלח."
+          ],
+          "warns": [
+            "⚠️ השביל רטוב מרסס המפלים גם ביום יפה. לא להגיע עם כפכפים, ולא להוציא רחפן באזור בלי בדיקה רגולטורית מקומית מוקדמת."
+          ],
+          "walk": {
+            "origin": "Rofan Seilbahn Bergstation, Maurach, Austria",
+            "destination": "Rofan Seilbahn Bergstation, Maurach, Austria",
+            "waypoints": [
+              "Erfurter Hütte, Maurach, Austria",
+              "Adlerhorst Aussichtsplattform Gschöllkopf, Maurach, Austria"
+            ]
+          }
+        },
+        {
+          "name": "WasserWelten Krimml — אופציה קצרה ליד הכניסה",
+          "meta": [
+            "נקודת מוצא: מתחם WasserWelten ליד החניה",
+            "משך/מרחק: 45–90 דקות",
+            "רמת קושי: קל, מתאים כתוספת אם רוצים פעילות מסודרת יותר אחרי המפלים"
+          ],
+          "steps": [
+            "שלב 1: נכנסים רק אם נשאר זמן וכוח אחרי שביל המפלים.",
+            "שלב 2: משתמשים בזה כפעילות משלימה ולא כתחליף למפלים עצמם.",
+            "שלב 3: אם הקבוצה עייפה — מדלגים, אוכלים משהו קל וחוזרים לצילרטל."
+          ],
+          "warns": [],
+          "walk": null
+        }
+      ],
+      "hours": [
+        {
+          "text": "Krimmler Wasserfälle / Wasserfallweg: שביל המפלים פתוח ברציפות מאמצע אפריל עד סוף אוקטובר, פתוח כל היום ובתשלום. דמי שימוש בשביל: מבוגר €9.00, ילד גיל 6–15 €4.50.",
+          "links": [
+            {
+              "label": "🔗 אתר רשמי",
+              "url": "https://www.rofanseilbahn.at/tarife-und-betriebszeiten/"
+            }
+          ]
+        },
+        {
+          "text": "כרטיס משולב Krimmler WasserWelten + Wasserfallweg: מבוגר €15.90, ילד גיל 6–15 €7.90. לפי האתר הרשמי, הכרטיס המשולב כולל גם את דמי החניה בחניון WasserWelten P4 ונרכש רק בקופת WasserWelten.",
+          "links": [
+            {
+              "label": "🔗 אתר רשמי",
+              "url": "https://www.rofanseilbahn.at/airrofan/"
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "טיפ יומי: לא חייבים להגיע עד המפל העליון. עדיף ליהנות מהחלק התחתון והאמצעי בקצב רגוע מאשר להפוך את היום לטיפוס מאומץ מדי.",
+        "צילום: להכין מטלית לעדשה/אייפון בגלל רסס המים. לצלם וידאו קצר בהילוך איטי ליד נקודות התצפית, אבל לשמור את הציוד יבש."
+      ],
+      "nav": [
+        {
+          "dest": "Krimmler Wasserfälle / WasserWelten Krimml",
+          "addr": "5743 Krimml 47, Austria"
+        },
+        {
+          "dest": "Zell am Ziller",
+          "addr": "6280 Zell am Ziller, Austria"
+        }
+      ],
+      "date": "2026-07-06",
+      "coords": {
+        "lat": 47.2219102,
+        "lon": 12.1754599
+      },
+      "driveMin": 82
+    },
+    {
+      "n": 10,
+      "kicker": "יום 10 · שלישי · 07.07.2026",
+      "title": "🏔️ Mayrhofen + Stilluptal: סיבוב קצר במאיירהופן, נסיעה זהירה ל-Stillup הליכה ליד האגם.",
+      "drive": {
+        "origin": "6280 Zell am Ziller, Austria",
+        "destination": "6280 Zell am Ziller, Austria",
+        "waypoints": [
+          "Hauptstraße, 6290 Mayrhofen, Austria",
+          "Stillup 945, 6290 Mayrhofen, Austria",
+          "Rohr 23, 6280 Zell am Ziller, Austria"
+        ]
+      },
+      "summary": "היום מתוכנן כיום טבע גמיש בעמק צילרטל, עם בחירה בין Stilluptal לבין חלופה קלה ונוחה יותר סביב Zillertal Arena. אם מזג האוויר טוב והקבוצה מרגישה רעננה, נוסעים בזהירות ל-Stillup ונהנים מהאגם, המפלים והעמק בהליכה רגועה. אם יש עייפות, גשם או רצון ביום פשוט יותר, עוברים לחלופה של Rosenalmbahn, Fichten Schloss / Fichtensee ו-Arena Coaster — בלי תחושת פספוס.",
+      "timeline": [
+        "09:00 Mayrhofen: סיור קצר.",
+        "11:45 נסיעה ל-Stillup Alpine Road.",
+        "12:15 הליכה לאורך Stillup Stausee.",
+        "13:30 Stillupperhaus / צהריים.",
+        "16:00 חזרה.",
+        "חלופה: Rosenalmbahn, Fichtenschloss, Fichtensee ו-Arena Coaster."
+      ],
+      "weather": [
+        "Mayrhofen / Stilluptal: בעמק צילרטל צפוי קיץ נעים-חמים סביב 20–28°C; ב-Stillup ובאזור המים קריר יותר, עם אפשרות לעננות וגשם בהרים.",
+        "משמעות ליום: Stillup מתאים כשיבש והנהיגה רגועה; אם הכביש רטוב/גשום או הקבוצה עייפה — לבחור Rosenalmbahn / Arena Coaster."
+      ],
+      "routes": [
+        {
+          "name": "Mayrhofen — סיבוב קצר במרכז",
+          "meta": [
+            "נקודת מוצא: Hauptstraße Mayrhofen",
+            "משך/מרחק: 30–60 דקות",
+            "רמת קושי: קל"
+          ],
+          "steps": [
+            "שלב 1: מחנים בחניה מסודרת במרכז/ליד Penkenbahn לפי זמינות.",
+            "שלב 2: הולכים לאורך Hauptstraße, עוצרים לקפה/מאפייה או חנות ציוד אם צריך.",
+            "שלב 3: לא מתעכבים יותר מדי — היום המרכזי הוא Stillup או החלופה."
+          ],
+          "warns": [],
+          "walk": {
+            "origin": "Hauptstraße, 6290 Mayrhofen, Austria",
+            "destination": "Hauptstraße, 6290 Mayrhofen, Austria",
+            "waypoints": [
+              "Penkenbahn Mayrhofen, Hauptstraße 472, 6290 Mayrhofen, Austria"
+            ]
+          }
+        },
+        {
+          "name": "Stillup Stausee → Stillupperhaus",
+          "meta": [
+            "נקודת מוצא: Stillup Stausee Parkplatz",
+            "משך/מרחק: 60–120 דקות הליכה רגועה הלוך-חזור לפי נקודת החזרה",
+            "רמת קושי: קל-בינוני, בעיקר בגלל כביש הגישה והמרחק"
+          ],
+          "steps": [
+            "שלב 1: נוסעים בכביש בזהירות; עם וואן לתת זכות קדימה ולהשתמש במפרצי מעבר.",
+            "שלב 2: מחנים רק בחניה מסודרת ליד הסכר/האגם.",
+            "שלב 3: הולכים לאורך הגדה לכיוון Stillupperhaus, בקצב רגוע.",
+            "שלב 4: עוצרים לצילום מפלים, מים טורקיז והעמק.",
+            "שלב 5: חוזרים באותה דרך ולא נכנסים למסלולים צדדיים אם מזג האוויר לא יציב."
+          ],
+          "warns": [],
+          "walk": {
+            "origin": "Stillup Stausee Parkplatz, Stillup 945, 6290 Mayrhofen, Austria",
+            "destination": "Stillup Stausee Parkplatz, Stillup 945, 6290 Mayrhofen, Austria",
+            "waypoints": [
+              "Stillupperhaus, Stillupklamm 826, 6290 Mayrhofen, Austria"
+            ]
+          }
+        },
+        {
+          "name": "חלופה: Rosenalm / Fichtenschloss / Fichtensee / Arena Coaster",
+          "meta": [
+            "נקודת מוצא: Rosenalmbahn valley station, Rohr 23",
+            "משך/מרחק: 3.5–5 שעות",
+            "רמת קושי: קל-בינוני"
+          ],
+          "steps": [
+            "שלב 1: מחנים ב-Rohr 23 ליד Rosenalmbahn / Arena Coaster.",
+            "שלב 2: קונים כרטיס לרכבל Rosenalmbahn ועולים ל-Rosenalm.",
+            "שלב 3: הולכים ל-Fichtenschloss, ממשיכים ל-Fichtensee וחוזרים לתחנת הרכבל.",
+            "שלב 4: בסיום יורדים לעמק ומסיימים ב-Arena Coaster שנמצא ליד תחנת העמק."
+          ],
+          "warns": [
+            "⚠️ זו חלופה טובה אם רוצים פחות כביש צר ויותר פעילות קרובה לדירה."
+          ],
+          "walk": {
+            "origin": "Rosenalmbahn Bergstation Rosenalm, Zell am Ziller, Austria",
+            "destination": "Rosenalmbahn Bergstation Rosenalm, Zell am Ziller, Austria",
+            "waypoints": [
+              "Fichtenschloss, Zell am Ziller, Austria",
+              "Fichtensee, Zell am Ziller, Austria"
+            ]
+          }
+        }
+      ],
+      "hours": [
+        {
+          "text": "Stillup Alpine Road: כביש אגרה/גישה מקומית. לבדוק פתיחה, תשלום ותנאי דרך לפני יציאה עם וואן.",
+          "links": [
+            {
+              "label": "🔗 אתר רשמי",
+              "url": "https://www.mayrhofen.at/en/service/arrival-mobility/drive/mountain-roads"
+            }
+          ]
+        },
+        {
+          "text": "Rosenalmbahn Zell am Ziller: שיא קיץ 01.07–31.08.2026: 09:00–17:45; עלייה אחרונה 17:15, ירידה אחרונה 17:45. הלוך-חזור עד Rosenalm: מבוגר €34.50, ילד €17.50; כרטיס אחר הצהריים מ-14:00: מבוגר €27.50, ילד €13.80.",
+          "links": [
+            {
+              "label": "🔗 אתר רשמי",
+              "url": "https://www.zillertalarena.com/en/summer/cable-cars/operating-hours/"
+            },
+            {
+              "label": "🎟️ כרטיסים",
+              "url": "https://www.zillertalarena.com/en/summer/cable-cars/tickets-prices/"
+            }
+          ]
+        },
+        {
+          "text": "Arena Coaster: 01.07–31.08.2026: 09:30–18:00. מסלול 1,450 מ׳. מחיר נסיעה אחת: מבוגר €8.00, ילד €5.30. הפעילות עשויה להיות מוגבלת בגלל מזג אוויר.",
+          "links": [
+            {
+              "label": "🔗 אתר רשמי",
+              "url": "https://www.zillertalarena.com/en/summer/sports-recreation/arena-coaster/"
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "עם וואן, Stillup דורש נהיגה סבלנית. אם יש חשש — לבחור בחלופה.",
+        "לא לקנות רכבל Rosenalmbahn אם מגיעים אחרי 15:00; לא יישאר מספיק זמן למעלה."
+      ],
+      "nav": [
+        {
+          "dest": "Mayrhofen Center",
+          "addr": "Hauptstraße, 6290 Mayrhofen, Austria"
+        },
+        {
+          "dest": "Stillup Stausee",
+          "addr": "Stillup 945, 6290 Mayrhofen, Austria"
+        },
+        {
+          "dest": "Rosenalmbahn / Arena Coaster",
+          "addr": "Rohr 23, 6280 Zell am Ziller, Austria"
+        }
+      ],
+      "date": "2026-07-07",
+      "coords": {
+        "lat": 47.1672188,
+        "lon": 11.8638664
+      },
+      "driveMin": 37
+    },
+    {
+      "n": 11,
+      "kicker": "יום 11 · רביעי · 08.07.2026",
+      "title": "🏛️ Innsbruck + אופציות קניות → Mittenwald → Munich Airport: יום סיום גמיש — סיבוב קצר באינסברוק או קניות, עצירה צפונה רק אם הזמן מאפשר, תדלוק, החזרת רכב והגעה לשדה ב-17:00.",
+      "drive": {
+        "origin": "6280 Zell am Ziller, Austria",
+        "destination": "Mietwagenzentrum, Munich Airport, Germany",
+        "waypoints": [
+          "Innrain 4, 6020 Innsbruck, Austria",
+          "Cytastraße 1, 6176 Völs, Austria",
+          "Dekan-Karl-Platz, 82481 Mittenwald, Germany",
+          "Walchensee, B11, Germany"
+        ]
+      },
+      "summary": "זהו יום הסיום, ולכן הוא בנוי כיום גמיש עם כלל ברזל אחד: לא מסכנים את ההגעה לשדה מינכן בשעה 17:00. הבסיס הוא אינסברוק קצרה, אפשרות קניות באזור אינסברוק לפי מצב הקבוצה, ואחר כך המשך צפונה דרך מיטנוואלד / Walchensee רק אם הזמן באמת מאפשר. CYTA בוולס היא אופציית הקניות המומלצת כי היא נוחה למסלול צפונה, DEZ ו-SILLPARK הן חלופות בתוך/ליד אינסברוק.",
+      "timeline": [
+        "08:00 צ׳ק-אאוט.",
+        "09:00–10:15 Innsbruck העיר העתיקה — סיבוב קצר בלבד, אם בוחרים בעיר.",
+        "10:30–12:00 אופציית קניות אחת: CYTA Völs מומלץ; DEZ / SILLPARK כחלופות.",
+        "12:30–14:00 Mittenwald לעצירה קצרה/צהריים — רק אם לא נגררתם בקניות.",
+        "14:30 לכל המאוחר יציאה לכיוון מינכן; אם יש עיכוב — מבטלים Walchensee.",
+        "16:00 תדלוק והחזרת רכב.",
+        "17:00 הגעה לשדה לטיסה LY0352 ב-20:00."
+      ],
+      "weather": [
+        "Innsbruck / Mittenwald / Walchensee: צפוי יום קיץ מתון יחסית, 18–27°C בעמקים, אבל גשם מקומי או עומסי תנועה יכולים לשנות את קצב היום.",
+        "משמעות ליום: מזג אוויר טוב מאפשר עצירות קצרות ויפות; כל גשם חזק/עיכוב בכביש מבטל עצירות כדי לשמור על הגעה לשדה ב-17:00."
+      ],
+      "routes": [
+        {
+          "name": "Innsbruck העיר העתיקה — מסלול קצר וברור",
+          "meta": [
+            "נקודת מוצא: Altstadtgarage, Innrain 4, 6020 Innsbruck",
+            "משך/מרחק: 90–120 דקות; 2–3 ק״מ",
+            "רמת קושי: קל"
+          ],
+          "steps": [
+            "שלב 1: יוצאים מהחניון לכיוון Innrain והכניסה לעיר העתיקה.",
+            "שלב 2: הולכים ל-Goldenes Dachl ומצלמים את הגג עם ההרים ברקע.",
+            "שלב 3: עוצרים ליד Helblinghaus לצילום החזית המעוטרת.",
+            "שלב 4: ממשיכים ל-Maria-Theresien-Straße לקפה/גלידה קצרה.",
+            "שלב 5: חוזרים לחניון דרך רחוב מקביל/סמטאות כדי לא להאריך מעבר לזמן."
+          ],
+          "warns": [
+            "⚠️ לא יום למוזיאונים ארוכים. זה סיבוב עירוני קצר לפני נסיעה לשדה."
+          ],
+          "walk": {
+            "origin": "Altstadtgarage, Innrain 4, 6020 Innsbruck, Austria",
+            "destination": "Altstadtgarage, Innrain 4, 6020 Innsbruck, Austria",
+            "waypoints": [
+              "Goldenes Dachl, Herzog-Friedrich-Straße 15, 6020 Innsbruck, Austria",
+              "Helbling Haus, Herzog-Friedrich-Straße 10, 6020 Innsbruck, Austria",
+              "Maria-Theresien-Straße, Innsbruck, Austria"
+            ]
+          }
+        },
+        {
+          "name": "Mittenwald — עצירה קצרה במרכז",
+          "meta": [
+            "נקודת מוצא: Dekan-Karl-Platz",
+            "משך/מרחק: 45–75 דקות",
+            "רמת קושי: קל"
+          ],
+          "steps": [
+            "שלב 1: מחנים באזור Dekan-Karl-Platz.",
+            "שלב 2: הולכים ל-Obermarkt לראות את הבתים המצוירים.",
+            "שלב 3: אם יש זמן: כניסת צילום קצרה לאזור כנסיית St. Peter und Paul מבחוץ.",
+            "שלב 4: חוזרים לרכב וממשיכים ל-Walchensee/שדה — לא מתעכבים."
+          ],
+          "warns": [],
+          "walk": {
+            "origin": "Dekan-Karl-Platz, 82481 Mittenwald, Germany",
+            "destination": "Dekan-Karl-Platz, 82481 Mittenwald, Germany",
+            "waypoints": [
+              "Obermarkt Mittenwald, Germany",
+              "St. Peter und Paul Mittenwald, Germany"
+            ]
+          }
+        }
+      ],
+      "hours": [
+        {
+          "text": "Innsbruck העיר העתיקה: המסלול החיצוני חופשי. אם מוסיפים Stadtturm/מוזיאון — רק אם יש זמן, ולבדוק במקום שעות/כרטיס.",
+          "links": []
+        },
+        {
+          "text": "CYTA Shoppingwelt Völs: לפי האתר הרשמי — 106 חנויות, 17 מקומות אוכל, ויותר מ-2,000 מקומות חניה חינם בזמן הקנייה עד 4 שעות. זו האופציה המועדפת לעצירה קצרה ויעילה ביום הטיסה.",
+          "links": []
+        },
+        {
+          "text": "DEZ Innsbruck: פתוח בדרך כלל שני–שישי 09:00–19:00, שבת 09:00–18:00, ראשון סגור. מתאים לקניון גדול ומסודר באינסברוק.",
+          "links": []
+        },
+        {
+          "text": "SILLPARK Innsbruck: פתוח בדרך כלל שני–שישי 09:00–19:00, שבת 09:00–18:00, ראשון סגור. יש כ-60 חנויות/מסעדות/שירותים ו-730 מקומות חניה תת-קרקעיים; לבדוק התאמה לגובה הוואן לפני כניסה לחניון.",
+          "links": []
+        }
+      ],
+      "tips": [
+        "להפריד בבוקר תיק עליה למטוס כדי לא לפתוח את כל המזוודות בשדה.",
+        "לתדלק לפני החזרת הרכב ולשמור קבלה/צילום מד דלק.",
+        "קניות ביום טיסה: לא יותר מ-60–90 דקות.",
+        "עם וואן ומזוודות עדיף CYTA או DEZ על פני SILLPARK, בגלל גישה וחניה פשוטות יותר."
+      ],
+      "nav": [
+        {
+          "dest": "Altstadtgarage Innsbruck",
+          "addr": "Innrain 4, 6020 Innsbruck, Austria"
+        },
+        {
+          "dest": "Mittenwald",
+          "addr": "Dekan-Karl-Platz, 82481 Mittenwald, Germany"
+        },
+        {
+          "dest": "Walchensee",
+          "addr": "Walchensee, B11, Germany"
+        },
+        {
+          "dest": "Sixt Return Munich Airport",
+          "addr": "Mietwagenzentrum, Munich Airport, Germany"
+        }
+      ],
+      "shopping": [
+        "אופציה 1 — CYTA Shoppingwelt Völs — מומלץ למסלול שלכם: מרכז קניות גדול ונוח ממערב לאינסברוק, קרוב ליציאה צפונה לכיוון Seefeld / Mittenwald / מינכן. מתאים לעצירה של 60–90 דקות לקניות יעילות, קפה, אוכל, שירותים וסופר/פארם/ביגוד. היתרון המרכזי: נוח יותר לוואן ולמסלול צפונה מאשר כניסה עמוקה לעיר.",
+        "אופציה 2 — DEZ Innsbruck — קניון גדול ומסודר בתוך אינסברוק, טוב אם רוצים מבחר קניון קלאסי: אופנה, נעליים, ספורט, אוכל ושירותים. מתאים אם ממילא נכנסים לצד העירוני של אינסברוק, אך פחות טבעי למסלול צפונה לעומת CYTA.",
+        "אופציה 3 — SILLPARK Innsbruck — קניון עירוני במרכז אינסברוק, מתאים אם עושים סיבוב רגלי בעיר ורוצים לשלב קניות קצרות/קפה. פחות מומלץ עם וואן ומזוודות בגלל מיקום עירוני וחניה תת-קרקעית — לבדוק גובה לפני כניסה.",
+        "כלל החלטה: ביום טיסה בוחרים מקסימום מרכז קניות אחד. אם נכנסים לקניות אחרי 12:00 — מבטלים עצירות נופיות ונוסעים לכיוון מינכן."
+      ],
+      "shoppingNav": [
+        {
+          "dest": "CYTA Shoppingwelt Völs — Cytastraße 1, 6176 Völs, Austria",
+          "addr": "Cytastraße 1, 6176 Völs, Austria"
+        },
+        {
+          "dest": "DEZ Innsbruck — Amraser-See-Straße 56a, 6020 Innsbruck, Austria",
+          "addr": "Amraser-See-Straße 56a, 6020 Innsbruck, Austria"
+        },
+        {
+          "dest": "SILLPARK Innsbruck — Museumstraße 38a, 6020 Innsbruck, Austria",
+          "addr": "Museumstraße 38a, 6020 Innsbruck, Austria"
+        }
+      ],
+      "date": "2026-07-08",
+      "coords": {
+        "lat": 47.2654296,
+        "lon": 11.3927685
+      },
+      "driveMin": 232
+    }
+  ],
+  "emergency": {
+    "note": "במצב חירום מסכן חיים חייגו 112 — חינם, עובד בכל אירופה גם ללא קו סלולרי. הסים שלכם הוא דאטה בלבד, לכן מול עסקים העדיפו WhatsApp או שיחת אינטרנט.",
+    "groups": [
+      {
+        "title": "חירום מקומי",
+        "contacts": [
+          {
+            "icon": "🚨",
+            "label": "חירום כללי — אירופה",
+            "sub": "משטרה · אמבולנס · כיבוי",
+            "tel": "112"
+          },
+          {
+            "icon": "🚑",
+            "label": "אמבולנס — אוסטריה",
+            "tel": "144"
+          },
+          {
+            "icon": "👮",
+            "label": "משטרה — אוסטריה",
+            "tel": "133"
+          },
+          {
+            "icon": "👮",
+            "label": "משטרה — גרמניה",
+            "tel": "110"
+          }
+        ]
+      },
+      {
+        "title": "ישראל",
+        "contacts": [
+          {
+            "icon": "🇮🇱",
+            "label": "שגרירות ישראל — וינה",
+            "sub": "Anton-Frank-Gasse 20, 1180 Wien",
+            "tel": "+43 1 476 46 0"
+          },
+          {
+            "icon": "📞",
+            "label": "חמ״ל משרד החוץ (24/7)",
+            "sub": "סיוע לישראלים בחו״ל",
+            "tel": "+972 2 530 3155"
+          }
+        ]
+      },
+      {
+        "title": "רכב, ביטוח ואשראי",
+        "contacts": [
+          {
+            "icon": "🚐",
+            "label": "Sixt — תקלות וגרירה",
+            "sub": "מוקד גרירה בגרמניה 24/7",
+            "tel": "+49 89 244 000 88",
+            "web": "https://www.sixt.com/help-center/categories/emergencies/"
+          },
+          {
+            "icon": "🏥",
+            "label": "ביטוח נסיעות — מגדל",
+            "sub": "מוקד חירום רפואי 24/7",
+            "tel": "+972 3 920 6912",
+            "wa": "972549940911",
+            "web": "https://www.migdal.co.il/product-lobby/travel-insurance"
+          },
+          {
+            "icon": "💳",
+            "label": "Cal Fly Card — חסימה/אובדן",
+            "sub": "מוקד 24/7 לאובדן/גניבה בחו״ל",
+            "tel": "+972 3 572 4801",
+            "wa": "97235725111",
+            "web": "https://www.cal-online.co.il/goingabroad/emergencyabroad/"
+          }
+        ]
+      }
+    ]
+  }
+}
