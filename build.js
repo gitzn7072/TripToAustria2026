@@ -94,8 +94,8 @@ function hoursBlock(rows) {
 }
 
 // Brand icons as inline SVG (self-contained, no external requests).
-// Waze: white speech-bubble face on the cyan button (cyan features read as cut-outs).
-const WAZE_ICON = '<svg class="bic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M21 10.4C21 6.3 16.9 3 12 3S3 6.3 3 10.4c0 2 .9 3.7 2.5 5.1-.2 1-.8 2.1-1.6 2.8 1.5.1 3-.4 4.2-1.3 1.2.4 2.5.6 3.9.6 4.9 0 9-3.3 9-7.2z"/><circle cx="9.2" cy="10.2" r="1.2" fill="#33ccff"/><circle cx="14.8" cy="10.2" r="1.2" fill="#33ccff"/><path d="M8.8 13c.9.9 2 1.3 3.2 1.3s2.3-.4 3.2-1.3" fill="none" stroke="#33ccff" stroke-width="1.3" stroke-linecap="round"/></svg>';
+// Waze: the app icon — cyan rounded square with a white smiling face.
+const WAZE_ICON = '<svg class="bic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5" fill="#33ccff"/><circle cx="12" cy="11" r="6.4" fill="#fff"/><circle cx="9.9" cy="10" r="1.05" fill="#173b4d"/><circle cx="14.1" cy="10" r="1.05" fill="#173b4d"/><path d="M9.2 12.4c.7 1 1.7 1.5 2.8 1.5s2.1-.5 2.8-1.5" fill="none" stroke="#173b4d" stroke-width="1.25" stroke-linecap="round"/></svg>';
 // Google Maps: the red location pin with white center, on a white button.
 const GMAP_ICON = '<svg class="bic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#EA4335" d="M12 2C8.1 2 5 5.1 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.9-3.1-7-7-7z"/><circle cx="12" cy="9" r="2.6" fill="#fff"/></svg>';
 const wazeBtn = (addr, label) => `<a class="btn b-waze" href="${attr(wazeUrl(addr))}" target="_blank" rel="noopener">${WAZE_ICON} ${label}</a>`;
