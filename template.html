@@ -82,6 +82,10 @@ details.rules[open]>summary::after{transform:rotate(180deg)}
 details.rules ul{margin:0;padding:0 18px 14px 18px;list-style:none}
 details.rules li{position:relative;padding:5px 18px 5px 0;font-size:14px;color:#3a3d33}
 details.rules li::before{content:"⛓";position:absolute;right:0;top:5px;font-size:12px;opacity:.6}
+.doc-link{display:inline-flex;align-items:center;gap:7px;margin-top:10px;text-decoration:none;
+  background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);
+  padding:11px 14px;font-weight:700;font-size:14px;color:var(--pine)}
+.doc-link:active{transform:scale(.98)}
 
 /* day */
 .day{display:none;padding:6px 14px 0}
@@ -262,6 +266,7 @@ footer b{color:var(--pine)}
         <summary><span class="sx" aria-hidden="true">⛓️</span>כללי ברזל לוואן ולניווט</summary>
         <ul>{{RULES}}</ul>
       </details>
+      {{DOC_LINK}}
     </div>
 
 {{DAYS}}
