@@ -204,6 +204,7 @@ footer b{color:var(--pine)}
 .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;border:0;background:none;cursor:pointer;
   color:var(--muted);font-family:inherit;font-weight:700;font-size:11.5px;padding:6px 4px;border-radius:12px;transition:.15s}
 .tab .tab-ic{font-size:21px;line-height:1;filter:grayscale(.45);opacity:.7;transition:.15s}
+.tab .tab-ic svg{width:23px;height:23px;display:block}
 .tab.tab-active{color:var(--pine)}
 .tab.tab-active .tab-ic{filter:none;opacity:1;transform:translateY(-1px)}
 
@@ -449,7 +450,7 @@ footer b{color:var(--pine)}
 
 <nav class="tabbar" id="tabbar" aria-label="ניווט ראשי">
   <button class="tab tab-active" type="button" data-go="itinerary" aria-current="page"><span class="tab-ic" aria-hidden="true">🛣️</span><span class="tab-lbl">מסלול</span></button>
-  <button class="tab" type="button" data-go="nav"><span class="tab-ic" aria-hidden="true">🗺️</span><span class="tab-lbl">ניווט</span></button>
+  <button class="tab" type="button" data-go="nav"><span class="tab-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="#7cb342" d="M12 12 L23 17 L12 22 L1 17 Z"/><path d="M5.5 16.3 L12 13.4 L18.5 16.3" fill="none" stroke="#fff" stroke-width="1.1" opacity=".9" stroke-linejoin="round"/><path fill="#ea4335" d="M12 1.5a5.3 5.3 0 0 0-5.3 5.3c0 3.9 5.3 8.5 5.3 8.5s5.3-4.6 5.3-8.5A5.3 5.3 0 0 0 12 1.5z"/><circle cx="12" cy="6.8" r="1.9" fill="#fff"/></svg></span><span class="tab-lbl">ניווט</span></button>
   <button class="tab" type="button" data-go="emergency"><span class="tab-ic" aria-hidden="true">🆘</span><span class="tab-lbl">חירום</span></button>
 </nav>
 <script>
