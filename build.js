@@ -212,7 +212,6 @@ function renderFooter() {
 /* ---------- assemble ---------- */
 
 const pills = trip.days.map((d) => `<button class="pill" type="button" data-target="${d.n}" aria-label="יום ${d.n}" aria-controls="day${d.n}">${d.n}</button>`).join('');
-const rules = trip.rules.map((r) => `<li>${esc(r)}</li>`).join('');
 const days = trip.days.map(renderDay).join('\n');
 // Optional link to the full plan document (e.g. a Google Doc). Empty/absent = no button.
 const docLink = trip.docUrl
@@ -224,7 +223,6 @@ const html = template
   .replace('{{SUBTITLE}}', esc(trip.subtitle))
   .replace('{{PILLS}}', pills)
   .replace('{{DOC_LINK}}', docLink)
-  .replace('{{RULES}}', rules)
   .replace('{{DAYS}}', days)
   .replace('{{NAV_SUMMARY}}', navSummary())
   .replace('{{EMERGENCY}}', emergencyView())
