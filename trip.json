@@ -1227,7 +1227,7 @@
       "title": "🏛️ Innsbruck + אופציות קניות → Mittenwald → Munich Airport: יום סיום גמיש — סיבוב קצר באינסברוק או קניות, עצירה צפונה רק אם הזמן מאפשר, תדלוק, החזרת רכב והגעה לשדה ב-17:00.",
       "drive": {
         "origin": "6280 Zell am Ziller, Austria",
-        "destination": "Mietwagenzentrum, Munich Airport, Germany",
+        "destination": "48.355250,11.786859",
         "waypoints": [
           "Innrain 4, 6020 Innsbruck, Austria",
           "Cytastraße 1, 6176 Völs, Austria",
@@ -1340,7 +1340,8 @@
         },
         {
           "dest": "Sixt Return Munich Airport",
-          "addr": "Mietwagenzentrum, Munich Airport, Germany"
+          "addr": "Rental return · 48.355250, 11.786859",
+          "ll": "48.355250,11.786859"
         }
       ],
       "shopping": [
