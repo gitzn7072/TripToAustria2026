@@ -211,12 +211,25 @@ function emergencyView() {
   return note + groups;
 }
 
-/* ---------- footer ---------- */
-// Re-bold the subtitle inside the footer (it renders bold in the shell).
+/* ---------- footer: version + last-updated ---------- */
+// Version is derived from git (build number = commit count, plus short hash);
+// "last updated" is stamped at build/deploy time. On Netlify, COMMIT_REF is the
+// deployed commit. All lookups degrade gracefully if git/env are unavailable.
+function buildMeta() {
+  const cp = require('child_process');
+  const sh = (c) => { try { return cp.execSync(c, { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim(); } catch (e) { return ''; } };
+  const hash = (process.env.COMMIT_REF || '').slice(0, 7) || sh('git rev-parse --short HEAD');
+  const count = sh('git rev-list --count HEAD');
+  const d = new Date();
+  const p = (n) => String(n).padStart(2, '0');
+  return { hash, count, date: `${p(d.getDate())}.${p(d.getMonth() + 1)}.${d.getFullYear()}` };
+}
+
 function renderFooter() {
-  const [l1, l2] = trip.footerLines;
-  const boldLine = esc(l1).replace(esc(trip.subtitle), `<b>${esc(trip.subtitle)}</b>`);
-  return `${boldLine}<br>${esc(l2)}`;
+  const m = buildMeta();
+  const ver = [m.count ? `v${m.count}` : '', m.hash].filter(Boolean).join(' · ');
+  const verLine = ver ? `<br><span class="ver">גרסה ${esc(ver)}</span>` : '';
+  return `עודכן לאחרונה: ${esc(m.date)}${verLine}`;
 }
 
 /* ---------- assemble ---------- */
