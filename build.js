@@ -98,14 +98,18 @@ function hoursBlock(rows) {
 const WAZE_ICON = '<svg class="bic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5" fill="#33ccff"/><circle cx="12" cy="11" r="6.4" fill="#fff"/><circle cx="9.9" cy="10" r="1.05" fill="#173b4d"/><circle cx="14.1" cy="10" r="1.05" fill="#173b4d"/><path d="M9.2 12.4c.7 1 1.7 1.5 2.8 1.5s2.1-.5 2.8-1.5" fill="none" stroke="#173b4d" stroke-width="1.25" stroke-linecap="round"/></svg>';
 // Google Maps: the red location pin with white center, on a white button.
 const GMAP_ICON = '<svg class="bic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#EA4335" d="M12 2C8.1 2 5 5.1 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.9-3.1-7-7-7z"/><circle cx="12" cy="9" r="2.6" fill="#fff"/></svg>';
-const wazeBtn = (addr, label) => `<a class="btn b-waze" href="${attr(wazeUrl(addr))}" target="_blank" rel="noopener">${WAZE_ICON} ${label}</a>`;
-const gmapBtn = (addr, label) => `<a class="btn b-gmap" href="${attr(gmapSearchUrl(addr))}" target="_blank" rel="noopener">${GMAP_ICON} ${label}</a>`;
+const wazeBtn = (href, label) => `<a class="btn b-waze" href="${attr(href)}" target="_blank" rel="noopener">${WAZE_ICON} ${label}</a>`;
+const gmapBtn = (href, label) => `<a class="btn b-gmap" href="${attr(href)}" target="_blank" rel="noopener">${GMAP_ICON} ${label}</a>`;
+// A nav point can be an address (n.addr) or an exact coordinate (n.ll = "lat,lon").
+// Coordinates use Waze's ll= param (not q=); both map to a precise pin.
+const wazeTarget = (n) => n.ll ? `https://www.waze.com/ul?ll=${encodeURIComponent(n.ll)}&navigate=yes` : wazeUrl(n.addr);
+const gmapTarget = (n) => gmapSearchUrl(n.ll || n.addr);
 
 // Standard nav rows: destination name + address on its own line.
 function navRows(rows) {
   return rows.map((n) => (
     `<div class="navrow"><div class="nav-info"><div class="nav-dest">${esc(n.dest)}</div><div class="nav-addr">${esc(n.addr)}</div></div>` +
-    `<div class="nav-btns">${wazeBtn(n.addr, 'Waze')}${gmapBtn(n.addr, 'Google')}</div></div>`
+    `<div class="nav-btns">${wazeBtn(wazeTarget(n), 'Waze')}${gmapBtn(gmapTarget(n), 'Google')}</div></div>`
   )).join('');
 }
 
@@ -113,7 +117,7 @@ function navRows(rows) {
 function shoppingNavRows(rows) {
   return rows.map((n) => (
     `<div class="navrow"><div class="nav-dest">${esc(n.dest)}</div>` +
-    `<div class="nav-btns">${gmapBtn(n.addr, 'מפה')}${wazeBtn(n.addr, 'Waze')}</div></div>`
+    `<div class="nav-btns">${gmapBtn(gmapTarget(n), 'מפה')}${wazeBtn(wazeTarget(n), 'Waze')}</div></div>`
   )).join('');
 }
 

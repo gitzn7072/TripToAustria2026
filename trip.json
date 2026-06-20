@@ -17,7 +17,7 @@
       "kicker": "יום 1 · ראשון · 28.06.2026",
       "title": "🛫 מינכן → Bad Reichenhall: נוחתים, מקבלים את הוואן ב-Sixt/P20, עושים קנייה קצרה אם פתוח ונוסעים למלון ללילה ראשון.",
       "drive": {
-        "origin": "Terminalstraße Mitte, 85356 München-Flughafen, Germany",
+        "origin": "48.355333,11.786972",
         "destination": "Am Münster 3, 83435 Bad Reichenhall, Germany",
         "waypoints": []
       },
@@ -59,7 +59,8 @@
       "nav": [
         {
           "dest": "Sixt / P20 Munich Airport",
-          "addr": "Terminalstraße Mitte, 85356 München-Flughafen, Germany"
+          "addr": "P20 · 48.355333, 11.786972",
+          "ll": "48.355333,11.786972"
         },
         {
           "dest": "Amber Hotel Bavaria",
