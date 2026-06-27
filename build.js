@@ -59,8 +59,8 @@ const gmapSearchUrl = (addr) => `https://www.google.com/maps/search/?api=1&query
 
 const li = (items, cls) => `<ul class="${cls}">${items.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>`;
 
-function sec({ icon, title, count, body, open, navClass }) {
-  const cls = `sec${navClass ? ' sec-nav' : ''}`;
+function sec({ icon, title, count, body, open, navClass, altClass }) {
+  const cls = `sec${navClass ? ' sec-nav' : ''}${altClass ? ' sec-alt' : ''}`;
   const cnt = count != null ? ` <span class="cnt">${count}</span>` : '';
   const o = open ? ' open' : '';
   return `<details class="${cls}"${o}><summary><span class="sx" aria-hidden="true">${icon}</span>${esc(title)}${cnt}</summary><div class="sec-body">${body}</div></details>`;
@@ -157,6 +157,12 @@ function renderDay(d) {
     `<div class="sec-body"><div class="live-weather" data-lw hidden></div>` +
     `<div data-wx-static>${li(d.weather, 'dots')}</div></div></details>`
   );
+  // Weather-alternative: what to do (or which day to swap with) if the weather
+  // doesn't fit the day's activity. Optional per-day map (trip.altWeather[n]).
+  const alt = trip.altWeather && trip.altWeather[d.n];
+  if (alt && alt.length) {
+    parts.push(sec({ icon: '🔄', title: 'חלופה אם מזג האוויר לא מתאים', altClass: true, body: li(alt, 'alt') }));
+  }
   parts.push(sec({ icon: '🥾', title: 'מסלולים', count: d.routes.length, body: d.routes.map(routeBlock).join('') }));
   if (d.hours && d.hours.length) {
     parts.push(sec({ icon: '🎟️', title: 'שעות ובדיקות לפני הגעה', body: hoursBlock(d.hours) }));
@@ -234,7 +240,24 @@ function renderFooter() {
 
 /* ---------- assemble ---------- */
 
-const pills = trip.days.map((d) => `<button class="pill" type="button" data-target="${d.n}" aria-label="יום ${d.n}" aria-controls="day${d.n}">${d.n}</button>`).join('');
+// Two stacked pill rows: the genuine plan (1..N in date order) and, below it, the
+// weather-alternative order (altOrder[i] = which day's activity to do on date-slot i+1
+// if weather doesn't fit). Both rows are plain .pill[data-target] → reuse the existing
+// day-switcher (tapping any pill shows that activity's article). Swapped slots stand out.
+const pillBtn = (label, target, extra, aria) =>
+  `<button class="pill${extra}" type="button" data-target="${target}" aria-label="${aria}" aria-controls="day${target}">${label}</button>`;
+const genuinePills = trip.days.map((d) => pillBtn(d.n, d.n, '', `יום ${d.n}`)).join('');
+const altOrder = trip.altOrder || [];
+const altPills = altOrder.map((target, i) => {
+  const slot = i + 1;
+  const swapped = target !== slot;
+  return pillBtn(target, target, ' pill-alt' + (swapped ? ' swapped' : ''), `חלופה ליום ${slot}: פעילות יום ${target}`);
+}).join('');
+const pills =
+  `<div class="pillrow"><span class="pillrow-lbl">תוכנית</span><div class="pills-scroll">${genuinePills}</div></div>` +
+  (altOrder.length
+    ? `<div class="pillrow pillrow-alt"><span class="pillrow-lbl">חלופה ☔</span><div class="pills-scroll">${altPills}</div></div>`
+    : '');
 const days = trip.days.map(renderDay).join('\n');
 // Optional full-plan document — rendered as an extra item in the bottom tab bar.
 // It's an external link (no data-view), so the view-switcher JS ignores it.

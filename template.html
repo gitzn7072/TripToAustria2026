@@ -67,13 +67,23 @@ body{
 /* sticky day pills */
 .pillbar{position:sticky;top:0;z-index:20;background:rgba(244,239,228,.92);
   backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
-  padding:9px 12px;display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;}
-.pillbar::-webkit-scrollbar{display:none}
+  padding:8px 12px;display:flex;flex-direction:column;gap:6px;}
+.pillrow{display:flex;align-items:center;gap:8px}
+.pillrow-lbl{flex:0 0 auto;width:50px;font-size:10px;font-weight:800;color:var(--moss);
+  text-transform:uppercase;letter-spacing:.03em;text-align:center;line-height:1.15}
+.pillrow-alt .pillrow-lbl{color:var(--gold)}
+.pills-scroll{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;flex:1 1 auto;min-width:0;padding-bottom:1px}
+.pills-scroll::-webkit-scrollbar{display:none}
 .pill{flex:0 0 auto;width:38px;height:38px;border-radius:12px;border:1.5px solid var(--line);
   background:#fff;color:var(--pine);font-family:'Assistant',system-ui,sans-serif;font-weight:700;font-size:17px;
   cursor:pointer;transition:.18s;font-feature-settings:"tnum"}
 .pill:hover{border-color:var(--moss)}
 .pill.active{background:var(--pine);color:#fff;border-color:var(--pine);transform:translateY(-1px);box-shadow:var(--shadow)}
+/* alternative-plan pills (second row): warmer, smaller; swapped slots stand out */
+.pill-alt{width:34px;height:34px;font-size:15px;background:#fdf7ea;border-color:#ecd79a;color:#8a5a06}
+.pill-alt:hover{border-color:var(--gold)}
+.pill-alt.swapped{border-color:var(--gold);box-shadow:0 0 0 1px rgba(192,138,45,.30)}
+.pill-alt.active{background:var(--gold);color:#fff;border-color:var(--gold);transform:translateY(-1px);box-shadow:var(--shadow)}
 
 .intro{margin:14px 14px 4px}
 details.rules{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
@@ -233,6 +243,11 @@ footer .ver{display:inline-block;margin-top:3px;font-size:11px;opacity:.7;direct
 .ec-wa{background:#25d366;color:#fff;border-color:#1da851}
 .ec-card.ec-ph{opacity:.75;border-style:dashed}
 .ec-fill{font-size:11px;font-weight:700;color:var(--gold);border:1px dashed var(--gold);border-radius:8px;padding:5px 9px;white-space:nowrap}
+
+/* weather-alternative section (per day) — tinted summary to set it apart */
+.sec-alt>summary{background:linear-gradient(90deg,rgba(192,138,45,.12),transparent)}
+ul.alt li{position:relative;padding:6px 18px 6px 0;font-size:14px;color:#3a3d33}
+ul.alt li::before{content:"🔄";position:absolute;right:0;top:6px;font-size:11px}
 
 /* ---- accessibility ---- */
 .skip-link{position:absolute;right:8px;top:-48px;z-index:60;background:var(--pine);color:#fff;
