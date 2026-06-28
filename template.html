@@ -71,6 +71,10 @@ body{
   border-radius:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.24)}
 .lang-flag.active{opacity:1;background:rgba(255,255,255,.30)}
 .lang-flag:hover{opacity:1}
+/* the location-based flag carries a 📍 pin so it reads as "your location", not a duplicate */
+#lang-local{position:relative}
+#lang-local::after{content:"📍";position:absolute;bottom:-4px;inset-inline-end:-5px;font-size:11px;line-height:1;
+  text-shadow:0 0 2px rgba(0,0,0,.55),0 0 2px rgba(0,0,0,.55)}
 .flags{align-items:center}
 .flags-cap{font-size:11px;font-weight:700;color:#f6f1e3;opacity:.85;margin-inline-end:3px}
 /* hide Google's translate banner/toolbar entirely */
