@@ -64,13 +64,21 @@ body{
 .flag-at{background:linear-gradient(to bottom,#c8102e 0 33.33%,#fff 33.33% 66.66%,#c8102e 66.66%)}
 .flag-de{background:linear-gradient(to bottom,#111 0 33.33%,#dd0000 33.33% 66.66%,#ffce00 66.66%)}
 
-/* external translate bar (opens the page via Google Translate in any language) */
-.xbar{display:flex;align-items:center;flex-wrap:wrap;gap:7px;background:var(--pine);color:#f6f1e3;padding:7px 12px}
-.xbar-ic{font-size:14px;line-height:1}
-.xbar-lbl{font-weight:700;font-size:11.5px;opacity:.85;margin-inline-end:3px}
-.xchip{background:rgba(255,255,255,.14);color:#fff;text-decoration:none;border-radius:999px;
-  padding:3px 11px;font-weight:700;font-size:11.5px;border:1px solid rgba(255,255,255,.28);transition:.15s}
-.xchip:hover{background:rgba(255,255,255,.28)}
+/* language switcher — in flow at the hero top, RTL-aligned; uses Google's in-page widget (no bar) */
+.lang{display:flex;align-items:center;justify-content:flex-start;gap:7px;margin-bottom:14px}
+.lang-cap{font-size:11px;font-weight:700;color:#f6f1e3;opacity:.92}
+.lang-flag{font:inherit;font-size:17px;line-height:1;cursor:pointer;opacity:.5;transition:.15s;padding:2px 5px;
+  border-radius:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.24)}
+.lang-flag.active{opacity:1;background:rgba(255,255,255,.30)}
+.lang-flag:hover{opacity:1}
+.flags{align-items:center}
+.flags-cap{font-size:11px;font-weight:700;color:#f6f1e3;opacity:.85;margin-inline-end:3px}
+/* hide Google's translate banner/toolbar entirely */
+.goog-te-banner-frame,.goog-te-banner-frame.skiptranslate,iframe.skiptranslate{display:none!important}
+body{top:0!important}
+#google_translate_element{display:none!important}
+.goog-tooltip,.goog-tooltip:hover{display:none!important}
+.goog-text-highlight{background:none!important;box-shadow:none!important}
 
 /* sticky day pills */
 /* days bar as a table: number title · ☀️ original · ☔ rainy alternative */
@@ -289,21 +297,15 @@ button.wxalt:active{transform:scale(.99)}
 <body>
 <a class="skip-link" href="#main-content">דלג לתוכן</a>
 <div class="wrap">
-  <div class="xbar" id="xbar" role="navigation" aria-label="Translate / תרגום">
-    <span class="xbar-ic" aria-hidden="true">🌐</span>
-    <span class="xbar-lbl">Translate · תרגום</span>
-    <a class="xchip" data-lang="en" target="_blank" rel="noopener">English</a>
-    <a class="xchip" data-lang="de" target="_blank" rel="noopener">Deutsch</a>
-    <a class="xchip" data-lang="fr" target="_blank" rel="noopener">Français</a>
-    <a class="xchip" data-lang="ru" target="_blank" rel="noopener">Русский</a>
-    <a class="xchip" data-lang="ar" target="_blank" rel="noopener">العربية</a>
-  </div>
   <header class="hero">
     <svg class="peaks" viewBox="0 0 500 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 90 L70 30 L120 60 L190 12 L260 58 L330 22 L400 62 L460 34 L500 70 L500 90 Z" fill="#ffffff"/></svg>
+    <div class="lang" role="navigation" aria-label="שפה"><span class="lang-cap">🌐 שפה</span><button type="button" class="lang-flag active" data-lang="iw" title="עברית">🇮🇱</button><button type="button" class="lang-flag" data-lang="en" title="English">🇺🇸</button><button type="button" class="lang-flag" id="lang-local" data-lang="de" title="המקום שבו אתם">🌍</button></div>
+    <div id="google_translate_element"></div>
     <div class="hero-kick">תוכנית טיול משפחתית</div>
     <h1>🌍 טיול לאוסטריה 2026</h1>
     <div class="dates">Salzburg &amp; Tyrol | 28.06.2026–08.07.2026</div>
-    <div class="flags" role="img" aria-label="מדינות במסלול: גרמניה, אוסטריה">
+    <div class="flags" role="group" aria-label="נוסעים אל: גרמניה, אוסטריה">
+      <span class="flags-cap">✈️ נוסעים אל</span>
       <span class="flag flag-de" title="גרמניה"></span>
       <span class="flag flag-at" title="אוסטריה"></span>
     </div>
@@ -479,7 +481,7 @@ button.wxalt:active{transform:scale(.99)}
 <details class="sec"><summary><span class="sx" aria-hidden="true">💡</span>טיפים ודגשים</summary><div class="sec-body"><ul class="tips"><li>להפריד בבוקר תיק עליה למטוס כדי לא לפתוח את כל המזוודות בשדה.</li><li>לתדלק לפני החזרת הרכב ולשמור קבלה/צילום מד דלק.</li><li>קניות ביום טיסה: לא יותר מ-60–90 דקות.</li><li>עם וואן ומזוודות עדיף CYTA או DEZ על פני SILLPARK, בגלל גישה וחניה פשוטות יותר.</li></ul></div></details>
 <details class="sec sec-nav" open><summary><span class="sx" aria-hidden="true">📍</span>ניווט מהיר ליעדי היום</summary><div class="sec-body"><div class="navrow"><div class="nav-info"><div class="nav-dest">Altstadtgarage Innsbruck</div><div class="nav-addr">Innrain 4, 6020 Innsbruck, Austria</div></div><div class="nav-btns"><a class="btn b-waze" href="https://www.waze.com/ul?q=Innrain+4%2C+6020+Innsbruck%2C+Austria&amp;navigate=yes" target="_blank" rel="noopener"><svg class="bic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5" fill="#33ccff"/><circle cx="12" cy="11" r="6.4" fill="#fff"/><circle cx="9.9" cy="10" r="1.05" fill="#173b4d"/><circle cx="14.1" cy="10" r="1.05" fill="#173b4d"/><path d="M9.2 12.4c.7 1 1.7 1.5 2.8 1.5s2.1-.5 2.8-1.5" fill="none" stroke="#173b4d" stroke-width="1.25" stroke-linecap="round"/></svg> Waze</a><a class="btn b-gmap" href="https://www.google.com/maps/search/?api=1&amp;query=Innrain+4%2C+6020+Innsbruck%2C+Austria" target="_blank" rel="noopener"><svg class="bic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#EA4335" d="M12 2C8.1 2 5 5.1 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.9-3.1-7-7-7z"/><circle cx="12" cy="9" r="2.6" fill="#fff"/></svg> Google</a></div></div><div class="navrow"><div class="nav-info"><div class="nav-dest">Mittenwald</div><div class="nav-addr">Dekan-Karl-Platz, 82481 Mittenwald, Germany</div></div><div class="nav-btns"><a class="btn b-waze" href="https://www.waze.com/ul?q=Dekan-Karl-Platz%2C+82481+Mittenwald%2C+Germany&amp;navigate=yes" target="_blank" rel="noopener"><svg class="bic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5" fill="#33ccff"/><circle cx="12" cy="11" r="6.4" fill="#fff"/><circle cx="9.9" cy="10" r="1.05" fill="#173b4d"/><circle cx="14.1" cy="10" r="1.05" fill="#173b4d"/><path d="M9.2 12.4c.7 1 1.7 1.5 2.8 1.5s2.1-.5 2.8-1.5" fill="none" stroke="#173b4d" stroke-width="1.25" stroke-linecap="round"/></svg> Waze</a><a class="btn b-gmap" href="https://www.google.com/maps/search/?api=1&amp;query=Dekan-Karl-Platz%2C+82481+Mittenwald%2C+Germany" target="_blank" rel="noopener"><svg class="bic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#EA4335" d="M12 2C8.1 2 5 5.1 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.9-3.1-7-7-7z"/><circle cx="12" cy="9" r="2.6" fill="#fff"/></svg> Google</a></div></div><div class="navrow"><div class="nav-info"><div class="nav-dest">Walchensee</div><div class="nav-addr">Walchensee, B11, Germany</div></div><div class="nav-btns"><a class="btn b-waze" href="https://www.waze.com/ul?q=Walchensee%2C+B11%2C+Germany&amp;navigate=yes" target="_blank" rel="noopener"><svg class="bic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5" fill="#33ccff"/><circle cx="12" cy="11" r="6.4" fill="#fff"/><circle cx="9.9" cy="10" r="1.05" fill="#173b4d"/><circle cx="14.1" cy="10" r="1.05" fill="#173b4d"/><path d="M9.2 12.4c.7 1 1.7 1.5 2.8 1.5s2.1-.5 2.8-1.5" fill="none" stroke="#173b4d" stroke-width="1.25" stroke-linecap="round"/></svg> Waze</a><a class="btn b-gmap" href="https://www.google.com/maps/search/?api=1&amp;query=Walchensee%2C+B11%2C+Germany" target="_blank" rel="noopener"><svg class="bic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#EA4335" d="M12 2C8.1 2 5 5.1 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.9-3.1-7-7-7z"/><circle cx="12" cy="9" r="2.6" fill="#fff"/></svg> Google</a></div></div><div class="navrow"><div class="nav-info"><div class="nav-dest">תחנת דלק — Eching (לפני החזרה)</div><div class="nav-addr">Eni · Dieselstraße 16, 85386 Eching</div></div><div class="nav-btns"><a class="btn b-waze" href="https://www.waze.com/ul?ll=48.306996%2C11.638617&amp;navigate=yes" target="_blank" rel="noopener"><svg class="bic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5" fill="#33ccff"/><circle cx="12" cy="11" r="6.4" fill="#fff"/><circle cx="9.9" cy="10" r="1.05" fill="#173b4d"/><circle cx="14.1" cy="10" r="1.05" fill="#173b4d"/><path d="M9.2 12.4c.7 1 1.7 1.5 2.8 1.5s2.1-.5 2.8-1.5" fill="none" stroke="#173b4d" stroke-width="1.25" stroke-linecap="round"/></svg> Waze</a><a class="btn b-gmap" href="https://www.google.com/maps/search/?api=1&amp;query=48.306996%2C11.638617" target="_blank" rel="noopener"><svg class="bic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#EA4335" d="M12 2C8.1 2 5 5.1 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.9-3.1-7-7-7z"/><circle cx="12" cy="9" r="2.6" fill="#fff"/></svg> Google</a></div></div><div class="navrow"><div class="nav-info"><div class="nav-dest">Sixt Return Munich Airport</div><div class="nav-addr">Rental return · 48.355250, 11.786859</div></div><div class="nav-btns"><a class="btn b-waze" href="https://www.waze.com/ul?ll=48.355250%2C11.786859&amp;navigate=yes" target="_blank" rel="noopener"><svg class="bic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5" fill="#33ccff"/><circle cx="12" cy="11" r="6.4" fill="#fff"/><circle cx="9.9" cy="10" r="1.05" fill="#173b4d"/><circle cx="14.1" cy="10" r="1.05" fill="#173b4d"/><path d="M9.2 12.4c.7 1 1.7 1.5 2.8 1.5s2.1-.5 2.8-1.5" fill="none" stroke="#173b4d" stroke-width="1.25" stroke-linecap="round"/></svg> Waze</a><a class="btn b-gmap" href="https://www.google.com/maps/search/?api=1&amp;query=48.355250%2C11.786859" target="_blank" rel="noopener"><svg class="bic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#EA4335" d="M12 2C8.1 2 5 5.1 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.9-3.1-7-7-7z"/><circle cx="12" cy="9" r="2.6" fill="#fff"/></svg> Google</a></div></div></div></details>
 </article>
-    <footer>עודכן לאחרונה: 28.06.2026<br><span class="ver">גרסה v28 · a954d9b</span></footer>
+    <footer>עודכן לאחרונה: 28.06.2026<br><span class="ver">גרסה v29 · 60bc1d4</span></footer>
   </section>
 
   <section class="view" data-view="nav" aria-label="ניווט — סיכום יומי" hidden>
@@ -510,7 +512,7 @@ button.wxalt:active{transform:scale(.99)}
   <button class="tab tab-active" type="button" data-go="itinerary" aria-current="page"><span class="tab-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3" fill="#fff"/><path d="M3 8.2a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v.3H3Z" fill="#4f7a5e"/><rect x="6.8" y="3" width="2.2" height="4.3" rx="1.1" fill="#2a5343"/><rect x="15" y="3" width="2.2" height="4.3" rx="1.1" fill="#2a5343"/><rect x="3" y="5" width="18" height="16" rx="3" fill="none" stroke="#2a5343" stroke-width="1.4"/><g fill="#4f7a5e"><circle cx="8" cy="13" r="1.25"/><circle cx="12" cy="13" r="1.25"/><circle cx="16" cy="13" r="1.25"/><circle cx="8" cy="17" r="1.25"/><circle cx="12" cy="17" r="1.25"/></g><circle cx="16" cy="17" r="1.25" fill="#c08a2d"/></svg></span><span class="tab-lbl">תוכנית</span></button>
   <button class="tab" type="button" data-go="nav"><span class="tab-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="#7cb342" d="M12 12 L23 17 L12 22 L1 17 Z"/><path d="M5.5 16.3 L12 13.4 L18.5 16.3" fill="none" stroke="#fff" stroke-width="1.1" opacity=".9" stroke-linejoin="round"/><path fill="#ea4335" d="M12 1.5a5.3 5.3 0 0 0-5.3 5.3c0 3.9 5.3 8.5 5.3 8.5s5.3-4.6 5.3-8.5A5.3 5.3 0 0 0 12 1.5z"/><circle cx="12" cy="6.8" r="1.9" fill="#fff"/></svg></span><span class="tab-lbl">ניווט</span></button>
   <button class="tab" type="button" data-go="emergency"><span class="tab-ic" aria-hidden="true">🆘</span><span class="tab-lbl">חירום</span></button>
-  <a class="tab" href="https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Ftamamaustria2026.netlify.app%2Ftrip-plan.docx" target="_blank" rel="noopener"><span class="tab-ic" aria-hidden="true">📄</span><span class="tab-lbl">מסמך</span></a>
+  <a class="tab" href="https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fgitzn7072.github.io%2FTripToAustria2026%2Ftrip-plan.docx" target="_blank" rel="noopener"><span class="tab-ic" aria-hidden="true">📄</span><span class="tab-lbl">מסמך</span></a>
 </nav>
 <script>
 // honor the user's reduced-motion preference for programmatic scrolling
@@ -564,20 +566,49 @@ function toTop(){ window.scrollTo({top:0, behavior: REDUCE ? 'auto' : 'smooth'})
   tabs.forEach(function(t){t.addEventListener('click',function(){go(t.dataset.go);});});
 })();
 
-/* External translate bar — build Google-Translate links from the current domain.
-   Google's proxy host = hostname with "-"→"--" and "."→"-", then ".translate.goog".
-   Hidden when already viewing a translated (translate.goog) page. Any language can
-   still be picked from Google's own toolbar once opened. */
+/* Language switcher — Google's in-page translate widget, its banner hidden via CSS
+   (no external bar). Flags: 🇮🇱 Hebrew (original) · 🇺🇸 English · local language set
+   from the device's timezone/region. Translation happens inside the page. */
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({pageLanguage:'iw',
+    includedLanguages:'en,de,fr,it,es,nl,cs,hu,pl,hr,sl,ru,ar',
+    autoDisplay:false}, 'google_translate_element');
+}
 (function(){
-  var bar=document.getElementById('xbar'); if(!bar) return;
-  var host=location.hostname;
-  if(host.indexOf('translate.goog')>=0 || host==='localhost' || host==='127.0.0.1'){ bar.hidden=true; return; }
-  var proxy=host.replace(/-/g,'--').replace(/\./g,'-')+'.translate.goog';
-  var base=location.protocol+'//'+proxy+'/';
-  [].slice.call(bar.querySelectorAll('.xchip')).forEach(function(a){
-    var l=a.getAttribute('data-lang');
-    a.href=base+'?_x_tr_sl=auto&_x_tr_tl='+l+'&_x_tr_hl='+l;
+  // 1) set the 3rd flag from the device region (timezone) — no permission, no network
+  var M={'Europe/Vienna':['de','🇦🇹','Deutsch (Österreich)'],'Europe/Berlin':['de','🇩🇪','Deutsch'],
+    'Europe/Busingen':['de','🇩🇪','Deutsch'],'Europe/Zurich':['de','🇨🇭','Deutsch'],
+    'Europe/Rome':['it','🇮🇹','Italiano'],'Europe/Paris':['fr','🇫🇷','Français'],
+    'Europe/Madrid':['es','🇪🇸','Español'],'Europe/Amsterdam':['nl','🇳🇱','Nederlands'],
+    'Europe/Prague':['cs','🇨🇿','Čeština'],'Europe/Budapest':['hu','🇭🇺','Magyar'],
+    'Europe/Warsaw':['pl','🇵🇱','Polski'],'Europe/Zagreb':['hr','🇭🇷','Hrvatski'],
+    'Europe/Ljubljana':['sl','🇸🇮','Slovenščina'],'Europe/Brussels':['fr','🇧🇪','Français']};
+  var tz=''; try{ tz=Intl.DateTimeFormat().resolvedOptions().timeZone||''; }catch(e){}
+  var g=M[tz]; if(!g||g[0]==='iw'||g[0]==='en') g=['de','🇦🇹','Deutsch (Österreich)'];
+  var lf=document.getElementById('lang-local');
+  if(lf){ lf.textContent=g[1]; lf.setAttribute('data-lang',g[0]); lf.title=g[2]; }
+  // 2) reflect the current translation (googtrans cookie) in the active flag
+  function current(){ var m=(document.cookie.match(/googtrans=([^;]+)/)||[])[1]||''; var p=decodeURIComponent(m).split('/'); return p[2]||'iw'; }
+  function mark(){ var c=current(); [].slice.call(document.querySelectorAll('.lang-flag')).forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang')===c); }); }
+  // 3) switch language on flag tap (Hebrew = clear the cookie and restore the original)
+  function setLang(lang){
+    if(lang==='iw'){
+      var ex='=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+      document.cookie='googtrans'+ex;
+      document.cookie='googtrans'+ex+'; domain='+location.hostname;
+      document.cookie='googtrans'+ex+'; domain=.'+location.hostname;
+      location.reload(); return;
+    }
+    var tries=0, t=setInterval(function(){
+      var sel=document.querySelector('.goog-te-combo');
+      if(sel){ clearInterval(t); sel.value=lang; sel.dispatchEvent(new Event('change')); setTimeout(mark,300); }
+      else if(++tries>40){ clearInterval(t); }
+    },125);
+  }
+  [].slice.call(document.querySelectorAll('.lang-flag')).forEach(function(b){
+    b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang')); });
   });
+  mark();
 })();
 
 /* Live weather, sunrise/sunset, and how-to-dress advice via Open-Meteo
@@ -692,5 +723,6 @@ function toTop(){ window.scrollTo({top:0, behavior: REDUCE ? 'auto' : 'smooth'})
   }
 })();
 </script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>

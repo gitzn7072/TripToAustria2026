@@ -64,13 +64,21 @@ body{
 .flag-at{background:linear-gradient(to bottom,#c8102e 0 33.33%,#fff 33.33% 66.66%,#c8102e 66.66%)}
 .flag-de{background:linear-gradient(to bottom,#111 0 33.33%,#dd0000 33.33% 66.66%,#ffce00 66.66%)}
 
-/* external translate bar (opens the page via Google Translate in any language) */
-.xbar{display:flex;align-items:center;flex-wrap:wrap;gap:7px;background:var(--pine);color:#f6f1e3;padding:7px 12px}
-.xbar-ic{font-size:14px;line-height:1}
-.xbar-lbl{font-weight:700;font-size:11.5px;opacity:.85;margin-inline-end:3px}
-.xchip{background:rgba(255,255,255,.14);color:#fff;text-decoration:none;border-radius:999px;
-  padding:3px 11px;font-weight:700;font-size:11.5px;border:1px solid rgba(255,255,255,.28);transition:.15s}
-.xchip:hover{background:rgba(255,255,255,.28)}
+/* language switcher — in flow at the hero top, RTL-aligned; uses Google's in-page widget (no bar) */
+.lang{display:flex;align-items:center;justify-content:flex-start;gap:7px;margin-bottom:14px}
+.lang-cap{font-size:11px;font-weight:700;color:#f6f1e3;opacity:.92}
+.lang-flag{font:inherit;font-size:17px;line-height:1;cursor:pointer;opacity:.5;transition:.15s;padding:2px 5px;
+  border-radius:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.24)}
+.lang-flag.active{opacity:1;background:rgba(255,255,255,.30)}
+.lang-flag:hover{opacity:1}
+.flags{align-items:center}
+.flags-cap{font-size:11px;font-weight:700;color:#f6f1e3;opacity:.85;margin-inline-end:3px}
+/* hide Google's translate banner/toolbar entirely */
+.goog-te-banner-frame,.goog-te-banner-frame.skiptranslate,iframe.skiptranslate{display:none!important}
+body{top:0!important}
+#google_translate_element{display:none!important}
+.goog-tooltip,.goog-tooltip:hover{display:none!important}
+.goog-text-highlight{background:none!important;box-shadow:none!important}
 
 /* sticky day pills */
 /* days bar as a table: number title · ☀️ original · ☔ rainy alternative */
@@ -289,21 +297,15 @@ button.wxalt:active{transform:scale(.99)}
 <body>
 <a class="skip-link" href="#main-content">דלג לתוכן</a>
 <div class="wrap">
-  <div class="xbar" id="xbar" role="navigation" aria-label="Translate / תרגום">
-    <span class="xbar-ic" aria-hidden="true">🌐</span>
-    <span class="xbar-lbl">Translate · תרגום</span>
-    <a class="xchip" data-lang="en" target="_blank" rel="noopener">English</a>
-    <a class="xchip" data-lang="de" target="_blank" rel="noopener">Deutsch</a>
-    <a class="xchip" data-lang="fr" target="_blank" rel="noopener">Français</a>
-    <a class="xchip" data-lang="ru" target="_blank" rel="noopener">Русский</a>
-    <a class="xchip" data-lang="ar" target="_blank" rel="noopener">العربية</a>
-  </div>
   <header class="hero">
     <svg class="peaks" viewBox="0 0 500 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 90 L70 30 L120 60 L190 12 L260 58 L330 22 L400 62 L460 34 L500 70 L500 90 Z" fill="#ffffff"/></svg>
+    <div class="lang" role="navigation" aria-label="שפה"><span class="lang-cap">🌐 שפה</span><button type="button" class="lang-flag active" data-lang="iw" title="עברית">🇮🇱</button><button type="button" class="lang-flag" data-lang="en" title="English">🇺🇸</button><button type="button" class="lang-flag" id="lang-local" data-lang="de" title="המקום שבו אתם">🌍</button></div>
+    <div id="google_translate_element"></div>
     <div class="hero-kick">תוכנית טיול משפחתית</div>
     <h1>{{TITLE}}</h1>
     <div class="dates">{{SUBTITLE}}</div>
-    <div class="flags" role="img" aria-label="מדינות במסלול: גרמניה, אוסטריה">
+    <div class="flags" role="group" aria-label="נוסעים אל: גרמניה, אוסטריה">
+      <span class="flags-cap">✈️ נוסעים אל</span>
       <span class="flag flag-de" title="גרמניה"></span>
       <span class="flag flag-at" title="אוסטריה"></span>
     </div>
@@ -387,20 +389,49 @@ function toTop(){ window.scrollTo({top:0, behavior: REDUCE ? 'auto' : 'smooth'})
   tabs.forEach(function(t){t.addEventListener('click',function(){go(t.dataset.go);});});
 })();
 
-/* External translate bar — build Google-Translate links from the current domain.
-   Google's proxy host = hostname with "-"→"--" and "."→"-", then ".translate.goog".
-   Hidden when already viewing a translated (translate.goog) page. Any language can
-   still be picked from Google's own toolbar once opened. */
+/* Language switcher — Google's in-page translate widget, its banner hidden via CSS
+   (no external bar). Flags: 🇮🇱 Hebrew (original) · 🇺🇸 English · local language set
+   from the device's timezone/region. Translation happens inside the page. */
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({pageLanguage:'iw',
+    includedLanguages:'en,de,fr,it,es,nl,cs,hu,pl,hr,sl,ru,ar',
+    autoDisplay:false}, 'google_translate_element');
+}
 (function(){
-  var bar=document.getElementById('xbar'); if(!bar) return;
-  var host=location.hostname;
-  if(host.indexOf('translate.goog')>=0 || host==='localhost' || host==='127.0.0.1'){ bar.hidden=true; return; }
-  var proxy=host.replace(/-/g,'--').replace(/\./g,'-')+'.translate.goog';
-  var base=location.protocol+'//'+proxy+'/';
-  [].slice.call(bar.querySelectorAll('.xchip')).forEach(function(a){
-    var l=a.getAttribute('data-lang');
-    a.href=base+'?_x_tr_sl=auto&_x_tr_tl='+l+'&_x_tr_hl='+l;
+  // 1) set the 3rd flag from the device region (timezone) — no permission, no network
+  var M={'Europe/Vienna':['de','🇦🇹','Deutsch (Österreich)'],'Europe/Berlin':['de','🇩🇪','Deutsch'],
+    'Europe/Busingen':['de','🇩🇪','Deutsch'],'Europe/Zurich':['de','🇨🇭','Deutsch'],
+    'Europe/Rome':['it','🇮🇹','Italiano'],'Europe/Paris':['fr','🇫🇷','Français'],
+    'Europe/Madrid':['es','🇪🇸','Español'],'Europe/Amsterdam':['nl','🇳🇱','Nederlands'],
+    'Europe/Prague':['cs','🇨🇿','Čeština'],'Europe/Budapest':['hu','🇭🇺','Magyar'],
+    'Europe/Warsaw':['pl','🇵🇱','Polski'],'Europe/Zagreb':['hr','🇭🇷','Hrvatski'],
+    'Europe/Ljubljana':['sl','🇸🇮','Slovenščina'],'Europe/Brussels':['fr','🇧🇪','Français']};
+  var tz=''; try{ tz=Intl.DateTimeFormat().resolvedOptions().timeZone||''; }catch(e){}
+  var g=M[tz]; if(!g||g[0]==='iw'||g[0]==='en') g=['de','🇦🇹','Deutsch (Österreich)'];
+  var lf=document.getElementById('lang-local');
+  if(lf){ lf.textContent=g[1]; lf.setAttribute('data-lang',g[0]); lf.title=g[2]; }
+  // 2) reflect the current translation (googtrans cookie) in the active flag
+  function current(){ var m=(document.cookie.match(/googtrans=([^;]+)/)||[])[1]||''; var p=decodeURIComponent(m).split('/'); return p[2]||'iw'; }
+  function mark(){ var c=current(); [].slice.call(document.querySelectorAll('.lang-flag')).forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang')===c); }); }
+  // 3) switch language on flag tap (Hebrew = clear the cookie and restore the original)
+  function setLang(lang){
+    if(lang==='iw'){
+      var ex='=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+      document.cookie='googtrans'+ex;
+      document.cookie='googtrans'+ex+'; domain='+location.hostname;
+      document.cookie='googtrans'+ex+'; domain=.'+location.hostname;
+      location.reload(); return;
+    }
+    var tries=0, t=setInterval(function(){
+      var sel=document.querySelector('.goog-te-combo');
+      if(sel){ clearInterval(t); sel.value=lang; sel.dispatchEvent(new Event('change')); setTimeout(mark,300); }
+      else if(++tries>40){ clearInterval(t); }
+    },125);
+  }
+  [].slice.call(document.querySelectorAll('.lang-flag')).forEach(function(b){
+    b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang')); });
   });
+  mark();
 })();
 
 /* Live weather, sunrise/sunset, and how-to-dress advice via Open-Meteo
@@ -515,5 +546,6 @@ function toTop(){ window.scrollTo({top:0, behavior: REDUCE ? 'auto' : 'smooth'})
   }
 })();
 </script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
