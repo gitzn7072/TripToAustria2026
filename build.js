@@ -59,8 +59,8 @@ const gmapSearchUrl = (addr) => `https://www.google.com/maps/search/?api=1&query
 
 const li = (items, cls) => `<ul class="${cls}">${items.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>`;
 
-function sec({ icon, title, count, body, open, navClass, altClass }) {
-  const cls = `sec${navClass ? ' sec-nav' : ''}${altClass ? ' sec-alt' : ''}`;
+function sec({ icon, title, count, body, open, navClass }) {
+  const cls = `sec${navClass ? ' sec-nav' : ''}`;
   const cnt = count != null ? ` <span class="cnt">${count}</span>` : '';
   const o = open ? ' open' : '';
   return `<details class="${cls}"${o}><summary><span class="sx" aria-hidden="true">${icon}</span>${esc(title)}${cnt}</summary><div class="sec-body">${body}</div></details>`;
@@ -132,6 +132,20 @@ function driveSub(min) {
   return `<span class="rc-sub"><span class="dt-dot" aria-hidden="true">${dot}</span>סה״כ נסיעה משוערת: ${t}</span>`;
 }
 
+/* ---------- per-day weather backup line (top of the day card) ---------- */
+// A slim callout under the day header: what to do if the weather doesn't fit
+// the day's activity. If it names a swap day, the strip is a button that jumps
+// to that day (handled by the day-switcher script in template.html).
+function wxBackup(d) {
+  const b = trip.weatherBackup && trip.weatherBackup[d.n];
+  if (!b || !b.text) return '';
+  const inner = `<span class="wxalt-ic" aria-hidden="true">☔</span><span class="wxalt-txt">${esc(b.text)}</span>`;
+  if (b.swap) {
+    return `<button class="wxalt" type="button" data-target="${b.swap}" aria-label="גיבוי למזג אוויר — מעבר ליום ${b.swap}">${inner}<span class="wxalt-arr" aria-hidden="true">↩︎</span></button>`;
+  }
+  return `<div class="wxalt wxalt-static">${inner}</div>`;
+}
+
 /* ---------- day renderer ---------- */
 
 function renderDay(d) {
@@ -147,6 +161,7 @@ function renderDay(d) {
   parts.push(routeCta(d));
   parts.push('</header>');
 
+  parts.push(wxBackup(d));
   parts.push(sec({ icon: '🧭', title: 'תקציר היום', open: true, body: `<p class="prose">${esc(d.summary)}</p>` }));
   parts.push(sec({ icon: '🕒', title: 'לוח זמנים', body: li(d.timeline, 'timeline') }));
   // Weather: the summary shows the LIVE condition icon + condition + temp range (filled
@@ -157,12 +172,6 @@ function renderDay(d) {
     `<div class="sec-body"><div class="live-weather" data-lw hidden></div>` +
     `<div data-wx-static>${li(d.weather, 'dots')}</div></div></details>`
   );
-  // Weather-alternative: what to do (or which day to swap with) if the weather
-  // doesn't fit the day's activity. Optional per-day map (trip.altWeather[n]).
-  const alt = trip.altWeather && trip.altWeather[d.n];
-  if (alt && alt.length) {
-    parts.push(sec({ icon: '🔄', title: 'חלופה אם מזג האוויר לא מתאים', altClass: true, body: li(alt, 'alt') }));
-  }
   parts.push(sec({ icon: '🥾', title: 'מסלולים', count: d.routes.length, body: d.routes.map(routeBlock).join('') }));
   if (d.hours && d.hours.length) {
     parts.push(sec({ icon: '🎟️', title: 'שעות ובדיקות לפני הגעה', body: hoursBlock(d.hours) }));
@@ -244,20 +253,19 @@ function renderFooter() {
 // weather-alternative order (altOrder[i] = which day's activity to do on date-slot i+1
 // if weather doesn't fit). Both rows are plain .pill[data-target] → reuse the existing
 // day-switcher (tapping any pill shows that activity's article). Swapped slots stand out.
-const pillBtn = (label, target, extra, aria) =>
-  `<button class="pill${extra}" type="button" data-target="${target}" aria-label="${aria}" aria-controls="day${target}">${label}</button>`;
-const genuinePills = trip.days.map((d) => pillBtn(d.n, d.n, '', `יום ${d.n}`)).join('');
-const altOrder = trip.altOrder || [];
-const altPills = altOrder.map((target, i) => {
-  const slot = i + 1;
-  const swapped = target !== slot;
-  return pillBtn(target, target, ' pill-alt' + (swapped ? ' swapped' : ''), `חלופה ליום ${slot}: פעילות יום ${target}`);
+// Days bar as a table: one column per day — number title, ☀️ button (original
+// plan) and ☔ button (rainy / alternative plan). Both carry data-target + data-mode;
+// the day-switcher in template.html shows the day in sun or rain mode.
+const dayCols = trip.days.map((d) => {
+  const sun = `<button class="dt-btn dt-sun" type="button" data-target="${d.n}" data-mode="sun" aria-label="תוכנית מקורית — יום ${d.n}" aria-controls="day${d.n}">☀️</button>`;
+  const hasRain = trip.weatherBackup && trip.weatherBackup[d.n];
+  const rain = hasRain
+    ? `<button class="dt-btn dt-rain" type="button" data-target="${d.n}" data-mode="rain" aria-label="גיבוי לגשם — יום ${d.n}" aria-controls="day${d.n}">☔</button>`
+    : `<span class="dt-btn dt-empty" aria-hidden="true"></span>`;
+  return `<div class="dt-col" data-day="${d.n}"><div class="dt-num">${d.n}</div>${sun}${rain}</div>`;
 }).join('');
-const pills =
-  `<div class="pillrow"><span class="pillrow-lbl">תוכנית</span><div class="pills-scroll">${genuinePills}</div></div>` +
-  (altOrder.length
-    ? `<div class="pillrow pillrow-alt"><span class="pillrow-lbl">חלופה ☔</span><div class="pills-scroll">${altPills}</div></div>`
-    : '');
+const pills = `<div class="dt-grid">${dayCols}</div>` +
+  `<div class="dt-legend"><span>☀️ <b>תוכנית מקורית</b></span><span>☔ <b>גיבוי לגשם / החלפה</b></span><span>⚠️ <b>סימון = גשם בתחזית</b></span></div>`;
 const days = trip.days.map(renderDay).join('\n');
 // Optional full-plan document — rendered as an extra item in the bottom tab bar.
 // It's an external link (no data-view), so the view-switcher JS ignores it.

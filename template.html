@@ -65,25 +65,31 @@ body{
 .flag-de{background:linear-gradient(to bottom,#111 0 33.33%,#dd0000 33.33% 66.66%,#ffce00 66.66%)}
 
 /* sticky day pills */
-.pillbar{position:sticky;top:0;z-index:20;background:rgba(244,239,228,.92);
+/* days bar as a table: number title · ☀️ original · ☔ rainy alternative */
+.pillbar{position:sticky;top:0;z-index:20;background:rgba(244,239,228,.96);
   backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
-  padding:8px 12px;display:flex;flex-direction:column;gap:6px;}
-.pillrow{display:flex;align-items:center;gap:8px}
-.pillrow-lbl{flex:0 0 auto;width:50px;font-size:10px;font-weight:800;color:var(--moss);
-  text-transform:uppercase;letter-spacing:.03em;text-align:center;line-height:1.15}
-.pillrow-alt .pillrow-lbl{color:var(--gold)}
-.pills-scroll{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;flex:1 1 auto;min-width:0;padding-bottom:1px}
-.pills-scroll::-webkit-scrollbar{display:none}
-.pill{flex:0 0 auto;width:38px;height:38px;border-radius:12px;border:1.5px solid var(--line);
-  background:#fff;color:var(--pine);font-family:'Assistant',system-ui,sans-serif;font-weight:700;font-size:17px;
-  cursor:pointer;transition:.18s;font-feature-settings:"tnum"}
-.pill:hover{border-color:var(--moss)}
-.pill.active{background:var(--pine);color:#fff;border-color:var(--pine);transform:translateY(-1px);box-shadow:var(--shadow)}
-/* alternative-plan pills (second row): warmer, smaller; swapped slots stand out */
-.pill-alt{width:34px;height:34px;font-size:15px;background:#fdf7ea;border-color:#ecd79a;color:#8a5a06}
-.pill-alt:hover{border-color:var(--gold)}
-.pill-alt.swapped{border-color:var(--gold);box-shadow:0 0 0 1px rgba(192,138,45,.30)}
-.pill-alt.active{background:var(--gold);color:#fff;border-color:var(--gold);transform:translateY(-1px);box-shadow:var(--shadow)}
+  padding:8px 12px;overflow-x:auto;scrollbar-width:none;}
+.pillbar::-webkit-scrollbar{display:none}
+.dt-grid{display:flex;gap:7px;min-width:max-content}
+.dt-col{display:flex;flex-direction:column;gap:4px;align-items:center}
+.dt-num{height:18px;min-width:36px;display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:12.5px;color:var(--pine);font-feature-settings:"tnum";border-radius:6px}
+.dt-col.active .dt-num{background:var(--pine2);color:#fff}
+.dt-btn{width:36px;height:34px;border-radius:11px;border:1.5px solid var(--line);background:#fff;cursor:pointer;
+  font-size:18px;display:flex;align-items:center;justify-content:center;transition:.15s;line-height:1;padding:0}
+.dt-btn:hover{border-color:var(--moss)}
+.dt-sun.on{background:var(--pine);border-color:var(--pine);box-shadow:var(--shadow);transform:translateY(-1px)}
+.dt-rain{background:#fbf3e3;border-color:#ecd79a}
+.dt-rain:hover{border-color:var(--gold)}
+.dt-rain.on{background:var(--gold);border-color:var(--gold);box-shadow:var(--shadow);transform:translateY(-1px)}
+.dt-empty{border:0;background:none;cursor:default}
+.dt-legend{display:flex;flex-wrap:wrap;gap:8px 14px;justify-content:center;margin:7px 2px 0;font-size:11px;color:var(--muted)}
+.dt-legend b{color:var(--pine)}
+/* live-forecast flag: ☔ alternative stands out for days the forecast now shows wet/foggy */
+.dt-rain.wet{border-color:var(--rust);box-shadow:0 0 0 2px rgba(181,72,46,.28);position:relative}
+.dt-rain.wet::after{content:"";position:absolute;top:-3px;left:-3px;width:9px;height:9px;border-radius:50%;
+  background:var(--rust);border:2px solid var(--paper)}
+.dt-col.wet .dt-num{color:var(--rust)}
 
 .intro{margin:14px 14px 4px}
 details.rules{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
@@ -244,10 +250,22 @@ footer .ver{display:inline-block;margin-top:3px;font-size:11px;opacity:.7;direct
 .ec-card.ec-ph{opacity:.75;border-style:dashed}
 .ec-fill{font-size:11px;font-weight:700;color:var(--gold);border:1px dashed var(--gold);border-radius:8px;padding:5px 9px;white-space:nowrap}
 
-/* weather-alternative section (per day) — tinted summary to set it apart */
-.sec-alt>summary{background:linear-gradient(90deg,rgba(192,138,45,.12),transparent)}
-ul.alt li{position:relative;padding:6px 18px 6px 0;font-size:14px;color:#3a3d33}
-ul.alt li::before{content:"🔄";position:absolute;right:0;top:6px;font-size:11px}
+/* per-day weather backup strip (under the day header) */
+.wxalt{display:flex;align-items:center;gap:9px;width:100%;text-align:right;margin-top:10px;
+  background:linear-gradient(90deg,#fbf1e8,#fffdf8);border:1px solid #ecd79a;
+  border-inline-start:4px solid var(--gold);border-radius:13px;padding:10px 12px;font:inherit;transition:.15s}
+button.wxalt{cursor:pointer}
+button.wxalt:hover{box-shadow:var(--shadow);border-color:var(--gold)}
+button.wxalt:active{transform:scale(.99)}
+.wxalt-ic{font-size:17px;flex:0 0 auto;line-height:1}
+.wxalt-txt{flex:1;font-size:13px;font-weight:600;color:#7a5418;line-height:1.4}
+.wxalt-arr{flex:0 0 auto;font-size:16px;color:var(--gold)}
+/* ☀️ sun mode = original plan only (hide the backup strip); ☔ rain mode = backup only */
+.day:not(.rain) .wxalt{display:none}
+.day.rain .route-cta,.day.rain .sec{display:none}
+.day.rain .wxalt{margin-top:4px;box-shadow:0 0 0 2px var(--gold);border-color:var(--gold);
+  background:linear-gradient(90deg,#f6e4c4,#fffdf8)}
+.day.rain .wxalt-txt{font-size:14px}
 
 /* ---- accessibility ---- */
 .skip-link{position:absolute;right:8px;top:-48px;z-index:60;background:var(--pine);color:#fff;
@@ -307,19 +325,29 @@ function toTop(){ window.scrollTo({top:0, behavior: REDUCE ? 'auto' : 'smooth'})
 
 /* day switcher (within the itinerary view) */
 (function(){
-  var pills=[].slice.call(document.querySelectorAll('.pill'));
   var days=[].slice.call(document.querySelectorAll('.day'));
-  function show(n){
-    days.forEach(function(d){d.classList.toggle('active', d.dataset.day===String(n));});
-    pills.forEach(function(p){
-      var on=p.dataset.target===String(n);
-      p.classList.toggle('active', on);
-      if(on){ p.setAttribute('aria-current','true'); } else { p.removeAttribute('aria-current'); }
+  var cols=[].slice.call(document.querySelectorAll('.dt-col'));
+  // table sun/rain buttons + the in-day backup strip (its jump = swap day, sun mode)
+  var btns=[].slice.call(document.querySelectorAll('.dt-btn[data-target], .wxalt[data-target]'));
+  function show(n, mode){
+    n=String(n); mode=mode||'sun';
+    days.forEach(function(d){
+      var on=d.dataset.day===n;
+      d.classList.toggle('active', on);
+      d.classList.toggle('rain', on && mode==='rain');
+    });
+    cols.forEach(function(c){ c.classList.toggle('active', c.dataset.day===n); });
+    btns.forEach(function(b){
+      var on=b.dataset.target===n && (b.getAttribute('data-mode')||'sun')===mode;
+      b.classList.toggle('on', on);
+      if(on){ b.setAttribute('aria-current','true'); } else { b.removeAttribute('aria-current'); }
     });
     toTop();
   }
-  pills.forEach(function(p){p.addEventListener('click',function(){show(p.dataset.target);});});
-  show(1);
+  btns.forEach(function(b){
+    b.addEventListener('click',function(){ show(b.dataset.target, b.getAttribute('data-mode')||'sun'); });
+  });
+  show(1,'sun');
 })();
 
 /* bottom tab bar — switch between top-level views (itinerary / nav / emergency) */
@@ -380,6 +408,13 @@ function toTop(){ window.scrollTo({top:0, behavior: REDUCE ? 'auto' : 'smooth'})
     return Math.round(uv)+' · '+lvl;
   }
   function row(k,v){ return v==null||v===''?'':'<div class="lw-stat"><span class="lw-k">'+k+'</span><span class="lw-v">'+v+'</span></div>'; }
+  // Is the live forecast "bad" for an outdoor plan? Flag only on a real rain
+  // chance (≥60%), genuine rain/storm codes, heavy showers, or fog — a light
+  // drizzle code at low probability must NOT flag (it would mark nearly every day).
+  function badWx(o){
+    var c=o.code, p=o.pop;
+    return (p!=null&&p>=60) || (c>=63&&c<=67) || c===81 || c===82 || c>=95 || c===45 || c===48;
+  }
   function apply(section,o){
     var w=WMO[o.code]||['🌡️','—'];
     // 1) summary: swap the icon, add condition + temp range
@@ -408,6 +443,16 @@ function toTop(){ window.scrollTo({top:0, behavior: REDUCE ? 'auto' : 'smooth'})
     }
     // 3) hide the static fallback notes
     var stat=section.querySelector('[data-wx-static]'); if(stat) stat.hidden=true;
+    // 4) flag the days-table ☔ alternative when the live forecast looks bad —
+    //    auto-adjusts as the forecast firms up; only runs on a successful in-window fetch.
+    var bad=badWx(o), n=section.getAttribute('data-day');
+    var rb=document.querySelector('.dt-rain[data-target="'+n+'"]');
+    if(rb){
+      rb.classList.toggle('wet', bad);
+      if(bad){ rb.title='התחזית: '+w[1]+(o.pop!=null?' '+o.pop+'%':''); } else { rb.removeAttribute('title'); }
+    }
+    var col=section && document.querySelector('.dt-col[data-day="'+n+'"]');
+    if(col) col.classList.toggle('wet', bad);
   }
   function load(section){
     var lat=section.getAttribute('data-lat'), lon=section.getAttribute('data-lon'), date=section.getAttribute('data-date');
