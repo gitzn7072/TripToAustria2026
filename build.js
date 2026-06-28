@@ -267,7 +267,7 @@ const dayCols = trip.days.map((d) => {
 }).join('');
 const pills = `<div class="dt-grid">${dayCols}</div>`;
 // legend lives OUTSIDE the sticky bar so it scrolls away (keeps the sticky header short)
-const pillsLegend = `<div class="dt-legend"><span>☀️ <b>תוכנית מקורית</b></span><span>☔ <b>גיבוי לגשם / החלפה</b></span><span>⚠️ <b>סימון = גשם בתחזית</b></span></div>`;
+const pillsLegend = `<div class="dt-legend"><span>☀️ <b>תוכנית מקורית</b></span><span>☔ <b>גיבוי לגשם / החלפה</b></span><span><span class="lg-dot" aria-hidden="true"></span> <b>= גשם בתחזית</b></span></div>`;
 const days = trip.days.map(renderDay).join('\n');
 // Optional full-plan document — rendered as an extra item in the bottom tab bar.
 // It's an external link (no data-view), so the view-switcher JS ignores it.
