@@ -41,7 +41,7 @@ body{
   background:linear-gradient(var(--paper),var(--paper)) padding-box;}
 
 /* hero */
-.hero{position:relative;color:#f6f1e3;padding:30px 20px 26px;overflow:hidden;
+.hero{position:relative;color:#f6f1e3;padding:calc(30px + env(safe-area-inset-top)) 20px 26px;overflow:hidden;
   background:
     radial-gradient(130px 130px at 84% 22%, rgba(248,222,150,.42), rgba(248,222,150,0) 62%),
     radial-gradient(90px 90px at 84% 22%, rgba(255,241,205,.55), rgba(255,241,205,0) 60%),
@@ -65,7 +65,7 @@ body{
 .flag-de{background:linear-gradient(to bottom,#111 0 33.33%,#dd0000 33.33% 66.66%,#ffce00 66.66%)}
 
 /* language switcher — in flow at the hero top, RTL-aligned; uses Google's in-page widget (no bar) */
-.lang{display:flex;align-items:center;justify-content:flex-start;gap:7px;margin-bottom:14px}
+.lang{display:flex;align-items:center;justify-content:flex-start;gap:8px;margin:13px 0 2px}
 .lang-cap{font-size:11px;font-weight:700;color:#f6f1e3;opacity:.92}
 .lang-flag{font:inherit;font-size:17px;line-height:1;cursor:pointer;opacity:.5;transition:.15s;padding:2px 5px;
   border-radius:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.24)}
@@ -82,24 +82,24 @@ body{top:0!important}
 
 /* sticky day pills */
 /* days bar as a table: number title · ☀️ original · ☔ rainy alternative */
-.pillbar{position:sticky;top:0;z-index:20;background:rgba(244,239,228,.96);
+.pillbar{position:sticky;top:env(safe-area-inset-top);z-index:20;background:rgba(244,239,228,.96);
   backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
   padding:8px 12px;overflow-x:auto;scrollbar-width:none;}
 .pillbar::-webkit-scrollbar{display:none}
 .dt-grid{display:flex;gap:7px;min-width:max-content}
 .dt-col{display:flex;flex-direction:column;gap:4px;align-items:center}
-.dt-num{height:18px;min-width:36px;display:flex;align-items:center;justify-content:center;
-  font-weight:800;font-size:12.5px;color:var(--pine);font-feature-settings:"tnum";border-radius:6px}
+.dt-num{height:16px;min-width:36px;display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:12px;color:var(--pine);font-feature-settings:"tnum";border-radius:6px}
 .dt-col.active .dt-num{background:var(--pine2);color:#fff}
-.dt-btn{width:36px;height:34px;border-radius:11px;border:1.5px solid var(--line);background:#fff;cursor:pointer;
-  font-size:18px;display:flex;align-items:center;justify-content:center;transition:.15s;line-height:1;padding:0}
+.dt-btn{width:36px;height:30px;border-radius:10px;border:1.5px solid var(--line);background:#fff;cursor:pointer;
+  font-size:17px;display:flex;align-items:center;justify-content:center;transition:.15s;line-height:1;padding:0}
 .dt-btn:hover{border-color:var(--moss)}
 .dt-sun.on{background:var(--pine);border-color:var(--pine);box-shadow:var(--shadow);transform:translateY(-1px)}
 .dt-rain{background:#fbf3e3;border-color:#ecd79a}
 .dt-rain:hover{border-color:var(--gold)}
 .dt-rain.on{background:var(--gold);border-color:var(--gold);box-shadow:var(--shadow);transform:translateY(-1px)}
 .dt-empty{border:0;background:none;cursor:default}
-.dt-legend{display:flex;flex-wrap:wrap;gap:8px 14px;justify-content:center;margin:7px 2px 0;font-size:11px;color:var(--muted)}
+.dt-legend{display:flex;flex-wrap:wrap;gap:8px 14px;justify-content:center;margin:8px 14px 0;font-size:11px;color:var(--muted)}
 .dt-legend b{color:var(--pine)}
 /* live-forecast flag: ☔ alternative stands out for days the forecast now shows wet/foggy */
 .dt-rain.wet{border-color:var(--rust);box-shadow:0 0 0 2px rgba(181,72,46,.28);position:relative}
@@ -282,6 +282,13 @@ button.wxalt:active{transform:scale(.99)}
 .day.rain .wxalt{margin-top:4px;box-shadow:0 0 0 2px var(--gold);border-color:var(--gold);
   background:linear-gradient(90deg,#f6e4c4,#fffdf8)}
 .day.rain .wxalt-txt{font-size:14px}
+/* rain-mode "back to full plan" button (shown only in rain mode) */
+.rainback{display:none;margin-top:9px;align-items:center;gap:6px;background:#fff;border:1.5px solid var(--moss);
+  color:var(--pine);border-radius:11px;padding:8px 13px;font:inherit;font-weight:700;font-size:13px;cursor:pointer}
+.rainback:hover{background:var(--paper2)}
+.day.rain .rainback{display:inline-flex}
+/* language flag: brief loading state while Google's widget initializes */
+.lang-flag.loading{opacity:.45}
 
 /* ---- accessibility ---- */
 .skip-link{position:absolute;right:8px;top:-48px;z-index:60;background:var(--pine);color:#fff;
@@ -299,11 +306,11 @@ button.wxalt:active{transform:scale(.99)}
 <div class="wrap">
   <header class="hero">
     <svg class="peaks" viewBox="0 0 500 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 90 L70 30 L120 60 L190 12 L260 58 L330 22 L400 62 L460 34 L500 70 L500 90 Z" fill="#ffffff"/></svg>
-    <div class="lang" role="navigation" aria-label="שפה"><span class="lang-cap">🌐 שפה</span><button type="button" class="lang-flag active" data-lang="iw" title="עברית">🇮🇱</button><button type="button" class="lang-flag" data-lang="en" title="English">🇺🇸</button><button type="button" class="lang-flag" id="lang-local" data-lang="de" title="המקום שבו אתם">🌍</button></div>
     <div id="google_translate_element"></div>
     <div class="hero-kick">תוכנית טיול משפחתית</div>
     <h1>{{TITLE}}</h1>
     <div class="dates">{{SUBTITLE}}</div>
+    <div class="lang" role="navigation" aria-label="שפה / Language"><span class="lang-cap" aria-hidden="true">🌐</span><button type="button" class="lang-flag active" data-lang="iw" title="עברית" aria-label="עברית">🇮🇱</button><button type="button" class="lang-flag" data-lang="en" title="English" aria-label="English">🇺🇸</button><button type="button" class="lang-flag" id="lang-local" data-lang="de" title="השפה המקומית" aria-label="השפה המקומית">🌍</button></div>
     <div class="flags" role="group" aria-label="נוסעים אל: גרמניה, אוסטריה">
       <span class="flags-cap">✈️ נוסעים אל</span>
       <span class="flag flag-de" title="גרמניה"></span>
@@ -314,6 +321,7 @@ button.wxalt:active{transform:scale(.99)}
   <main id="main-content">
   <section class="view view-active" data-view="itinerary" aria-label="מסלול יומי">
     <nav class="pillbar" id="pills" aria-label="בחירת יום">{{PILLS}}</nav>
+    {{PILLS_LEGEND}}
 
 {{DAYS}}
     <footer>{{FOOTER}}</footer>
@@ -347,7 +355,7 @@ function toTop(){ window.scrollTo({top:0, behavior: REDUCE ? 'auto' : 'smooth'})
   var days=[].slice.call(document.querySelectorAll('.day'));
   var cols=[].slice.call(document.querySelectorAll('.dt-col'));
   // table sun/rain buttons + the in-day backup strip (its jump = swap day, sun mode)
-  var btns=[].slice.call(document.querySelectorAll('.dt-btn[data-target], .wxalt[data-target]'));
+  var btns=[].slice.call(document.querySelectorAll('.dt-btn[data-target], .wxalt[data-target], .rainback[data-target]'));
   function show(n, mode){
     n=String(n); mode=mode||'sun';
     days.forEach(function(d){
@@ -356,6 +364,7 @@ function toTop(){ window.scrollTo({top:0, behavior: REDUCE ? 'auto' : 'smooth'})
       d.classList.toggle('rain', on && mode==='rain');
     });
     cols.forEach(function(c){ c.classList.toggle('active', c.dataset.day===n); });
+    var ac=document.querySelector('.dt-col[data-day="'+n+'"]'); if(ac&&ac.scrollIntoView){ ac.scrollIntoView({inline:'center',block:'nearest',behavior:REDUCE?'auto':'smooth'}); }
     btns.forEach(function(b){
       var on=b.dataset.target===n && (b.getAttribute('data-mode')||'sun')===mode;
       b.classList.toggle('on', on);
@@ -391,30 +400,45 @@ function toTop(){ window.scrollTo({top:0, behavior: REDUCE ? 'auto' : 'smooth'})
 
 /* Language switcher — Google's in-page translate widget, its banner hidden via CSS
    (no external bar). Flags: 🇮🇱 Hebrew (original) · 🇺🇸 English · local language set
-   from the device's timezone/region. Translation happens inside the page. */
+   from the device's GPS location (timezone guess first, then GPS). Translation happens in-page. */
 function googleTranslateElementInit(){
   new google.translate.TranslateElement({pageLanguage:'iw',
     includedLanguages:'en,de,fr,it,es,nl,cs,hu,pl,hr,sl,ru,ar',
     autoDisplay:false}, 'google_translate_element');
 }
 (function(){
-  // 1) set the 3rd flag from the device region (timezone) — no permission, no network
-  var M={'Europe/Vienna':['de','🇦🇹','Deutsch (Österreich)'],'Europe/Berlin':['de','🇩🇪','Deutsch'],
+  // 1) set the 3rd flag from the device's GPS location (lat/lon → reverse-geocode →
+  //    country → language). Shows a timezone-based guess instantly, then refines to the
+  //    real GPS country once the user allows location. Shows the true local even if it
+  //    duplicates Hebrew/English (e.g. two 🇮🇱 flags while testing in Israel).
+  var lf=document.getElementById('lang-local');
+  function setLocal(g){ if(lf&&g){ lf.textContent=g[1]; lf.setAttribute('data-lang',g[0]); lf.title=g[2]; lf.setAttribute('aria-label',g[2]); if(typeof mark==='function') mark(); } }
+  var TZ={'Europe/Vienna':['de','🇦🇹','Deutsch (Österreich)'],'Europe/Berlin':['de','🇩🇪','Deutsch'],
     'Europe/Busingen':['de','🇩🇪','Deutsch'],'Europe/Zurich':['de','🇨🇭','Deutsch'],
     'Europe/Rome':['it','🇮🇹','Italiano'],'Europe/Paris':['fr','🇫🇷','Français'],
     'Europe/Madrid':['es','🇪🇸','Español'],'Europe/Amsterdam':['nl','🇳🇱','Nederlands'],
     'Europe/Prague':['cs','🇨🇿','Čeština'],'Europe/Budapest':['hu','🇭🇺','Magyar'],
     'Europe/Warsaw':['pl','🇵🇱','Polski'],'Europe/Zagreb':['hr','🇭🇷','Hrvatski'],
-    'Europe/Ljubljana':['sl','🇸🇮','Slovenščina'],'Europe/Brussels':['fr','🇧🇪','Français']};
-  var tz=''; try{ tz=Intl.DateTimeFormat().resolvedOptions().timeZone||''; }catch(e){}
-  var g=M[tz]; if(!g||g[0]==='iw'||g[0]==='en') g=['de','🇦🇹','Deutsch (Österreich)'];
-  var lf=document.getElementById('lang-local');
-  if(lf){ lf.textContent=g[1]; lf.setAttribute('data-lang',g[0]); lf.title=g[2]; }
+    'Europe/Ljubljana':['sl','🇸🇮','Slovenščina'],'Europe/Brussels':['fr','🇧🇪','Français'],
+    'Asia/Jerusalem':['iw','🇮🇱','עברית']};
+  var CC={IL:['iw','🇮🇱','עברית'],AT:['de','🇦🇹','Deutsch (Österreich)'],DE:['de','🇩🇪','Deutsch'],
+    CH:['de','🇨🇭','Deutsch'],IT:['it','🇮🇹','Italiano'],FR:['fr','🇫🇷','Français'],BE:['fr','🇧🇪','Français'],
+    ES:['es','🇪🇸','Español'],NL:['nl','🇳🇱','Nederlands'],CZ:['cs','🇨🇿','Čeština'],HU:['hu','🇭🇺','Magyar'],
+    PL:['pl','🇵🇱','Polski'],HR:['hr','🇭🇷','Hrvatski'],SI:['sl','🇸🇮','Slovenščina'],GB:['en','🇬🇧','English'],
+    US:['en','🇺🇸','English'],GR:['el','🇬🇷','Ελληνικά'],PT:['pt','🇵🇹','Português'],RU:['ru','🇷🇺','Русский']};
+  function byTZ(){ var tz=''; try{ tz=Intl.DateTimeFormat().resolvedOptions().timeZone||''; }catch(e){} return TZ[tz]||['de','🇦🇹','Deutsch (Österreich)']; }
+  setLocal(byTZ()); // instant best-guess so the flag is never empty
+  if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(function(pos){
+      var u='https://api.bigdatacloud.net/data/reverse-geocode-client?latitude='+pos.coords.latitude+'&longitude='+pos.coords.longitude+'&localityLanguage=en';
+      fetch(u).then(function(r){return r.json();}).then(function(j){ var g=CC[(j&&j.countryCode)||'']; if(g) setLocal(g); }).catch(function(){});
+    }, function(){}, {enableHighAccuracy:false, timeout:8000, maximumAge:600000});
+  }
   // 2) reflect the current translation (googtrans cookie) in the active flag
   function current(){ var m=(document.cookie.match(/googtrans=([^;]+)/)||[])[1]||''; var p=decodeURIComponent(m).split('/'); return p[2]||'iw'; }
   function mark(){ var c=current(); [].slice.call(document.querySelectorAll('.lang-flag')).forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang')===c); }); }
   // 3) switch language on flag tap (Hebrew = clear the cookie and restore the original)
-  function setLang(lang){
+  function setLang(lang, btn){
     if(lang==='iw'){
       var ex='=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
       document.cookie='googtrans'+ex;
@@ -422,14 +446,15 @@ function googleTranslateElementInit(){
       document.cookie='googtrans'+ex+'; domain=.'+location.hostname;
       location.reload(); return;
     }
+    if(btn) btn.classList.add('loading');
     var tries=0, t=setInterval(function(){
       var sel=document.querySelector('.goog-te-combo');
-      if(sel){ clearInterval(t); sel.value=lang; sel.dispatchEvent(new Event('change')); setTimeout(mark,300); }
-      else if(++tries>40){ clearInterval(t); }
+      if(sel){ clearInterval(t); if(btn) btn.classList.remove('loading'); sel.value=lang; sel.dispatchEvent(new Event('change')); setTimeout(mark,300); }
+      else if(++tries>60){ clearInterval(t); if(btn){ btn.classList.remove('loading'); var ot=btn.title; btn.title='התרגום אינו זמין כרגע — נסו שוב'; setTimeout(function(){ btn.title=ot; },2500); } }
     },125);
   }
   [].slice.call(document.querySelectorAll('.lang-flag')).forEach(function(b){
-    b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang')); });
+    b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang'), b); });
   });
   mark();
 })();

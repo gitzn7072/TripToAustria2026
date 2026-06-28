@@ -162,6 +162,7 @@ function renderDay(d) {
   parts.push('</header>');
 
   parts.push(wxBackup(d));
+  parts.push(`<button class="rainback" type="button" data-target="${d.n}" data-mode="sun">☀️ חזרה לתוכנית המקורית</button>`);
   parts.push(sec({ icon: '🧭', title: 'תקציר היום', open: true, body: `<p class="prose">${esc(d.summary)}</p>` }));
   parts.push(sec({ icon: '🕒', title: 'לוח זמנים', body: li(d.timeline, 'timeline') }));
   // Weather: the summary shows the LIVE condition icon + condition + temp range (filled
@@ -264,8 +265,9 @@ const dayCols = trip.days.map((d) => {
     : `<span class="dt-btn dt-empty" aria-hidden="true"></span>`;
   return `<div class="dt-col" data-day="${d.n}"><div class="dt-num">${d.n}</div>${sun}${rain}</div>`;
 }).join('');
-const pills = `<div class="dt-grid">${dayCols}</div>` +
-  `<div class="dt-legend"><span>☀️ <b>תוכנית מקורית</b></span><span>☔ <b>גיבוי לגשם / החלפה</b></span><span>⚠️ <b>סימון = גשם בתחזית</b></span></div>`;
+const pills = `<div class="dt-grid">${dayCols}</div>`;
+// legend lives OUTSIDE the sticky bar so it scrolls away (keeps the sticky header short)
+const pillsLegend = `<div class="dt-legend"><span>☀️ <b>תוכנית מקורית</b></span><span>☔ <b>גיבוי לגשם / החלפה</b></span><span>⚠️ <b>סימון = גשם בתחזית</b></span></div>`;
 const days = trip.days.map(renderDay).join('\n');
 // Optional full-plan document — rendered as an extra item in the bottom tab bar.
 // It's an external link (no data-view), so the view-switcher JS ignores it.
@@ -277,6 +279,7 @@ const html = template
   .replace('{{TITLE}}', esc(trip.title))
   .replace('{{SUBTITLE}}', esc(trip.subtitle))
   .replace('{{PILLS}}', pills)
+  .replace('{{PILLS_LEGEND}}', pillsLegend)
   .replace('{{DOC_TAB}}', docTab)
   .replace('{{DAYS}}', days)
   .replace('{{NAV_SUMMARY}}', navSummary())
