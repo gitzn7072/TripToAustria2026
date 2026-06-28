@@ -64,6 +64,14 @@ body{
 .flag-at{background:linear-gradient(to bottom,#c8102e 0 33.33%,#fff 33.33% 66.66%,#c8102e 66.66%)}
 .flag-de{background:linear-gradient(to bottom,#111 0 33.33%,#dd0000 33.33% 66.66%,#ffce00 66.66%)}
 
+/* external translate bar (opens the page via Google Translate in any language) */
+.xbar{display:flex;align-items:center;flex-wrap:wrap;gap:7px;background:var(--pine);color:#f6f1e3;padding:7px 12px}
+.xbar-ic{font-size:14px;line-height:1}
+.xbar-lbl{font-weight:700;font-size:11.5px;opacity:.85;margin-inline-end:3px}
+.xchip{background:rgba(255,255,255,.14);color:#fff;text-decoration:none;border-radius:999px;
+  padding:3px 11px;font-weight:700;font-size:11.5px;border:1px solid rgba(255,255,255,.28);transition:.15s}
+.xchip:hover{background:rgba(255,255,255,.28)}
+
 /* sticky day pills */
 /* days bar as a table: number title · ☀️ original · ☔ rainy alternative */
 .pillbar{position:sticky;top:0;z-index:20;background:rgba(244,239,228,.96);
@@ -281,6 +289,15 @@ button.wxalt:active{transform:scale(.99)}
 <body>
 <a class="skip-link" href="#main-content">דלג לתוכן</a>
 <div class="wrap">
+  <div class="xbar" id="xbar" role="navigation" aria-label="Translate / תרגום">
+    <span class="xbar-ic" aria-hidden="true">🌐</span>
+    <span class="xbar-lbl">Translate · תרגום</span>
+    <a class="xchip" data-lang="en" target="_blank" rel="noopener">English</a>
+    <a class="xchip" data-lang="de" target="_blank" rel="noopener">Deutsch</a>
+    <a class="xchip" data-lang="fr" target="_blank" rel="noopener">Français</a>
+    <a class="xchip" data-lang="ru" target="_blank" rel="noopener">Русский</a>
+    <a class="xchip" data-lang="ar" target="_blank" rel="noopener">العربية</a>
+  </div>
   <header class="hero">
     <svg class="peaks" viewBox="0 0 500 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 90 L70 30 L120 60 L190 12 L260 58 L330 22 L400 62 L460 34 L500 70 L500 90 Z" fill="#ffffff"/></svg>
     <div class="hero-kick">תוכנית טיול משפחתית</div>
@@ -462,7 +479,7 @@ button.wxalt:active{transform:scale(.99)}
 <details class="sec"><summary><span class="sx" aria-hidden="true">💡</span>טיפים ודגשים</summary><div class="sec-body"><ul class="tips"><li>להפריד בבוקר תיק עליה למטוס כדי לא לפתוח את כל המזוודות בשדה.</li><li>לתדלק לפני החזרת הרכב ולשמור קבלה/צילום מד דלק.</li><li>קניות ביום טיסה: לא יותר מ-60–90 דקות.</li><li>עם וואן ומזוודות עדיף CYTA או DEZ על פני SILLPARK, בגלל גישה וחניה פשוטות יותר.</li></ul></div></details>
 <details class="sec sec-nav" open><summary><span class="sx" aria-hidden="true">📍</span>ניווט מהיר ליעדי היום</summary><div class="sec-body"><div class="navrow"><div class="nav-info"><div class="nav-dest">Altstadtgarage Innsbruck</div><div class="nav-addr">Innrain 4, 6020 Innsbruck, Austria</div></div><div class="nav-btns"><a class="btn b-waze" href="https://www.waze.com/ul?q=Innrain+4%2C+6020+Innsbruck%2C+Austria&amp;navigate=yes" target="_blank" rel="noopener"><svg class="bic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5" fill="#33ccff"/><circle cx="12" cy="11" r="6.4" fill="#fff"/><circle cx="9.9" cy="10" r="1.05" fill="#173b4d"/><circle cx="14.1" cy="10" r="1.05" fill="#173b4d"/><path d="M9.2 12.4c.7 1 1.7 1.5 2.8 1.5s2.1-.5 2.8-1.5" fill="none" stroke="#173b4d" stroke-width="1.25" stroke-linecap="round"/></svg> Waze</a><a class="btn b-gmap" href="https://www.google.com/maps/search/?api=1&amp;query=Innrain+4%2C+6020+Innsbruck%2C+Austria" target="_blank" rel="noopener"><svg class="bic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#EA4335" d="M12 2C8.1 2 5 5.1 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.9-3.1-7-7-7z"/><circle cx="12" cy="9" r="2.6" fill="#fff"/></svg> Google</a></div></div><div class="navrow"><div class="nav-info"><div class="nav-dest">Mittenwald</div><div class="nav-addr">Dekan-Karl-Platz, 82481 Mittenwald, Germany</div></div><div class="nav-btns"><a class="btn b-waze" href="https://www.waze.com/ul?q=Dekan-Karl-Platz%2C+82481+Mittenwald%2C+Germany&amp;navigate=yes" target="_blank" rel="noopener"><svg class="bic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5" fill="#33ccff"/><circle cx="12" cy="11" r="6.4" fill="#fff"/><circle cx="9.9" cy="10" r="1.05" fill="#173b4d"/><circle cx="14.1" cy="10" r="1.05" fill="#173b4d"/><path d="M9.2 12.4c.7 1 1.7 1.5 2.8 1.5s2.1-.5 2.8-1.5" fill="none" stroke="#173b4d" stroke-width="1.25" stroke-linecap="round"/></svg> Waze</a><a class="btn b-gmap" href="https://www.google.com/maps/search/?api=1&amp;query=Dekan-Karl-Platz%2C+82481+Mittenwald%2C+Germany" target="_blank" rel="noopener"><svg class="bic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#EA4335" d="M12 2C8.1 2 5 5.1 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.9-3.1-7-7-7z"/><circle cx="12" cy="9" r="2.6" fill="#fff"/></svg> Google</a></div></div><div class="navrow"><div class="nav-info"><div class="nav-dest">Walchensee</div><div class="nav-addr">Walchensee, B11, Germany</div></div><div class="nav-btns"><a class="btn b-waze" href="https://www.waze.com/ul?q=Walchensee%2C+B11%2C+Germany&amp;navigate=yes" target="_blank" rel="noopener"><svg class="bic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5" fill="#33ccff"/><circle cx="12" cy="11" r="6.4" fill="#fff"/><circle cx="9.9" cy="10" r="1.05" fill="#173b4d"/><circle cx="14.1" cy="10" r="1.05" fill="#173b4d"/><path d="M9.2 12.4c.7 1 1.7 1.5 2.8 1.5s2.1-.5 2.8-1.5" fill="none" stroke="#173b4d" stroke-width="1.25" stroke-linecap="round"/></svg> Waze</a><a class="btn b-gmap" href="https://www.google.com/maps/search/?api=1&amp;query=Walchensee%2C+B11%2C+Germany" target="_blank" rel="noopener"><svg class="bic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#EA4335" d="M12 2C8.1 2 5 5.1 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.9-3.1-7-7-7z"/><circle cx="12" cy="9" r="2.6" fill="#fff"/></svg> Google</a></div></div><div class="navrow"><div class="nav-info"><div class="nav-dest">תחנת דלק — Eching (לפני החזרה)</div><div class="nav-addr">Eni · Dieselstraße 16, 85386 Eching</div></div><div class="nav-btns"><a class="btn b-waze" href="https://www.waze.com/ul?ll=48.306996%2C11.638617&amp;navigate=yes" target="_blank" rel="noopener"><svg class="bic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5" fill="#33ccff"/><circle cx="12" cy="11" r="6.4" fill="#fff"/><circle cx="9.9" cy="10" r="1.05" fill="#173b4d"/><circle cx="14.1" cy="10" r="1.05" fill="#173b4d"/><path d="M9.2 12.4c.7 1 1.7 1.5 2.8 1.5s2.1-.5 2.8-1.5" fill="none" stroke="#173b4d" stroke-width="1.25" stroke-linecap="round"/></svg> Waze</a><a class="btn b-gmap" href="https://www.google.com/maps/search/?api=1&amp;query=48.306996%2C11.638617" target="_blank" rel="noopener"><svg class="bic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#EA4335" d="M12 2C8.1 2 5 5.1 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.9-3.1-7-7-7z"/><circle cx="12" cy="9" r="2.6" fill="#fff"/></svg> Google</a></div></div><div class="navrow"><div class="nav-info"><div class="nav-dest">Sixt Return Munich Airport</div><div class="nav-addr">Rental return · 48.355250, 11.786859</div></div><div class="nav-btns"><a class="btn b-waze" href="https://www.waze.com/ul?ll=48.355250%2C11.786859&amp;navigate=yes" target="_blank" rel="noopener"><svg class="bic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5" fill="#33ccff"/><circle cx="12" cy="11" r="6.4" fill="#fff"/><circle cx="9.9" cy="10" r="1.05" fill="#173b4d"/><circle cx="14.1" cy="10" r="1.05" fill="#173b4d"/><path d="M9.2 12.4c.7 1 1.7 1.5 2.8 1.5s2.1-.5 2.8-1.5" fill="none" stroke="#173b4d" stroke-width="1.25" stroke-linecap="round"/></svg> Waze</a><a class="btn b-gmap" href="https://www.google.com/maps/search/?api=1&amp;query=48.355250%2C11.786859" target="_blank" rel="noopener"><svg class="bic" viewBox="0 0 24 24" aria-hidden="true"><path fill="#EA4335" d="M12 2C8.1 2 5 5.1 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.9-3.1-7-7-7z"/><circle cx="12" cy="9" r="2.6" fill="#fff"/></svg> Google</a></div></div></div></details>
 </article>
-    <footer>עודכן לאחרונה: 28.06.2026<br><span class="ver">גרסה v27 · 64148f3</span></footer>
+    <footer>עודכן לאחרונה: 28.06.2026<br><span class="ver">גרסה v28 · a954d9b</span></footer>
   </section>
 
   <section class="view" data-view="nav" aria-label="ניווט — סיכום יומי" hidden>
@@ -545,6 +562,22 @@ function toTop(){ window.scrollTo({top:0, behavior: REDUCE ? 'auto' : 'smooth'})
     toTop();
   }
   tabs.forEach(function(t){t.addEventListener('click',function(){go(t.dataset.go);});});
+})();
+
+/* External translate bar — build Google-Translate links from the current domain.
+   Google's proxy host = hostname with "-"→"--" and "."→"-", then ".translate.goog".
+   Hidden when already viewing a translated (translate.goog) page. Any language can
+   still be picked from Google's own toolbar once opened. */
+(function(){
+  var bar=document.getElementById('xbar'); if(!bar) return;
+  var host=location.hostname;
+  if(host.indexOf('translate.goog')>=0 || host==='localhost' || host==='127.0.0.1'){ bar.hidden=true; return; }
+  var proxy=host.replace(/-/g,'--').replace(/\./g,'-')+'.translate.goog';
+  var base=location.protocol+'//'+proxy+'/';
+  [].slice.call(bar.querySelectorAll('.xchip')).forEach(function(a){
+    var l=a.getAttribute('data-lang');
+    a.href=base+'?_x_tr_sl=auto&_x_tr_tl='+l+'&_x_tr_hl='+l;
+  });
 })();
 
 /* Live weather, sunrise/sunset, and how-to-dress advice via Open-Meteo

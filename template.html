@@ -64,6 +64,14 @@ body{
 .flag-at{background:linear-gradient(to bottom,#c8102e 0 33.33%,#fff 33.33% 66.66%,#c8102e 66.66%)}
 .flag-de{background:linear-gradient(to bottom,#111 0 33.33%,#dd0000 33.33% 66.66%,#ffce00 66.66%)}
 
+/* external translate bar (opens the page via Google Translate in any language) */
+.xbar{display:flex;align-items:center;flex-wrap:wrap;gap:7px;background:var(--pine);color:#f6f1e3;padding:7px 12px}
+.xbar-ic{font-size:14px;line-height:1}
+.xbar-lbl{font-weight:700;font-size:11.5px;opacity:.85;margin-inline-end:3px}
+.xchip{background:rgba(255,255,255,.14);color:#fff;text-decoration:none;border-radius:999px;
+  padding:3px 11px;font-weight:700;font-size:11.5px;border:1px solid rgba(255,255,255,.28);transition:.15s}
+.xchip:hover{background:rgba(255,255,255,.28)}
+
 /* sticky day pills */
 /* days bar as a table: number title · ☀️ original · ☔ rainy alternative */
 .pillbar{position:sticky;top:0;z-index:20;background:rgba(244,239,228,.96);
@@ -281,6 +289,15 @@ button.wxalt:active{transform:scale(.99)}
 <body>
 <a class="skip-link" href="#main-content">דלג לתוכן</a>
 <div class="wrap">
+  <div class="xbar" id="xbar" role="navigation" aria-label="Translate / תרגום">
+    <span class="xbar-ic" aria-hidden="true">🌐</span>
+    <span class="xbar-lbl">Translate · תרגום</span>
+    <a class="xchip" data-lang="en" target="_blank" rel="noopener">English</a>
+    <a class="xchip" data-lang="de" target="_blank" rel="noopener">Deutsch</a>
+    <a class="xchip" data-lang="fr" target="_blank" rel="noopener">Français</a>
+    <a class="xchip" data-lang="ru" target="_blank" rel="noopener">Русский</a>
+    <a class="xchip" data-lang="ar" target="_blank" rel="noopener">العربية</a>
+  </div>
   <header class="hero">
     <svg class="peaks" viewBox="0 0 500 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 90 L70 30 L120 60 L190 12 L260 58 L330 22 L400 62 L460 34 L500 70 L500 90 Z" fill="#ffffff"/></svg>
     <div class="hero-kick">תוכנית טיול משפחתית</div>
@@ -368,6 +385,22 @@ function toTop(){ window.scrollTo({top:0, behavior: REDUCE ? 'auto' : 'smooth'})
     toTop();
   }
   tabs.forEach(function(t){t.addEventListener('click',function(){go(t.dataset.go);});});
+})();
+
+/* External translate bar — build Google-Translate links from the current domain.
+   Google's proxy host = hostname with "-"→"--" and "."→"-", then ".translate.goog".
+   Hidden when already viewing a translated (translate.goog) page. Any language can
+   still be picked from Google's own toolbar once opened. */
+(function(){
+  var bar=document.getElementById('xbar'); if(!bar) return;
+  var host=location.hostname;
+  if(host.indexOf('translate.goog')>=0 || host==='localhost' || host==='127.0.0.1'){ bar.hidden=true; return; }
+  var proxy=host.replace(/-/g,'--').replace(/\./g,'-')+'.translate.goog';
+  var base=location.protocol+'//'+proxy+'/';
+  [].slice.call(bar.querySelectorAll('.xchip')).forEach(function(a){
+    var l=a.getAttribute('data-lang');
+    a.href=base+'?_x_tr_sl=auto&_x_tr_tl='+l+'&_x_tr_hl='+l;
+  });
 })();
 
 /* Live weather, sunrise/sunset, and how-to-dress advice via Open-Meteo
